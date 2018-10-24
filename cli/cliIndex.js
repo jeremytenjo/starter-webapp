@@ -6,8 +6,8 @@ const webpackIndex = require('./Webpack/webpackIndex.js')
 
 const initLoad = () => {
   let params = {
-    param1: process.argv[2],
-    param2: process.argv[3]
+    p1: process.argv[2],
+    p2: process.argv[3]
   }
 
   // New Project

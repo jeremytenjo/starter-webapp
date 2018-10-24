@@ -1,7 +1,7 @@
 const shell = require('shelljs')
 
 exports.index = function(templatePath, params) {
-  let projectName = params.param2 || 'Webapp-project'
+  let projectName = params.p2 || 'Webapp-project'
   const currentDir = shell.pwd().stdout
   const templateDir = templatePath
   console.log(currentDir)

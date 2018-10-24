@@ -7,8 +7,8 @@ const settingInfo = require('./setting.js')
 const pageInfo = require('./page.js')
 
 exports.index = function(params) {
-  let elementType = params.param1
-  let elementName = params.param2
+  let elementType = params.p1
+  let elementName = params.p2
   if (elementType && elementName) {
     let elementNameFolder =
       elementName.charAt(0).toUpperCase() + elementName.slice(1)
