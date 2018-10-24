@@ -1,0 +1,9 @@
+.icon {
+  transition: 0.2s;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.icon:active {
+  background-color: rgba(97, 97, 97, 0.5);
+}
