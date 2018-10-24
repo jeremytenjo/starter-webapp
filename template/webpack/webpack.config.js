@@ -24,13 +24,12 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].bundle.js'
   },
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     port: wepbackManifest.port,
     host: wepbackManifest.host,
     compress: true,
     quiet: true,
-    // noInfo: false,
     overlay: true,
     clientLogLevel: 'none',
     historyApiFallback: true,

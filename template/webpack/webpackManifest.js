@@ -3,11 +3,11 @@ const localIp = require('get-my-local-ip')
 exports.manifest = {
   port: 3001,
   host: localIp.address,
-  project_name: 'App Template React',
-  project_short_name: 'ATR',
-  project_desc: 'App template react description',
+  project_name: 'Webapp',
+  project_short_name: 'Webapp',
+  project_desc: 'Webapp Template',
   theme: {
-    colorPrimary: '#24c3a9',
+    colorPrimary: '#C1F9EE',
     background_color: '#ffffff'
   }
 }
