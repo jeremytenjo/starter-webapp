@@ -7,7 +7,7 @@ exports.manifest = {
   project_short_name: 'Webapp',
   project_desc: 'Webapp Template',
   theme: {
-    colorPrimary: '#C1F9EE',
+    colorPrimary: '#DAD2F0',
     background_color: '#ffffff'
   }
 }
