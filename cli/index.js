@@ -1,25 +1,25 @@
 #!/usr/bin/env node
-const chalk = require('chalk')
-const shell = require('shelljs')
-const emoji = require('node-emoji')
+const elementsIndex = require('./Elements/elementsIndex.js')
+const newProject = require('./Project/newProject.js')
+const templatePath = 'C:/Dev/Personal Projects/Webapp/template'
 
 const initLoad = () => {
   let param1 = process.argv[2]
   let param2 = process.argv[3]
 
-  switch (elementType) {
+  switch (param1) {
     case 'a':
-      return atomInfo.data
+      return elementsIndex.index()
       break
     case 's':
-      return settingInfo.data
+      return elementsIndex.index()
       break
     case 'p':
-      return pageInfo.data
+      return elementsIndex.index()
       break
 
     default:
-      return ''
+      return newProject.index(templatePath)
       break
   }
 }

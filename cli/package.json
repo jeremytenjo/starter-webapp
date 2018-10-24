@@ -1,7 +1,7 @@
 {
-  "name": "app-react-cli",
+  "name": "webapp-cli",
   "version": "1.0.0",
-  "description": "CLI for React",
+  "description": "Webapp cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,6 @@
     "shelljs": "^0.8.2"
   },
   "bin": {
-    "rn": "./index.js"
+    "wa": "./index.js"
   }
 }
