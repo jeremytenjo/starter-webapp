@@ -4,8 +4,8 @@
   "description": "app-template-react",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack/webpack.config.js --mode development --hot --inline --open ",
-    "build": "webpack --config webpack/webpack.config.js --mode production",
+    "start": "webpack-dev-server --config webpack/webpackConfig/webpack.config.js --mode development --hot --inline --open ",
+    "build": "webpack --config webpack/webpackConfig/webpack.config.js --mode production",
     "dev": "webpack-dashboard -- node index.js"
   },
   "eslintIgnore": [
@@ -40,7 +40,7 @@
     "html-webpack-template": "^6.2.0",
     "image-webpack-loader": "^4.3.1",
     "inline-chunk-manifest-html-webpack-plugin": "^2.0.0",
-    "purify-css": "^1.2.5",
+    "purify-css": "^1.2.6",
     "purifycss-webpack": "^0.7.0",
     "style-loader": "^0.21.0",
     "tidy-html-webpack-plugin": "^0.1.2",
@@ -86,9 +86,9 @@
     "mobx-state-tree": "^3.0.2",
     "mongodb": "^3.1.0",
     "path": "^0.12.7",
-    "react": "^16.4.0",
+    "react": "^16.6.0",
     "react-devtools": "^3.3.2",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.6.0",
     "react-exif-orientation-img": "^0.1.5",
     "react-gesture": "^0.0.5",
     "react-hammerjs": "^1.0.1",
