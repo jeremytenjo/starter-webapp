@@ -10,23 +10,17 @@ exports.index = function(params) {
   let elementType = params.p1
   let elementName = params.p2
   if (elementType && elementName) {
-    let elementNameFolder =
-      elementName.charAt(0).toUpperCase() + elementName.slice(1)
-
+    let elementNameFolder = elementName.charAt(0).toUpperCase() + elementName.slice(1)
     let elementData = getElData(elementType)
     let folderPath = `${elementData.folder}/${elementName}`
     let filePath = `${folderPath}/${elementName}Index.js`
     let emojiSuccess = () => emoji.find('sparkles').emoji
     let emojiFail = () => emoji.find('thumbsup').emoji
     let messageSuccess = chalk.white(
-      `${elementData.name} ${chalk.cyanBright(
-        elementNameFolder
-      )} created ${emojiSuccess()}`
+      `${elementData.name} ${chalk.cyanBright(elementNameFolder)} created ${emojiSuccess()}`
     )
     let messageFail = chalk.white(
-      `${elementData.name} ${chalk.cyanBright(
-        elementNameFolder
-      )} already exists ${emojiFail()}`
+      `${elementData.name} ${chalk.cyanBright(elementNameFolder)} already exists ${emojiFail()}`
     )
 
     // 1. Check if directory exists
@@ -54,7 +48,7 @@ exports.index = function(params) {
   }
 }
 
-const getElData = elementType => {
+const getElData = (elementType) => {
   switch (elementType) {
     case 'a':
       return atomInfo.data
