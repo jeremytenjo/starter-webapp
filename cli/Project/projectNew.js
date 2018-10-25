@@ -1,9 +1,10 @@
 const shell = require('shelljs')
 
 exports.index = function(templatePath, params) {
-  let projectName = params.p2 || 'Webapp-project'
+  let projectName = params.p1 || 'Webapp-project'
   const currentDir = shell.pwd().stdout
   const templateDir = templatePath
+  console.log(projectName)
   console.log(currentDir)
   console.log(templateDir)
   // 1. Copy template to current folder

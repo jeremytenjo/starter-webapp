@@ -16,6 +16,6 @@
     "shelljs": "^0.8.2"
   },
   "bin": {
-    "wa": "./index.js"
+    "wa": "./cliIndex.js"
   }
 }
