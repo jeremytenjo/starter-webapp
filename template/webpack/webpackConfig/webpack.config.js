@@ -2,6 +2,10 @@
 const path = require('path')
 const chalk = require('chalk')
 
+// Manifest
+const wepbackManifestFile = require('../webpackManifest.js')
+const wepbackManifest = wepbackManifestFile.manifest
+
 //Loaders
 const loaders = require('./loaders')
 
@@ -12,10 +16,6 @@ const webpack_pwa_manifest = require('./plugins/webpack-pwa-manifest.js')
 const html_beautify_webpack_plugin = require('./plugins/html-beautify-webpack-plugin.js')
 const workbox_webpack_plugin = require('./plugins/workbox-webpack-plugin.js')
 const uglifyjs_webpack_plugin = require('./plugins/uglifyjs-webpack-plugin.js')
-
-// Manifest
-const wepbackManifestFile = require('./webpackManifest.js')
-const wepbackManifest = wepbackManifestFile.manifest
 
 // Export
 module.exports = {
@@ -38,12 +38,14 @@ module.exports = {
       console.log(chalk.yellow(`You can now view your app in the browser.`))
       console.log()
       console.log(
-        `  ${chalk.cyanBright('On Your Network:')}  http://${wepbackManifest.host}:${chalk.cyanBright(
-          wepbackManifest.port
-        )}/`
+        `  ${chalk.cyanBright('On Your Network:')}  http://${
+          wepbackManifest.host
+        }:${chalk.cyanBright(wepbackManifest.port)}/`
       )
       console.log()
-      console.log(chalk.cyan('Note that the development build is not optimized.'))
+      console.log(
+        chalk.cyan('Note that the development build is not optimized.')
+      )
       console.log(chalk.cyan(`To create a production build, use yarn build`))
       console.log()
     }
@@ -58,7 +60,11 @@ module.exports = {
     rules: loaders
   },
   plugins: [
-    html_webpack_plugin(wepbackManifest.project_name, wepbackManifest.project_desc, wepbackManifest.theme),
+    html_webpack_plugin(
+      wepbackManifest.project_name,
+      wepbackManifest.project_desc,
+      wepbackManifest.theme
+    ),
     webpack_pwa_manifest(
       wepbackManifest.theme,
       wepbackManifest.project_name,
