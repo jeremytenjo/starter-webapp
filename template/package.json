@@ -88,7 +88,7 @@
     "path": "^0.12.7",
     "react": "^16.7.0-alpha.0",
     "react-devtools": "^3.3.2",
-    "react-dom": "^16.6.0",
+    "react-dom": "^16.7.0-alpha.0",
     "react-exif-orientation-img": "^0.1.5",
     "react-gesture": "^0.0.5",
     "react-hammerjs": "^1.0.1",

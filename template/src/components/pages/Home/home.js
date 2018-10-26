@@ -1,24 +1,17 @@
 //Vendors
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
-class Home extends React.Component {
-  //initial state
-  constructor(props) {
-    super(props)
-    this.state = {
-      ...props
-    }
-  }
+const Home = () => {
+  const [count, setCount] = useState(0)
 
-  //Methods
-
-  render() {
-    //Properties
-
-    //Template
-    return <Wrapper>Home</Wrapper>
-  }
+  return (
+    <Wrapper>
+      Home
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </Wrapper>
+  )
 }
 
 //Style
