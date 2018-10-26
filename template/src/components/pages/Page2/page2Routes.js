@@ -1,23 +1,21 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Loadable from 'react-loadable'
 import PrivateRoute from '../../../settings/User/Auth/privateRoute'
 import CoreTemplate from '../../templates/Core'
 
-const Home = Loadable({
-  loader: () => import(/* webpackChunkName: 'Home' */ './Home'),
-  loading: () => null
-})
+const Page2 = lazy(() => import(/* webpackChunkName: 'Page2' */ './Page2'))
 
 export default () => (
   <Switch>
     <Route
       exact
-      path="/"
+      path="/Page2"
       render={() => (
         <PrivateRoute>
           <CoreTemplate>
-            <Home />
+            <Suspense fallback={null}>
+              <Page2 />
+            </Suspense>
           </CoreTemplate>
         </PrivateRoute>
       )}
