@@ -86,7 +86,7 @@
     "mobx-state-tree": "^3.0.2",
     "mongodb": "^3.1.0",
     "path": "^0.12.7",
-    "react": "^16.6.0",
+    "react": "^16.7.0-alpha.0",
     "react-devtools": "^3.3.2",
     "react-dom": "^16.6.0",
     "react-exif-orientation-img": "^0.1.5",

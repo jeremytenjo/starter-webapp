@@ -4,6 +4,7 @@ const templatePath = 'C:/Dev/Personal Projects/Webapp/template'
 const elementsIndex = require('./Elements/elementsIndex.js')
 const projectIndex = require('./Project/projectIndex.js')
 const webpackIndex = require('./Webpack/webpackIndex.js')
+const babelIndex = require('./Babel/babelIndex.js')
 
 const initLoad = () => {
   const currentDir = shell.pwd().stdout
@@ -25,6 +26,11 @@ const initLoad = () => {
   // Wepack
   if (params.p1 === 'update' && params.p2 === 'webpack') {
     return webpackIndex.functions.webpackUpdate.index(templatePath, currentDir)
+  }
+
+  // Babel
+  if (params.p1 === 'update' && params.p2 === 'babel') {
+    return babelIndex.functions.babelUpdate.index(templatePath, currentDir)
   }
 }
 

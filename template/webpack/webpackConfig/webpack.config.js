@@ -7,7 +7,7 @@ const wepbackManifestFile = require('../webpackManifest.js')
 const wepbackManifest = wepbackManifestFile.manifest
 
 //Loaders
-const loaders = require('./loaders')
+const loaders = require('./webpackLoaders')
 
 // Plugins
 const html_webpack_plugin = require('./plugins/html-webpack-plugin.js')
