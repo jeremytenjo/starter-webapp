@@ -1,24 +1,11 @@
 //Vendors
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
-class Page2 extends React.Component {
-  //initial state
-  constructor(props) {
-    super(props)
-    this.state = {
-      ...props
-    }
-  }
+const Page2 = () => {
+  const [name, setName] = useState('Jeremy')
 
-  //Methods
-
-  render() {
-    //Properties
-
-    //Template
-    return <Wrapper>Page2</Wrapper>
-  }
+  return <Wrapper>{name}</Wrapper>
 }
 
 //Style

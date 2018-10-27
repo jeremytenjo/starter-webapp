@@ -1,9 +1,9 @@
 import React from 'react'
 
-class Register extends React.Component {
-  render() {
-    return <div>Register</div>
-  }
+const Register = () => {
+  const [title, setTitle] = useState('Register')
+
+  return <div>{title}</div>
 }
 
 export default Register

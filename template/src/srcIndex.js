@@ -8,7 +8,7 @@ import ServiceWorker from './settings/ServiceWorker/swIndex'
 import PublicStates from './settings/State/stateIndex'
 import Router from './settings/Router/routerIndex'
 import Theme from './settings/Theme/themeIndex'
-import loadApiSettings from './settings/Api/loader'
+import { apiSetUrl } from './settings/Api/apiIndex'
 
 ReactDOM.render(
   <PublicStates>
@@ -20,4 +20,4 @@ ReactDOM.render(
 )
 // Load asynchronous
 ServiceWorker()
-loadApiSettings()
+apiSetUrl()
