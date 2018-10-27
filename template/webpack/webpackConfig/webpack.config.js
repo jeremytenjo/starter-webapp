@@ -21,8 +21,10 @@ const uglifyjs_webpack_plugin = require('./plugins/uglifyjs-webpack-plugin.js')
 module.exports = {
   entry: './src/srcIndex.js',
   output: {
+    chunkFilename: 'js/[name].bundle.js',
+    filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, '../../build'),
-    filename: '[name].bundle.js'
+    publicPath: '/'
   },
   devtool: 'cheap-module-source-map',
   devServer: {

@@ -1,6 +1,7 @@
 //Vendors
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [count, setCount] = useState(0)
@@ -8,8 +9,8 @@ const Home = () => {
   return (
     <Wrapper>
       Home
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <br />
+      <Link to="/Page2/Page2/Page2">page2</Link>
     </Wrapper>
   )
 }
