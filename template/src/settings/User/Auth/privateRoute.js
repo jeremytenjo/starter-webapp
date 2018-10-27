@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom'
 const PrivateComponent = ({ children, location }) => (
   <>
     <Route
-      render={(children, location, authed = true) =>
+      render={(authed = true) =>
         authed === true ? (
           children
         ) : (
