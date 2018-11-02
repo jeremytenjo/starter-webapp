@@ -1,5 +1,5 @@
 export default async function() {
-  const initServiceWorker = () => {
+  const registerServiceWorker = () => {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
       try {
@@ -10,5 +10,5 @@ export default async function() {
       })    
     }
   }
-  process.env.NODE_ENV === 'production' && initServiceWorker()
+  process.env.NODE_ENV === 'production' && registerServiceWorker()
 }
