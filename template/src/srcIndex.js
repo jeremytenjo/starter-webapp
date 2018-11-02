@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 
 //Settings
 import './settings/Firebase/firebaseIndex'
-import registerServiceWorker from './settings/ServiceWorker/swRegister'
+import { swRegister } from './settings/ServiceWorker/swIndex'
 import PublicStates from './settings/State/stateIndex'
 import Router from './settings/Router/routerIndex'
 import Theme from './settings/Theme/themeIndex'
@@ -19,5 +19,5 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-registerServiceWorker()
+swRegister()
 apiSetUrl()
