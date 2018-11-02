@@ -1,7 +1,7 @@
 const functions = require('firebase-functions')
 const cors = require('cors')
 const express = require('express')
-var MongoDB = require('./routes/MongoDB/MDBIndex.js')
+var MongoDB = require('./routes/MongoDB/mdbIndex.js')
 var PushNotifications = require('./routes/PushNotifications/pnIndex.js')
 
 
