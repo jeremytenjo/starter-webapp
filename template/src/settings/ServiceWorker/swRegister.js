@@ -8,7 +8,7 @@ export default async function() {
           console.log(error)
         }
       })    
-    }
+    } else { return '' }
   }
   process.env.NODE_ENV === 'production' && registerServiceWorker()
 }
