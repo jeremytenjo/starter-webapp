@@ -1,11 +1,10 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Login from './login'
-import Register from './register'
+import Access from './accessIndex'
 
 export default () => (
   <Switch>
-    <Route path="/login" component={Login} />
-    <Route path="/register" component={Register} />
+    <Route path="/login" component={Access} />
+    <Route path="/register" component={Access} />
   </Switch>
 )
