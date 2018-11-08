@@ -1,3 +1,4 @@
+//Vendors
 import React from 'react'
 
 const Core = ({ children }) => (
