@@ -60,12 +60,12 @@ module.exports = {
     rules: loaders
   },
   plugins: [
-    html_webpack_plugin(wepbackManifest.project_name, wepbackManifest.project_desc, wepbackManifest.theme),
+    html_webpack_plugin(wepbackManifest.projectInfo.name, wepbackManifest.projectInfo.description, wepbackManifest.theme),
     webpack_pwa_manifest(
       wepbackManifest.theme,
-      wepbackManifest.project_name,
-      wepbackManifest.project_desc,
-      wepbackManifest.project_short_name
+      wepbackManifest.projectInfo.name,
+      wepbackManifest.projectInfo.description,
+      wepbackManifest.projectInfo.shortName
     ),
     favicons_webpack_plugin(),
     html_beautify_webpack_plugin,
