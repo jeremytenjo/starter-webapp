@@ -1,14 +1,11 @@
 const create = (req, res) => {
-  const data = req.body || { name: 5 },
-    db = req.db,
-    client = req.client,
-    collection = db.collection('users')
-
-  // console.log(data)
+  const data = req.payload || { name: 5 }
+  const client = req.client
+  const collection = req.collection
 
   //make sure user desent exist
   collection
-    .find({ name: data.name })
+    .find({ _id: data._id })
     .toArray()
     .then((user) => {
       //create user if one doesent exist

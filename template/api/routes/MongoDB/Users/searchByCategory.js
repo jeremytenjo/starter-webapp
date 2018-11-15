@@ -2,13 +2,12 @@
 // https://docs.mongodb.com/manual/tutorial/query-arrays/
 
 const searchByCategory = (req, res) => {
-  let query = req.body,
-    db = req.db,
-    client = req.client,
-    collection_users = db.collection('users'),
-    users
+  const query = req.payload    
+  const client = req.client
+  const collection = req.collection
+  let users
 
-  collection_users
+  collection
     .find({ categories: { $all: query } })
     .toArray()
     .then((users) => {

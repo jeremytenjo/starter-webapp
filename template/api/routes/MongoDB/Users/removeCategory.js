@@ -1,8 +1,6 @@
-const removeCategory = (req, res) => {
-  const data = req.body || { name: 5 },
-    db = req.db,
-    client = req.client,
-    collection = db.collection('users')
+const removeCategory = (req, res) => { 
+  const collection = req.collection 
+  const name = req.payload
 
   //remove category from categories
   collection
