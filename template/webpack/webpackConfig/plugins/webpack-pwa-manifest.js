@@ -12,15 +12,15 @@ module.exports = function(
     name: project_name,
     short_name: project_short_name,
     description: project_desc,
-    background_color: theme.background_color,
-    theme_color: theme.colorPrimary,
+    background_color: theme.colors.background,
+    theme_color: theme.colors.primary,
     orientation: 'portrait',
     scope: '/',
     start_url: '/',
     display: 'standalone',
     icons: [
       {
-        src: path.resolve(theme.logoPath),
+        src: path.resolve(theme.logo.path),
         sizes: [152, 180, 167, 192, 512],
         destination: path.join('images', 'public')
       }

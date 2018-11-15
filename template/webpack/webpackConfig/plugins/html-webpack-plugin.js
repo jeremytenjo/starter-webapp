@@ -28,7 +28,7 @@ module.exports = function(project_name, project_desc, theme) {
       },
       {
         name: 'apple-mobile-web-app-status-bar-style',
-        content: theme.colorPrimary
+        content: theme.colors.primary
       },
       {
         name: 'apple-mobile-web-app-capable',
