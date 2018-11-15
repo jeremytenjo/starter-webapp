@@ -1,14 +1,18 @@
-const searchByName = (req, res) => {
-  // console.log(req.body.name)
-  const db = req.db,
-    client = req.client,
-    collection_users = db.collection('users'),
-    regxName = new RegExp(req.body.name)
+const searchByName = async(req, res) => {  
+  const client = req.client
+  const collection = req.collection
+  const regxName = new RegExp(req.body.name)
+  
+  try {
+    const foundUsers = await collection.find({ name: { $regex: regxName, options: 'i' } }).toArray()
 
-  collection_users
-    .find({ name: { $regex: regxName, $options: 'i' } })
-    .toArray()
-    .then((users) => res.json(users))
-    .catch((error) => res.json(error))
+    res.json(foundUsers)
+  } catch (error) {
+    res.status(500).json(error)
+    }
+
+    client.close()
 }
+
+// Exports
 module.exports = searchByName

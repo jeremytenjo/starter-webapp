@@ -34,5 +34,10 @@ app.use( async(req, res, next) => {
 app.use('/users', Users)
 app.use('/photos', Photos)
 
+// Endware
+app.use(() => {
+  console.log('SHOULD RUN LATS to close client')
+})
+
 // Exports
 module.exports = app
