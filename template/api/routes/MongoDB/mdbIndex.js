@@ -7,7 +7,7 @@ const MongoClient = require('mongodb').MongoClient
 const Users = require('./Users/usersIndex.js')
 const Photos = require('./Photos/photosIndex.js')
 
-//Configuration
+// Middleware
 app.use((req, res, next) => {
   const db_uri =
     'mongodb://jeremytenjo:Shadowsombra7!@cluster0-shard-00-00-ji1uv.mongodb.net:27017,cluster0-shard-00-01-ji1uv.mongodb.net:27017,cluster0-shard-00-02-ji1uv.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'

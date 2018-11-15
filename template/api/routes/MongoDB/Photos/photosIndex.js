@@ -6,11 +6,15 @@ const router = express.Router()
 const addTag = require('./addTag')
 
 // Middleware
-app.use((req, res, next) => {
+router.use((req, res, next) => {
+  const db = req.db
+  req.payload = req.body.payload  
+  req.collection = db.collection('photos')
 
+  return next()
 })
 
-// Routes
+// Router
 router.post('/addTag', (req, res) => addTag(req, res))
 
 // Exports

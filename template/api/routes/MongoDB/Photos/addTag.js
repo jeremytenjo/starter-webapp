@@ -1,9 +1,8 @@
-const addTag = (req, res) => {
-  const data = req.body
-  const db = req.db
+const addTag = async (req, res) => {
+  const payload = req.payload  
   const client = req.client
-  const collection = db.collection('photos')
-  console.log(data)
+  const collection = req.collection
+  console.log(payload)
   //  collection
   //    .find({ name: data.name })
   //    .toArray()
