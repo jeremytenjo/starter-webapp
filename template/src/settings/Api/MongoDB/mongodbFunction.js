@@ -4,7 +4,7 @@ export default (data) => {
   const fnName = data.fnName || false  
   const payload = data.payload || false
 
-    if (userId, collection, fnName, payload) {
+    if (userId && collection && fnName && payload) {
 
   return new Promise(async (resolve, reject) => {
     try {
@@ -24,7 +24,7 @@ export default (data) => {
       throw new Error(error)
     }
   })
-    } else {
+    } else {      
         throw new Error(`Missing params ${userId, collection, fnName, payload}`)
     }
 
