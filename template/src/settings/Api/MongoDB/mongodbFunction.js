@@ -19,10 +19,10 @@ export default (data) => {
           const dbDataJson = await dbData.json()
           
           resolve(dbDataJson)
-    } catch (error) {      
-      reject(error)
-    }
-  })
+          } catch (error) {
+            reject(error)
+            }
+    })
     } else {      
         throw new Error(`Missing nesseasry params ${{userId, collection, fnName, payload}}`) 
     }
