@@ -16,7 +16,7 @@ const searchByCategory = (req, res) => {
       res.json(users)
     })
     .catch((error) => {
-      res.json(error)
+     res.status(500).json(error)
     })
 
   client.close()

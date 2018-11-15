@@ -19,10 +19,10 @@ const create = (req, res) => {
             res.json(newUser.insertedId)
           })
           .catch((err) => {
-            res.json(err.message)
+            res.status(500).json(err.message)
           })
       } else {
-        res.json('User Already Exists')
+        res.status(500).json('User Already extts')
       }
 
       client.close()

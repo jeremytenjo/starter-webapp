@@ -10,8 +10,8 @@ const removeCategory = (req, res) => {
     .then((user) => {
       res.send('client')
     })
-    .catch((e) => {
-      res.send(e)
+    .catch((error) => {
+      res.status(500).json(error)
     })
 
   client.close()

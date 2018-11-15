@@ -9,7 +9,7 @@ const addCategory = (req, res) => {
     res.send(e)
   })
 
-  res.send('client')
+  res.status(500).json(error)
   client.close()
 }
 
