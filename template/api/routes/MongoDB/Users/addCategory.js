@@ -1,7 +1,7 @@
 const addCategory = (req, res) => {
-  const client = req.client,
+  const client = req.client
   const collection = db.collection('users')
-  const name = req.payload 
+  const name = req.payload
 
   //only add if not already present
   collection.updateOne({ name: 'Hayle Whitehead' }, { $addToSet: { categories: { $each: ['d3'] } } }).catch((e) => {
