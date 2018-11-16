@@ -11,7 +11,7 @@ const Photos = require('./Photos/photosIndex.js')
 const dbName = 'Estilistta-db'
 
 // Middleware
-app.use( async(req, res, next) => {
+app.use(async (req, res, next) => {
   const db_uri =
     'mongodb://jeremytenjo:Shadowsombra7!@cluster0-shard-00-00-ji1uv.mongodb.net:27017,cluster0-shard-00-01-ji1uv.mongodb.net:27017,cluster0-shard-00-02-ji1uv.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'
 

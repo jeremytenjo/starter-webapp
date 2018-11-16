@@ -19,7 +19,7 @@ const initLoad = () => {
   }
 
   // Elements
-  if (params.p1 === 'a' || params.p1 === 's' || params.p1 === 'p') {
+  if (params.p1 === 'a' || params.p1 === 's' || params.p1 === 'p' || params.p1 === 'm') {
     return elementsIndex.index(params)
   }
 

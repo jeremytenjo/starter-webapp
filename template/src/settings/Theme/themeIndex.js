@@ -1,17 +1,27 @@
+// Vendors
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import MaterialUI from './vendors/MaterialUi'
 
+// Variables
+import setVariables from './cssVariables/setVariables'
+
+// Theme Manifest
+import ThemeManifest from './themeManifest'
+
+// Tags
+import './tags/body.css'
+
+// Properties
 import './fonts/fonts.css'
-import './body.css'
-import './colors.css'
-import './transition.css'
-import './icons.css'
+import './properties/colors.css'
+import './properties/transition.css'
 
-const theme = {
-  colors: {
-    primary: '#24c3a9',
-    secondary: '#ada3ff'
-  }
-}
+// CSS Variables
+setVariables(ThemeManifest)
 
-export default ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
+export default ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <MaterialUI ThemeManifest={ThemeManifest}>{children}</MaterialUI>
+  </ThemeProvider>
+)

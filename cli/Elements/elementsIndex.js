@@ -5,6 +5,7 @@ const emoji = require('node-emoji')
 const atomInfo = require('./atom.js')
 const settingInfo = require('./setting.js')
 const pageInfo = require('./page.js')
+const moleculeInfo = require('./molecule.js')
 
 exports.index = function(params) {
   let elementType = params.p1
@@ -58,6 +59,9 @@ const getElData = (elementType) => {
       break
     case 'p':
       return pageInfo.data
+      break
+    case 'm':
+      return moleculeInfo.data
       break
 
     default:
