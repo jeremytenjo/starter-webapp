@@ -13,7 +13,7 @@
     "rules": "storage.rules"
   },
   "functions": {
-    "source": "api/apiIndex.js"
+    "source": "api"
   },
   "firestore": {
     "rules": "firestore.rules",
