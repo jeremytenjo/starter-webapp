@@ -1,14 +1,16 @@
 export default async function() {
   const registerServiceWorker = () => {
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-      try {
-        const registration = await navigator.serviceWorker.register('/sw.js')
-      } catch (error) {
+      window.addEventListener('load', async () => {
+        try {
+          const registration = await navigator.serviceWorker.register('/sw.js')
+        } catch (error) {
           console.log(error)
         }
-      })    
-    } else { return '' }
+      })
+    } else {
+      return ''
+    }
   }
   process.env.NODE_ENV === 'production' && registerServiceWorker()
 }

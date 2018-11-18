@@ -10,7 +10,7 @@ import setVariables from './cssVariables/setVariables'
 import ThemeManifest from './themeManifest'
 
 // Tags
-import './tags/body.css'
+import './tags/tagBody.css'
 
 // Properties
 import './fonts/fonts.css'
@@ -21,7 +21,7 @@ import './properties/transition.css'
 setVariables(ThemeManifest)
 
 export default ({ children }) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={ThemeManifest}>
     <MaterialUI ThemeManifest={ThemeManifest}>{children}</MaterialUI>
   </ThemeProvider>
 )

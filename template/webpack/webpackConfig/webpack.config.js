@@ -16,6 +16,7 @@ const webpack_pwa_manifest = require('./plugins/webpack-pwa-manifest.js')
 const html_beautify_webpack_plugin = require('./plugins/html-beautify-webpack-plugin.js')
 const workbox_webpack_plugin = require('./plugins/workbox-webpack-plugin.js')
 const uglifyjs_webpack_plugin = require('./plugins/uglifyjs-webpack-plugin.js')
+const clean_webpack_plugin = require('./plugins/clean-webpack-plugin.js')
 
 // Export
 module.exports = {
@@ -60,7 +61,12 @@ module.exports = {
     rules: loaders
   },
   plugins: [
-    html_webpack_plugin(wepbackManifest.projectInfo.name, wepbackManifest.projectInfo.description, wepbackManifest.theme),
+    clean_webpack_plugin(),
+    html_webpack_plugin(
+      wepbackManifest.projectInfo.name,
+      wepbackManifest.projectInfo.description,
+      wepbackManifest.theme
+    ),
     webpack_pwa_manifest(
       wepbackManifest.theme,
       wepbackManifest.projectInfo.name,
