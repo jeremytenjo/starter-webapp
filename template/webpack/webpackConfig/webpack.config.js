@@ -54,9 +54,6 @@ module.exports = {
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   },
-  optimization: {
-    minimizer: [uglifyjs_webpack_plugin()]
-  },
   module: {
     rules: loaders
   },
