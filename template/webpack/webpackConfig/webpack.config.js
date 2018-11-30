@@ -17,6 +17,7 @@ const html_beautify_webpack_plugin = require('./plugins/html-beautify-webpack-pl
 const workbox_webpack_plugin = require('./plugins/workbox-webpack-plugin.js')
 const uglifyjs_webpack_plugin = require('./plugins/uglifyjs-webpack-plugin.js')
 const clean_webpack_plugin = require('./plugins/clean-webpack-plugin.js')
+const webpack_bundle_analyzer = require('./plugins/webpack-bundle-analyzer.js')
 
 // Export
 module.exports = {
@@ -36,7 +37,7 @@ module.exports = {
     overlay: true,
     clientLogLevel: 'none',
     historyApiFallback: true,
-    after: function(app) {
+    after: function() {
       console.clear()
       console.log(chalk.yellow(`You can now view your app in the browser.`))
       console.log()
@@ -59,6 +60,7 @@ module.exports = {
   },
   plugins: [
     clean_webpack_plugin(),
+    webpack_bundle_analyzer(),
     html_webpack_plugin(
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,
@@ -72,6 +74,7 @@ module.exports = {
     ),
     favicons_webpack_plugin(),
     html_beautify_webpack_plugin,
-    workbox_webpack_plugin
+    workbox_webpack_plugin,
+    uglifyjs_webpack_plugin()
   ]
 }
