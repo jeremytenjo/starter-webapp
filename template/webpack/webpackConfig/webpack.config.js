@@ -23,8 +23,8 @@ const webpack_bundle_analyzer = require('./plugins/webpack-bundle-analyzer.js')
 module.exports = {
   entry: './src/srcIndex.js',
   output: {
-    chunkFilename: 'js/[name].bundle.js',
-    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[name].[contenthash].bundle.js',
+    filename: 'js/[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, '../../build'),
     publicPath: '/'
   },
