@@ -23,8 +23,8 @@ const webpack_bundle_analyzer = require('./plugins/webpack-bundle-analyzer.js')
 module.exports = {
   entry: './src/srcIndex.js',
   output: {
-    chunkFilename: 'js/[name].[contenthash].bundle.js',
-    filename: 'js/[name].[contenthash].bundle.js',
+    chunkFilename: 'js/[name].bundle.js',
+    filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, '../../build'),
     publicPath: '/'
   },
@@ -55,12 +55,14 @@ module.exports = {
   performance: {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   },
+  optimization: {
+    minimizer: [uglifyjs_webpack_plugin()]
+  },
   module: {
     rules: loaders
   },
   plugins: [
     clean_webpack_plugin(),
-    webpack_bundle_analyzer(),
     html_webpack_plugin(
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,
@@ -73,8 +75,8 @@ module.exports = {
       wepbackManifest.projectInfo.shortName
     ),
     favicons_webpack_plugin(),
-    html_beautify_webpack_plugin,
-    workbox_webpack_plugin,
-    uglifyjs_webpack_plugin()
+    html_beautify_webpack_plugin(),
+    workbox_webpack_plugin(),
+    webpack_bundle_analyzer()
   ]
 }
