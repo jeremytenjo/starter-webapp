@@ -1,12 +1,7 @@
 const path = require('path')
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 
-module.exports = function(
-  theme,
-  project_name,
-  project_desc,
-  project_short_name
-) {
+module.exports = function(theme, project_name, project_desc, project_short_name) {
   return new WebpackPwaManifest({
     fingerprints: false,
     name: project_name,
@@ -21,7 +16,7 @@ module.exports = function(
     icons: [
       {
         src: path.resolve(theme.logo.path),
-        sizes: [152, 180, 167, 192, 512],
+        sizes: [92, 152, 180, 167, 192, 512],
         destination: path.join('images', 'public')
       }
     ]

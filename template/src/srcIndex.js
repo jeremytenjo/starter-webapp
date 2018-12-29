@@ -9,13 +9,16 @@ import PublicStates from './settings/State/stateIndex'
 import Router from './settings/Router/routerIndex'
 import Theme from './settings/Theme/themeIndex'
 import { apiSetUrl } from './settings/Api/apiIndex'
+import UserAuthentication from './settings/User/userAuth/userAuthentication'
 
 ReactDOM.render(
-  <PublicStates>
-    <Theme>
-      <Router />
-    </Theme>
-  </PublicStates>,
+  <UserAuthentication>
+    <PublicStates>
+      <Theme>
+        <Router />
+      </Theme>
+    </PublicStates>
+  </UserAuthentication>,
   document.getElementById('root')
 )
 
