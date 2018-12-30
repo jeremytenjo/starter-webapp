@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 //Settings
 import './settings/Firebase/firebaseIndex'
 import { swRegister } from './settings/ServiceWorker/swIndex'
-import PublicStates from './settings/State/stateIndex'
+import Store from './store/storeIndex'
 import Router from './settings/Router/routerIndex'
 import Theme from './settings/Theme/themeIndex'
 import { apiSetUrl } from './settings/Api/apiIndex'
@@ -13,11 +13,11 @@ import UserAuthentication from './settings/User/userAuth/userAuthentication'
 
 ReactDOM.render(
   <UserAuthentication>
-    <PublicStates>
+    <Store>
       <Theme>
         <Router />
       </Theme>
-    </PublicStates>
+    </Store>
   </UserAuthentication>,
   document.getElementById('root')
 )

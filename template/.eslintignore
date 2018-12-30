@@ -1,4 +1,5 @@
 # Build
 /build/*
- /src/serviceWorker/sw.js
+/src/serviceWorker/sw.js
+/webpack/webpackConfig/plugins/html-webpack-plugin.js
 

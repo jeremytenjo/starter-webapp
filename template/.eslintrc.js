@@ -33,6 +33,7 @@ module.exports = {
     'valid-typeof': 'warn',
     'react/display-name': 'off',
     'react/prop-types': 'off',
+    'react/jsx-uses-react:': 'off',
     'react/jsx-fragments': [true, 'syntax']
   }
 }

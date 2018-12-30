@@ -4,6 +4,9 @@ module.exports = function(project_name, project_desc, theme) {
   return new HtmlWebpackPlugin({
     inject: false,
     template: require('html-webpack-template'),
+    filename: './index.html',
+    title: project_name,
+    appMountId: 'root',
     bodyHtmlSnippet:
       '<img id="splashPage" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 100px; z-index: -2;" src="/images/public/icon_92x92.png"><noscript>You need to enable JavaScript to run this app.</noscript>',
     headHtmlSnippet: '<base href="/"/>',
@@ -11,9 +14,6 @@ module.exports = function(project_name, project_desc, theme) {
     headHtmlSnippet: '<link rel="apple-touch-icon" sizes="152x152" href="images/public/icon_152x152.png">',
     headHtmlSnippet: '<link rel="apple-touch-icon" sizes="180x180" href="images/public/icon_180x180.png">',
     headHtmlSnippet: '<link rel="apple-touch-icon" sizes="167x167" href="images/public/icon_167x167.png">',
-    filename: './index.html',
-    title: project_name,
-    appMountId: 'root',
     meta: [
       {
         name: 'viewport',

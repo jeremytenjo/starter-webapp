@@ -10,7 +10,7 @@ const Home = () => {
     <Wrapper>
       Home
       <br />
-      <Link to="/Page2/Page2/Page2">page2</Link>
+      <Link to="/Page2">page2</Link>
     </Wrapper>
   )
 }
