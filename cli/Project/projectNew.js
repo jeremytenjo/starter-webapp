@@ -1,17 +1,17 @@
 const shell = require('shelljs')
 
-exports.index = function(templatePath, params) {
+exports.index = function(boileplatePath, params) {
   let projectName = params.p1 || 'Webapp-project'
   const currentDir = shell.pwd().stdout
-  const templateDir = templatePath
+  const boileplateDir = boileplatePath
   console.log(projectName)
   console.log(currentDir)
-  console.log(templateDir)
-  // 1. Copy template to current folder
-  shell.cp('-R', templateDir, currentDir)
+  console.log(boileplateDir)
+  // 1. Copy boileplate to current folder
+  shell.cp('-R', boileplateDir, currentDir)
 
   // 2. Change name to prject name
-  shell.mv('template', projectName)
+  shell.mv('boileplate', projectName)
 }
 
 // const addBash = (projectName) => {
