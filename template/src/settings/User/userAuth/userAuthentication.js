@@ -1,6 +1,5 @@
 // Vendors
-import React, { useState, useEffect, memo } from 'react'
-import { useGlobal } from 'reactn'
+import React, { useState, useEffect, memo, useGlobal } from 'reactn'
 
 // Functions
 import authCheck from './userAuthCheck'

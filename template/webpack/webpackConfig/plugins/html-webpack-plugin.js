@@ -1,14 +1,15 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = function(project_name, project_desc, theme) {
+module.exports = function(project_name, project_desc, theme, html) {
+  const bodyHtmlSnippet = html.bodyHtmlSnippet || ''
+
   return new HtmlWebpackPlugin({
     inject: false,
     template: require('html-webpack-template'),
     filename: './index.html',
     title: project_name,
     appMountId: 'root',
-    bodyHtmlSnippet:
-      '<img id="splashPage" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 100px; z-index: -2;" src="/images/public/icon_92x92.png"><noscript>You need to enable JavaScript to run this app.</noscript>',
+    bodyHtmlSnippet: `${bodyHtmlSnippet}<noscript>You need to enable JavaScript to run this app.</noscript>`,
     headHtmlSnippet: '<base href="/"/>',
     headHtmlSnippet: '<link rel="apple-touch-icon" href="images/public/icon_152x152.png">',
     headHtmlSnippet: '<link rel="apple-touch-icon" sizes="152x152" href="images/public/icon_152x152.png">',

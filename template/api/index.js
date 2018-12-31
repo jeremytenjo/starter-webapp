@@ -1,20 +1,18 @@
 // Vendors
 const functions = require('firebase-functions')
-const cors = require('cors')
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 // Routes
-const MongoDB = require('./routes/MongoDB/mdbIndex.js')
-const PushNotifications = require('./routes/PushNotifications/pnIndex.js')
+const Example = require('./routes/Example/_exmapleIndex.js')
 
 // Middleware
 app.use(cors())
 app.options('*', cors())
 
 // Router
-app.use('/MongoDB', MongoDB)
-app.use('/PushNotifications', PushNotifications)
+app.use('/Example', Example)
 
 // Exports
 exports.api = functions.https.onRequest(app)

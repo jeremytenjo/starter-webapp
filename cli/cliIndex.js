@@ -23,7 +23,7 @@ const initLoad = () => {
     return elementsIndex.index(params)
   }
 
-  // Wepack
+  // Webpack
   if (params.p1 === 'update' && params.p2 === 'webpack') {
     return webpackIndex.functions.webpackUpdate.index(templatePath, currentDir)
   }

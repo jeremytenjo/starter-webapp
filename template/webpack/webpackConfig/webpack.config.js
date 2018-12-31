@@ -15,7 +15,7 @@ const favicons_webpack_plugin = require('./plugins/favicons-webpack-plugin.js')
 const webpack_pwa_manifest = require('./plugins/webpack-pwa-manifest.js')
 const html_beautify_webpack_plugin = require('./plugins/html-beautify-webpack-plugin.js')
 const workbox_webpack_plugin = require('./plugins/workbox-webpack-plugin.js')
-const uglifyjs_webpack_plugin = require('./plugins/uglifyjs-webpack-plugin.js')
+const terser_webpack_plugin = require('./plugins/terser-webpack-plugin.js')
 const clean_webpack_plugin = require('./plugins/clean-webpack-plugin.js')
 const webpack_bundle_analyzer = require('./plugins/webpack-bundle-analyzer.js')
 
@@ -56,7 +56,7 @@ module.exports = {
     hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   },
   optimization: {
-    minimizer: [uglifyjs_webpack_plugin()]
+    minimizer: [terser_webpack_plugin()]
   },
   module: {
     rules: loaders
@@ -66,7 +66,8 @@ module.exports = {
     html_webpack_plugin(
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,
-      wepbackManifest.theme
+      wepbackManifest.theme,
+      wepbackManifest.webpack.plugins.html
     ),
     webpack_pwa_manifest(
       wepbackManifest.theme,
