@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 
 //Settings
 import './settings/Firebase/firebaseIndex'
-import { swRegister } from './settings/ServiceWorker/swIndex'
+// import { swRegister } from './settings/ServiceWorker/swIndex'
 import Store from './store/storeIndex'
 import Router from './settings/Router/routerIndex'
 import Theme from './settings/Theme/themeIndex'
@@ -22,5 +22,5 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-swRegister()
+// swRegister()
 apiSetUrl()
