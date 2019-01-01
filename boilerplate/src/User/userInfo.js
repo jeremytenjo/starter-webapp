@@ -1,4 +1,4 @@
-export const userInfo = {
+export default {
   id: 'gKtlqN5aKmU7IBMkQ0iWFEQpIyn1',
   name: 'Hayle Whitehead',
   phone_number: 519800499,

@@ -2,7 +2,7 @@
 import React, { setGlobal } from 'reactn'
 
 // States
-import { userInfo } from '../settings/User/userIndex'
+import userInfo from '../User/userInfo'
 
 const States = { userInfo }
 

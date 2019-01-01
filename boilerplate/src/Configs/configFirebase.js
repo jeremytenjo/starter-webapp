@@ -1,5 +1,4 @@
 import firebase from 'firebase/app'
-import 'firebase/auth'
 
 let config = {
   apiKey: 'AIzaSyB1L1inpSmWPh4QTMaivEFD6oLo8RMvKmw',
@@ -9,4 +8,5 @@ let config = {
   storageBucket: '',
   messagingSenderId: '64204415951'
 }
+
 firebase.initializeApp(config)
