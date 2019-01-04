@@ -3,13 +3,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 //Settings
-import './settings/Firebase/firebaseIndex'
-// import { swRegister } from './settings/ServiceWorker/swIndex'
-import Store from './store/storeIndex'
-import Router from './settings/Router/routerIndex'
-import Theme from './settings/Theme/themeIndex'
-import { apiSetUrl } from './settings/Api/apiIndex'
-import UserAuthentication from './settings/User/userAuth/userAuthentication'
+import './Configs/configFirebase'
+// import { swRegister } from './ServiceWorker/swIndex'
+import Store from './Store/storeIndex'
+import Router from './Router/routerIndex'
+import Theme from './Theme/themeIndex'
+import { apiSetUrl } from './Api/apiIndex'
+import UserAuthentication from './User/userAuthentication/userAuthentication'
 
 ReactDOM.render(
   <UserAuthentication>

@@ -3,7 +3,7 @@ import React, { useState, useEffect, memo, useGlobal } from 'reactn'
 
 // Functions
 import authCheck from './userAuthCheck'
-import { hideSplashPage } from './../../../components/atoms/SpashPage'
+import { hideSplashPage } from '../../Theme/SpashPage'
 
 const UserAuthentication = ({ children }) => {
   // Global State

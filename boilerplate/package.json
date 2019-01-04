@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpackConfig/webpack.config.js --mode development --hot --inline",
     "build": "webpack --config webpack/webpackConfig/webpack.config.js --mode production",
-    "dev": "webpack-dashboard -- node index.js"
+    "dev": "webpack-dashboard -- node index.js",
+    "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json"
   },
   "author": "",
   "license": "ISC",
