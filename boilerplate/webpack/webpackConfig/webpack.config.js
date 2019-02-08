@@ -73,7 +73,8 @@ module.exports = {
       wepbackManifest.theme,
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,
-      wepbackManifest.projectInfo.shortName
+      wepbackManifest.projectInfo.shortName,
+      wepbackManifest.projectInfo.logo
     ),
     favicons_webpack_plugin(),
     html_beautify_webpack_plugin(),

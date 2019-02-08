@@ -3,8 +3,8 @@ import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 //Components
-import PrivateRoute from '../../User/userAuthentication/privateRoute'
-import CoreTemplate from '../../templates/Core'
+import PrivateRoute from '../../User/userAuth/privateRoute'
+import CoreTemplate from '../../Components/Templates/core'
 
 const Home = lazy(() => import(/* webpackChunkName: 'HomeIndex' */ './HomeIndex'))
 

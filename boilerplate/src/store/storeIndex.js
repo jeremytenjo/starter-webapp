@@ -2,13 +2,12 @@
 import React, { setGlobal } from 'reactn'
 
 // States
-import userInfo from '../User/userInfo'
+import user from '../User/userState'
+import ThemeManifestModule from '../Theme/themeManifest'
 
-const States = { userInfo }
+const { ThemeManifest: theme } = ThemeManifestModule
 
-setGlobal({
-  ...States
-})
+setGlobal({ user, theme })
 
 // Exports
 export default ({ children }) => <>{children}</>

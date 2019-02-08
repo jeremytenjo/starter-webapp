@@ -7,7 +7,8 @@ import MaterialUI from './vendors/MaterialUi'
 import setVariables from './cssVariables/setVariables'
 
 // Theme Manifest
-import ThemeManifest from './themeManifest'
+import ThemeManifestModule from './themeManifest'
+const { ThemeManifest } = ThemeManifestModule
 
 // Tags
 import './tags/tagBody.css'

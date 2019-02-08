@@ -12,4 +12,5 @@ const themeManifest = {
   }
 }
 
-export default themeManifest
+// Exports
+exports.ThemeManifest = themeManifest

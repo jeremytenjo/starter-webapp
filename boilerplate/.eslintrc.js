@@ -5,35 +5,36 @@ module.exports = {
     node: true,
     es6: true
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
   parser: 'babel-eslint',
+  plugins: ['react', 'babel', 'react-hooks'],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 9,
     sourceType: 'module'
   },
   settings: {
     react: {
       createClass: 'createReactClass',
       pragma: 'React',
-      version: '16.0'
+      version: 'detect'
     },
     propWrapperFunctions: ['forbidExtraProps']
   },
   rules: {
     'no-const-assign': 'warn',
     'no-this-before-super': 'warn',
-    'no-undef': 'warn',
-    'no-unreachable': 'warn',
+    'no-undef': 'error',
+    'no-unreachable': 'error',
     'no-unused-vars': 'warn',
     'no-console': 'off',
     'constructor-super': 'warn',
     'valid-typeof': 'warn',
     'react/display-name': 'off',
     'react/prop-types': 'off',
-    'react/jsx-uses-react:': 'off',
-    'react/jsx-fragments': [true, 'syntax']
+    'react/jsx-fragments': ['off', 'syntax'],
+    'react-hooks/rules-of-hooks': 'error'
   }
 }
