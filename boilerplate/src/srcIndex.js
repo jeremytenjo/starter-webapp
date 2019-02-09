@@ -13,7 +13,6 @@ import UserAuthentication from './User/userAuth/userAuthentication'
 
 ReactDOM.render(
   <UserAuthentication>
-    <p>hi</p>
     <Store>
       <Theme>
         <Router />
