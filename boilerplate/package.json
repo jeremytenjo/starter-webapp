@@ -20,7 +20,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix-dry-run, prettier --list-different"]
+    "*.{js,jsx}": ["eslint --fix-dry-run", "prettier --list-different"]
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

@@ -1,16 +1,22 @@
-## Webapp
+# Webapp
 
-Fetures:
+## Features:
 
-Google analytics = usage analysis
-Prettier - formatter
-Browserlist - browser support
-babel - new javascript featuers
-webpack - bundler
-storybook - test/solation
-husky - pre commit checks
+`Google analytics = usage analysis`
 
-Continuous integration - Gitlab
+`Prettier - formatter`
 
-- lint
-- deplay
+`Browserlist - browser support`
+
+`babel - new javascript featuers`
+
+`webpack - bundler`
+
+`storybook - test/isolation`
+
+`Linting (husky, lint-staged):`
+
+- pre commit checks
+  - lint
+  - prettier
+  - eslint
