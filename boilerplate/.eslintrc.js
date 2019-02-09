@@ -33,6 +33,7 @@ module.exports = {
     'constructor-super': 'warn',
     'valid-typeof': 'warn',
     'react/display-name': 'off',
+    'react/jsx-uses-react': 1,
     'react/prop-types': 'off',
     'react/jsx-fragments': ['off', 'syntax'],
     'react-hooks/rules-of-hooks': 'error',

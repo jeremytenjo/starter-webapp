@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Page2 = () => {
-  const [name, setName] = useState('Jeremy')
+  const [name, ,] = useState('Jeremy')
 
   return <Wrapper>{name}</Wrapper>
 }

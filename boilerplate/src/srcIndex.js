@@ -23,6 +23,7 @@ ReactDOM.render(
   document.getElementById('root'),
 )
 
+console.log(addToHomeScreen)
 swRegister()
 apiSetUrl()
 addToHomeScreen()
