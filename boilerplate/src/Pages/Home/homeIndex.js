@@ -2,20 +2,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { addToHomeScreen } from '../../Utilities/addToHomeScreen'
+import { AddToHomeScreenButton } from '../../Utilities/addToHomeScreen/addToHomeScreen.index'
 
-const Home = () => {
-  const add = () => addToHomeScreen()
-
-  return (
-    <Wrapper>
-      Home
-      <br />
-      <Link to='/Page2'>page2</Link>
-      <button onClick={add}>Add to homescreen</button>
-    </Wrapper>
-  )
-}
+const Home = () => (
+  <Wrapper>
+    Home
+    <br />
+    <Link to='/Page2'>page2</Link>
+    <AddToHomeScreenButton />
+  </Wrapper>
+)
 
 //Style
 const Wrapper = styled.div``
