@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const googleAnalytics = require('../../../googleAnalytics')
+const { googleAnalysticsScript } = googleAnalytics
 
 module.exports = function(project_name, project_desc, theme, html) {
   const bodyHtmlSnippet = html.bodyHtmlSnippet || ''
@@ -9,7 +11,7 @@ module.exports = function(project_name, project_desc, theme, html) {
     filename: './index.html',
     title: project_name,
     appMountId: 'root',
-    bodyHtmlSnippet: `${bodyHtmlSnippet}<noscript>You need to enable JavaScript to run this app.</noscript>`,
+    bodyHtmlSnippet: `${bodyHtmlSnippet}<noscript>You need to enable JavaScript to run this app.</noscript>${googleAnalysticsScript}`,
     headHtmlSnippet: `
      <base href="/"/>
      <link rel="apple-touch-icon" href="images/public/icon_152x152.png">
