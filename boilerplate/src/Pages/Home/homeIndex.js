@@ -1,16 +1,17 @@
 //Vendors
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-  const [count, setCount] = useState(0)
+  const add = () => window.addToHomeScreen.prompt()
 
   return (
     <Wrapper>
       Home
       <br />
       <Link to='/Page2'>page2</Link>
+      <button onClick={add}>Add to homescreen</button>
     </Wrapper>
   )
 }
