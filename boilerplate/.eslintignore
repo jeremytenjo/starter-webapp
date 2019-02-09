@@ -2,4 +2,6 @@
 /build/*
 /src/serviceWorker/sw.js
 /webpack/webpackConfig/plugins/html-webpack-plugin.js
+/node_modules/*
+/api/node_modules/*
 

@@ -3,24 +3,25 @@
   "version": "1.0.0",
   "description": "webapp",
   "main": "index.js",
+  "author": "je",
+  "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpackConfig/webpack.config.js --mode development --hot --inline",
     "build": "webpack --config webpack/webpackConfig/webpack.config.js --mode production",
     "dev": "webpack-dashboard -- node index.js",
     "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "pretty": "prettier \"**/*.js\" --write"
+    "pretty": "prettier \"**/*.js\" --write",
+    "check-staged": "lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pretty && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.{js,jsx}": ["eslint --fix-dry-run, prettier --list-different"]
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
