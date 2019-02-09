@@ -6,6 +6,7 @@ import { configure, addDecorator } from '@storybook/react'
 // Stories
 function loadStories() {
   require('./storyBookExample')
+  require('../src/Utilities/addToHomeScreen/ui/addToHomeScreen.stories')
   // You can require as many stories as you need.
 }
 

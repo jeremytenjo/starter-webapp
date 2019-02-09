@@ -1,14 +1,21 @@
-import React from 'react'
+// Vendros
+import React, { cloneElement } from 'react'
+
+// Functions
 import { addToHomeScreenAdd } from '../addToHomeScreen.index'
 
-const addToHomeScreenButton = ({ onCick }) => {
-  const add = () => addToHomeScreenAdd
+const addToHomeScreenButton = ({ onCick, Button }) => {
+  const showPromt = () => {
+    addToHomeScreenAdd
+    onCick && onCick
+  }
 
-  return (
-    <>
-      <button onClick={add}>Add to homescreen</button>
-    </>
-  )
+  return <>{Button ? <Button onClick={showPromt} /> : <button onClick={showPromt}>Add to homescreen</button>} </>
+}
+
+addToHomeScreenButton.defaultProps = {
+  onClick: null,
+  button: null,
 }
 
 export default addToHomeScreenButton
