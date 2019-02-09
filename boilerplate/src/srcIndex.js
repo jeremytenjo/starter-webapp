@@ -19,8 +19,8 @@ ReactDOM.render(
       </Theme>
     </Store>
   </UserAuthentication>,
-  document.getElementById('root'),,sfasdfasdfasdf
+  document.getElementById('root'),
 )
-afsdfa
+
 // swRegister()
 apiSetUrl()

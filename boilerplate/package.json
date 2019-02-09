@@ -11,8 +11,10 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write"
   },
-  "hooks": {
-    "pre-commit": "yarn pretty && lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pretty && lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"]
