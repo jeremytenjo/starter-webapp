@@ -1,4 +1,4 @@
-const addToHomeScreen = () => {
+const addToHomeScreenInit = () => {
   window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault()
@@ -9,4 +9,6 @@ const addToHomeScreen = () => {
   })
 }
 
-export default addToHomeScreen
+const addToHomeScreen = () => window.addToHomeScreen && window.addToHomeScreen.prompt()
+
+export { addToHomeScreenInit, addToHomeScreen }

@@ -1,6 +1,6 @@
 const themeManifest = {
   colors: {
-    primary: '#24c3a9',
+    primary: '#4A148C',
     secondary: '#ada3ff',
     black: '#212121',
     white: '#fafafa',

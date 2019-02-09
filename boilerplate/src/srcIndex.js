@@ -10,7 +10,7 @@ import Router from './Router/routerIndex'
 import Theme from './Theme/themeIndex'
 import { apiSetUrl } from './Api/apiIndex'
 import UserAuthentication from './User/userAuth/userAuthentication'
-import addToHomeScreen from './Utilities/addToHomeScreen'
+import { addToHomeScreenInit } from './Utilities/addToHomeScreen'
 
 ReactDOM.render(
   <UserAuthentication>
@@ -23,7 +23,6 @@ ReactDOM.render(
   document.getElementById('root'),
 )
 
-console.log(addToHomeScreen)
 swRegister()
 apiSetUrl()
-addToHomeScreen()
+addToHomeScreenInit()

@@ -2,9 +2,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { addToHomeScreen } from '../../Utilities/addToHomeScreen'
 
 const Home = () => {
-  const add = () => window.addToHomeScreen.prompt()
+  const add = () => addToHomeScreen()
 
   return (
     <Wrapper>
