@@ -8,6 +8,9 @@ const { ThemeManifest: theme } = ThemeManifestModule
 const logoStringModule = require('../src/Images/logo/logo')
 const { logoStringModule: logoString } = logoStringModule
 
+// Google Analytics manifest
+const gaManifestModules = require('../analytics/google/googleAnalytics/gaManifest')
+
 exports.manifest = {
   port: 3001,
   host: localIp.address,
@@ -21,9 +24,7 @@ exports.manifest = {
   },
   analytics: {
     google: {
-      analytics: {
-        trackingId: 'UA-134155158-1'
-      }
+      analytics: gaManifestModules
     }
   },
   theme,

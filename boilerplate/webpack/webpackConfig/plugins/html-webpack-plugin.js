@@ -1,8 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const googleAnalytics = require('../../../analytics/google/googleAnalytics/onlyViewsScript')
-const { googleAnalysticsScript } = googleAnalytics
 
-module.exports = function(project_name, project_desc, theme, html, trackingId) {
+module.exports = function(project_name, project_desc, theme, html, googleAnalyticsonlyViewsScript) {
   const bodyHtmlSnippet = html.bodyHtmlSnippet || ''
 
   return new HtmlWebpackPlugin({
@@ -11,9 +9,7 @@ module.exports = function(project_name, project_desc, theme, html, trackingId) {
     filename: './index.html',
     title: project_name,
     appMountId: 'root',
-    bodyHtmlSnippet: `${bodyHtmlSnippet}<noscript>You need to enable JavaScript to run this app.</noscript>${googleAnalysticsScript(
-      trackingId
-    )}`,
+    bodyHtmlSnippet: `${bodyHtmlSnippet}<noscript>You need to enable JavaScript to run this app.</noscript>${googleAnalyticsonlyViewsScript}`,
     headHtmlSnippet: `
      <base href="/"/>
      <link rel="apple-touch-icon" href="images/public/icon_152x152.png">

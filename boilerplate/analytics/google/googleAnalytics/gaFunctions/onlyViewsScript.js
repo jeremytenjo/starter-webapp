@@ -1,4 +1,4 @@
-exports.googleAnalysticsScript = (trackingId) =>
+exports.onlyViewsScript = (trackingId) =>
   `<script>
 (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
 h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
