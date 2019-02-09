@@ -11,6 +11,12 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write"
   },
+  "hooks": {
+    "pre-commit": "yarn pretty && lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -82,6 +88,7 @@
     "htmltidy": "^0.0.6",
     "husky": "^1.3.1",
     "imagemin-webpack-plugin": "^2.1.5",
+    "lint-staged": "^8.1.3",
     "path": "^0.12.7",
     "prettier": "^1.16.4",
     "react": "^16.8.1",
