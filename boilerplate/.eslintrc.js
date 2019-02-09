@@ -28,7 +28,7 @@ module.exports = {
     'no-this-before-super': 'warn',
     'no-undef': 'error',
     'no-unreachable': 'error',
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'warn',
     'no-console': 'off',
     'constructor-super': 'warn',
     'valid-typeof': 'warn',
