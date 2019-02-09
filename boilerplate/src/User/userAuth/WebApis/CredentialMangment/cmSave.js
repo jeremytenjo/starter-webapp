@@ -8,7 +8,7 @@ export default (email, password) =>
 
     if (credentailApiConditions) {
       try {
-        let cred = new PasswordCredential({
+        let cred = new window.PasswordCredential({
           id: email,
           password: password,
           name: 'name',
