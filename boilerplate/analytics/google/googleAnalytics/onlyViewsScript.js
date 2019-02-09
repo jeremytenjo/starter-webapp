@@ -1,4 +1,5 @@
-exports.googleAnalysticsScript = `<script>
+exports.googleAnalysticsScript = (trackingId) =>
+  `<script>
 (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
 h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
 l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
@@ -16,5 +17,5 @@ y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof
 d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
 a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
 trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
-(window,"UA-134155158-1",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
+(window,"${trackingId}",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
 </script>`

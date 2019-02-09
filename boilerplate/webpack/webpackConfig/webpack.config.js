@@ -67,7 +67,8 @@ module.exports = {
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,
       wepbackManifest.theme,
-      wepbackManifest.webpack.plugins.html
+      wepbackManifest.webpack.plugins.html,
+      wepbackManifest.analytics.google.analytics.trackingId
     ),
     webpack_pwa_manifest(
       wepbackManifest.theme,
