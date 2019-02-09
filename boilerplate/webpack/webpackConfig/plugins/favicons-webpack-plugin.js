@@ -16,7 +16,7 @@ module.exports = function() {
       opengraph: false,
       twitter: false,
       yandex: false,
-      windows: false
-    }
+      windows: false,
+    },
   })
 }

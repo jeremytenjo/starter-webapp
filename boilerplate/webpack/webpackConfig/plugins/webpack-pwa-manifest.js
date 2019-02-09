@@ -17,8 +17,8 @@ module.exports = function(theme, project_name, project_desc, project_short_name,
       {
         src: path.resolve(project_logo.path),
         sizes: [92, 152, 180, 167, 192, 512],
-        destination: path.join('images', 'public')
-      }
-    ]
+        destination: path.join('images', 'public'),
+      },
+    ],
   })
 }

@@ -6,7 +6,7 @@ let config = {
   databaseURL: 'https://webapp-jt.firebaseio.com',
   projectId: 'webapp-jt',
   storageBucket: '',
-  messagingSenderId: '64204415951'
+  messagingSenderId: '64204415951',
 }
 
 firebase.initializeApp(config)

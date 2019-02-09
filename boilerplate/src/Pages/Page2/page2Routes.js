@@ -12,7 +12,7 @@ export default () => (
   <Switch>
     <Route
       exact
-      path="/Page2"
+      path='/Page2'
       render={() => (
         <PrivateRoute>
           <CoreTemplate>

@@ -5,12 +5,12 @@ const { onlyViewsScript } = onlyViewsScriptModule
 
 // Manifest
 const gAnalyticsManifest = {
-  trackingId: 'UA-134155158-1'
+  trackingId: 'UA-134155158-1',
 }
 
 // Funcitons
 const gAnalyticFunctions = {
-  onlyViewsScript: onlyViewsScript(gAnalyticsManifest.trackingId)
+  onlyViewsScript: onlyViewsScript(gAnalyticsManifest.trackingId),
 }
 
 module.exports = { gAnalyticsManifest, gAnalyticFunctions }

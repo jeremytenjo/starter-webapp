@@ -14,8 +14,8 @@ const PrivateComponent = ({ children, location }) => {
               to={{
                 pathname: '/login',
                 state: {
-                  from: location
-                }
+                  from: location,
+                },
               }}
             />
           )

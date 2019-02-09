@@ -5,11 +5,11 @@ const themeManifest = {
     black: '#212121',
     white: '#fafafa',
     disabled: '#b0b0b0',
-    lightGrey: '#eeeeee'
+    lightGrey: '#eeeeee',
   },
   transitions: {
-    duration: '0.2s'
-  }
+    duration: '0.2s',
+  },
 }
 
 // Exports

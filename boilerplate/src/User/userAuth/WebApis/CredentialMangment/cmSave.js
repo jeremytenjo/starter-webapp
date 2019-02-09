@@ -12,7 +12,7 @@ export default (email, password) =>
           id: email,
           password: password,
           name: 'name',
-          iconURL: 'iconUrl'
+          iconURL: 'iconUrl',
         })
 
         navigator.credentials.store(cred)

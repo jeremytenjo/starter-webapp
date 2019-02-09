@@ -9,15 +9,15 @@ export default ({ children, ThemeManifest }) => {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: colorPrimary
+        main: colorPrimary,
       },
       secondary: {
-        main: colorSecondary
-      }
+        main: colorSecondary,
+      },
     },
     typography: {
-      useNextVariants: true
-    }
+      useNextVariants: true,
+    },
   })
 
   return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>

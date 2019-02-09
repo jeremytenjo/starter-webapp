@@ -5,6 +5,6 @@ module.exports = function() {
     analyzerMode: 'disabled',
     generateStatsFile: true,
     statsOptions: { source: false },
-    logLevel: 'silent'
+    logLevel: 'silent',
   })
 }

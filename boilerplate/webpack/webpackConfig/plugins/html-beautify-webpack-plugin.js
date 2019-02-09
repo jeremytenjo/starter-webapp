@@ -9,9 +9,9 @@ module.exports = function() {
         indent_with_tabs: true,
         indent_inner_html: true,
         preserve_newlines: false,
-        unformatted: ['p', 'i', 'b', 'span']
+        unformatted: ['p', 'i', 'b', 'span'],
       },
-      replace: [' type="text/javascript"']
-    }
+      replace: [' type="text/javascript"'],
+    },
   })
 }

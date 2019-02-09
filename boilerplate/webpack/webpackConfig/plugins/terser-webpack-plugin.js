@@ -4,8 +4,8 @@ module.exports = function() {
   return new TerserPlugin({
     terserOptions: {
       output: {
-        comments: false
-      }
-    }
+        comments: false,
+      },
+    },
   })
 }

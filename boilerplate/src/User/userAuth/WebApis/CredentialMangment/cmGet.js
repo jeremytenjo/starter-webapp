@@ -11,7 +11,7 @@ export default () =>
       try {
         userInfo = await navigator.credentials.get({
           password: true,
-          mediation: 'silent'
+          mediation: 'silent',
         })
         resolve(userInfo)
       } catch (e) {

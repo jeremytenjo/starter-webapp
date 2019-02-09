@@ -20,28 +20,28 @@ module.exports = function(project_name, project_desc, theme, html, googleAnalyti
     meta: [
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0'
+        content: 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0',
       },
       {
         name: 'description',
-        content: project_desc
+        content: project_desc,
       },
       {
         name: 'apple-mobile-web-app-title',
-        content: project_name
+        content: project_name,
       },
       {
         name: 'apple-mobile-web-app-status-bar-style',
-        content: theme.colors.primary
+        content: theme.colors.primary,
       },
       {
         name: 'apple-mobile-web-app-capable',
-        content: 'yes'
+        content: 'yes',
       },
       {
         name: 'msapplication-tap-highlight',
-        content: 'no'
-      }
-    ]
+        content: 'no',
+      },
+    ],
   })
 }

@@ -5,19 +5,19 @@ module.exports = {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: 'images/'
-      }
+        outputPath: 'images/',
+      },
     },
     {
       loader: 'image-webpack-loader',
       options: {
         mozjpeg: {
-          quality: 50
+          quality: 50,
         },
         pngquant: {
-          quality: 50
-        }
-      }
-    }
-  ]
+          quality: 50,
+        },
+      },
+    },
+  ],
 }

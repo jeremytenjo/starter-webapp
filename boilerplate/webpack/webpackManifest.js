@@ -19,20 +19,20 @@ exports.manifest = {
     shortName: 'Webapp',
     description: 'Webapp Template',
     logo: {
-      path: 'src/images/logo/logo.png'
-    }
+      path: 'src/images/logo/logo.png',
+    },
   },
   analytics: {
     google: {
-      analytics: gaManifestModules
-    }
+      analytics: gaManifestModules,
+    },
   },
   theme,
   webpack: {
     plugins: {
       html: {
-        bodyHtmlSnippet: logoString
-      }
-    }
-  }
+        bodyHtmlSnippet: logoString,
+      },
+    },
+  },
 }

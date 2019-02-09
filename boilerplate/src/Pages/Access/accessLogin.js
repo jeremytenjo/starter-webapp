@@ -52,9 +52,9 @@ const Login = () => {
   // TEmplate
   return (
     <form onSubmit={loginUser}>
-      <input value={email} onChange={onchangeEmail} placeholder="email" />
-      <input value={password} onChange={onchangePassword} placeholder="password" type="password" />
-      <button type="submit">SUBMIT</button>
+      <input value={email} onChange={onchangeEmail} placeholder='email' />
+      <input value={password} onChange={onchangePassword} placeholder='password' type='password' />
+      <button type='submit'>SUBMIT</button>
       <span>{msgError}</span>
     </form>
   )

@@ -26,7 +26,7 @@ module.exports = {
     chunkFilename: 'js/[name].bundle.js',
     filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, '../../build'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devtool: 'cheap-module-source-map',
   devServer: {
@@ -43,23 +43,23 @@ module.exports = {
       console.log()
       console.log(
         `  ${chalk.cyanBright('On Your Network:')}  http://${wepbackManifest.host}:${chalk.cyanBright(
-          wepbackManifest.port
-        )}/`
+          wepbackManifest.port,
+        )}/`,
       )
       console.log()
       console.log(chalk.cyan('Note that the development build is not optimized.'))
       console.log(chalk.cyan(`To create a production build, use yarn build`))
       console.log()
-    }
+    },
   },
   performance: {
-    hints: process.env.NODE_ENV === 'production' ? 'warning' : false
+    hints: process.env.NODE_ENV === 'production' ? 'warning' : false,
   },
   optimization: {
-    minimizer: [terser_webpack_plugin()]
+    minimizer: [terser_webpack_plugin()],
   },
   module: {
-    rules: loaders
+    rules: loaders,
   },
   plugins: [
     clean_webpack_plugin(),
@@ -68,18 +68,18 @@ module.exports = {
       wepbackManifest.projectInfo.description,
       wepbackManifest.theme,
       wepbackManifest.webpack.plugins.html,
-      wepbackManifest.analytics.google.analytics.gAnalyticFunctions.onlyViewsScript
+      wepbackManifest.analytics.google.analytics.gAnalyticFunctions.onlyViewsScript,
     ),
     webpack_pwa_manifest(
       wepbackManifest.theme,
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,
       wepbackManifest.projectInfo.shortName,
-      wepbackManifest.projectInfo.logo
+      wepbackManifest.projectInfo.logo,
     ),
     favicons_webpack_plugin(),
     html_beautify_webpack_plugin(),
     workbox_webpack_plugin(),
-    webpack_bundle_analyzer()
-  ]
+    webpack_bundle_analyzer(),
+  ],
 }
