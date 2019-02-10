@@ -1,5 +1,5 @@
 // Vendros
-import React, { cloneElement } from 'react'
+import React from 'react'
 
 // Functions
 import { addToHomeScreenAdd } from '../addToHomeScreen.index'
