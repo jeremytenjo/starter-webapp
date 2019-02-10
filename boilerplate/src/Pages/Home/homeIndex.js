@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { AddToHomeScreenButton } from '../../Utilities/addToHomeScreen/addToHomeScreen.index'
+import { AddToHomeScreenButton } from '../../Utilities/Misc/AddToHomeScreen/addToHomeScreen.index'
 
 const Buttons = ({ onClick }) => <button onClick={onClick}>Custom Button</button>
 

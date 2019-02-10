@@ -6,7 +6,7 @@ import { addToHomeScreenAdd } from '../addToHomeScreen.index'
 
 const addToHomeScreenButton = ({ onCick, Button }) => {
   const showPromt = () => {
-    addToHomeScreenAdd
+    addToHomeScreenAdd()
     onCick && onCick
   }
 
