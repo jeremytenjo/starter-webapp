@@ -6,6 +6,7 @@
     "@babel/core": "^7.2.2",
     "@storybook/react": "^4.1.11",
     "babel-loader": "^8.0.5",
+    "install": "^0.12.2",
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1"
   }
