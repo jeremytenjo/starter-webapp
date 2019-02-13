@@ -9,7 +9,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 // Components
-import <%= compNameUpper %> from './<%= compNameUpper %>.index'
+import { <%= compNameUpper %> } from './<%= compNameUpper %>.index'
 
 // Test data
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "hygen": "HYGEN_TMPLS=.hygen/_templates hygen"
+    "hygen": "set HYGEN_TMPLS=.hygen/_templates&& hygen"
   },
   "dependencies": {
     "@babel/core": "latest",
