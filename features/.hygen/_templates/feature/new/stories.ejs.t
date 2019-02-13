@@ -5,13 +5,13 @@ to: features/<%= name %>.stories.js
 <%_ compName = compName[compName.length - 1] _%>
 <%_ compNameUpper = compName.charAt(0).toUpperCase() + compName.slice(1); _%>
 // Vendors
-import React, { memo } from 'react'
-import { storiesOf } from 'storybook'
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-// Main
-const <%= compNameUpper %> = () => {
+// Components
+import <%= compNameUpper %> from './<%= compNameUpper %>.index'
 
-}
+// Test data
 
-// Exports
-export default memo(<%= compNameUpper %>)
+// Stories
+storiesOf('<%= compNameUpper %>', module).addWithJSX('default', () => <<%= compNameUpper %> />)

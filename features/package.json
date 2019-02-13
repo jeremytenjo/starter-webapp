@@ -1,14 +1,17 @@
 {
+  "name": "web-features",
+  "version": "1.0.0",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "hygen": "HYGEN_TMPLS=.hygen/_templates hygen"
   },
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@storybook/react": "^4.1.11",
-    "babel-loader": "^8.0.5",
-    "install": "^0.12.2",
-    "react": "^16.8.0-alpha.1",
-    "react-dom": "^16.8.0-alpha.1"
+    "@babel/core": "latest",
+    "@storybook/react": "latest",
+    "babel-loader": "latest",
+    "hygen": "^2.1.2",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest"
   }
 }
