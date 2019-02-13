@@ -10,7 +10,7 @@ import styled from 'styled-components'
 
 // Main
 const <%= compNameUpper %> = () => {
-
+  return <><%= compNameUpper %> </>
 }
 
 // Exports
