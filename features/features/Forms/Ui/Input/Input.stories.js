@@ -10,4 +10,4 @@ const errMessage = 'err message'
 const placeholder = 'this is a plcaholder'
 
 // Stories
-storiesOf('Input', module).addWithJSX('default', () => <Input errMessage={errMessage} placeholder={placeholder} />)
+storiesOf('Input', module).add('default', () => <Input errMessage={errMessage} placeholder={placeholder} />)

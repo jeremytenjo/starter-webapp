@@ -1,0 +1,31 @@
+---
+to: features/<%= Name %>.readme.md
+---
+<%_ compName = name.split('/') _%>
+<%_ compName = compName[compName.length - 1] _%>
+<%_ compNameUpper = compName.charAt(0).toUpperCase() + compName.slice(1); _%>
+### Usage
+```js
+import Button from 'components/button';
+```
+### Properties
+|**propName**|**propType**|**defaultValue**|**isRequired**|   
+|---|---|---|---|
+|   |   |   |   |   
+|   |   |   |   |  
+|   |   |   |   |   
+
+```
+Requirements: 
+    *  Must have firebase initialized in client https://axiomlegal.atlassian.net/browse/CI-1332
+```
+### Bit Information
+* Url: https://bitsrc.io/bit/movie-app/components/hero-button
+* Install: `yarn add @bit/bit.movie-app.components.hero-button`
+* Add: `bit add features/<%= Name %>`
+* Tag (Version):
+    * `bit tag --minor features/<%= Name %>`
+    * `bit tag --mayor features/<%= Name %>`
+* Remove: `bit remove tenjojeremy.web-features/<%= Name %>`
+
+

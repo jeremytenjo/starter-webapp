@@ -1,15 +1,18 @@
-import { configure, setAddon } from '@storybook/react'
+import { configure, addDecorator } from '@storybook/react'
+import { withOptions } from '@storybook/addon-options'
 
 // Addons
-import JSXAddon from 'storybook-addon-jsx'
-import '@storybook/addon-console'
+addDecorator(
+  withOptions({
+    name: 'Web Features',
+    addonPanelInRight: true
+  })
+)
 
 const req = require.context('../features', true, /\.stories\.js$/)
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename))
 }
-
-setAddon(JSXAddon)
 
 configure(loadStories, module)
