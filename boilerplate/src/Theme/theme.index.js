@@ -4,22 +4,20 @@ import { ThemeProvider } from 'styled-components'
 import MaterialUI from './vendors/MaterialUi'
 
 // CSS Variables
-import setVariables from './cssVariables/setVariables'
+// import setVariables from './cssVariables/setVariables'
 
 // Theme Manifest
-import ThemeManifestModule from './themeManifest'
+import ThemeManifestModule from './theme.manifest'
 const { ThemeManifest } = ThemeManifestModule
 
-// Tags
-import './tags/tagBody.css'
-
-// Properties
-import './fonts/fonts.css'
-import './properties/colors.css'
-import './properties/transition.css'
+// Global
+// import './tags/tagBody.css'
+// import './fonts/fonts.css'
+// import './properties/colors.css'
+// import './properties/transition.css'
 
 // CSS Variables
-setVariables(ThemeManifest)
+// setVariables(ThemeManifest)
 
 // Exports
 export default ({ children }) => (

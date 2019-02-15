@@ -7,7 +7,7 @@ import { withPrettierSource } from 'storybook-addon-prettier-source'
 // Decorats
 addDecorator(
   withOptions({
-    name: 'Web Features',
+    name: 'Web App',
     addonPanelInRight: true,
   }),
 )

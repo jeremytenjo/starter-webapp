@@ -1,7 +1,7 @@
-const eslint = require('./loaderEslint')
-const babel = require('./loaderBabel')
-const css = require('./loaderCss')
-const fonts = require('./loaderFonts')
-const images = require('./loaderImages')
+const js = require('./loaderJs')
+const js_jsx = require('./loader.js.jsx.js')
+const css = require('./loader.css')
+const fonts = require('./loader.fonts')
+const images = require('./loader.images')
 
-module.exports = [babel, eslint, css, fonts, images]
+module.exports = [js_jsx, js, css, fonts, images]

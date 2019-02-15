@@ -10,6 +10,7 @@ const wepbackManifest = wepbackManifestFile.manifest
 const loaders = require('./loaders/_loaderIndex')
 
 // Plugins
+const mini_css_extract_plugin = require('./plugins/mini-css-extract-plugin.js')
 const html_webpack_plugin = require('./plugins/html-webpack-plugin.js')
 const favicons_webpack_plugin = require('./plugins/favicons-webpack-plugin.js')
 const webpack_pwa_manifest = require('./plugins/webpack-pwa-manifest.js')
@@ -63,6 +64,7 @@ module.exports = {
   },
   plugins: [
     clean_webpack_plugin(),
+    mini_css_extract_plugin(),
     html_webpack_plugin(
       wepbackManifest.projectInfo.name,
       wepbackManifest.projectInfo.description,

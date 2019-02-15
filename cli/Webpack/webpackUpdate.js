@@ -6,10 +6,10 @@ exports.index = (templatePath, currentDir) => {
 
   //1. are you sure?
   //2 Delete current webpacl/webpackCongfig folder
-  shell.rm(`-rf`, `${currentDir}/webpack/webpackConfig`)
+  shell.rm(`-rf`, `${currentDir}/.webpack/webpackConfig`)
 
   //3. copy webpackCongfig folder folder from template
-  shell.cp('-R', `${templatePath}/webpack/webpackConfig`, `${currentDir}/webpack`)
+  shell.cp('-R', `${templatePath}/.webpack/webpackConfig`, `${currentDir}/webpack`)
 
   // 4 message
   console.log('Webpack Updated! ' + emojiSuccess())

@@ -1,6 +1,7 @@
 //Vendors
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'linaria/react'
+
 import { Link } from 'react-router-dom'
 import { AddToHomeScreenButton } from '../../Utilities/Misc/AddToHomeScreen/addToHomeScreen.index'
 
