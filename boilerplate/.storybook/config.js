@@ -1,5 +1,5 @@
 // Vendors
-import { configure, addDecorator } from '@storybook/react'
+import { configure } from '@storybook/react'
 
 // Addons Config
 
