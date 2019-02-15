@@ -1,12 +1,11 @@
+const figamValues = require('./Figma/theme.json')
+
+const { colors, fontSizes, fonts } = figamValues
+
 const themeManifest = {
-  colors: {
-    primary: '#4A148C',
-    secondary: '#ada3ff',
-    black: '#212121',
-    white: '#fafafa',
-    disabled: '#b0b0b0',
-    lightGrey: '#eeeeee',
-  },
+  colors,
+  fontSizes,
+  fonts,
   transitions: {
     duration: '0.2s',
   },

@@ -1,13 +1,23 @@
-// Vendors
-import { configure } from '@storybook/react'
+import { configure, addDecorator } from '@storybook/react'
 
-// Addons Config
+// Addons
+import { withOptions } from '@storybook/addon-options'
+import { withPrettierSource } from 'storybook-addon-prettier-source'
 
-// Stories
+// Decorats
+addDecorator(
+  withOptions({
+    name: 'Web Features',
+    addonPanelInRight: true,
+  }),
+)
+
+addDecorator((story, context) => withPrettierSource()(story)(context))
+
+const req = require.context('../src', true, /\.stories\.js$/)
+
 function loadStories() {
-  require('./storyBookExample')
-  require('../src/Utilities/addToHomeScreen/ui/addToHomeScreen.stories')
-  // You can require as many stories as you need.
+  req.keys().forEach((filename) => req(filename))
 }
 
 configure(loadStories, module)
