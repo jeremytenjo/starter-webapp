@@ -6,14 +6,14 @@
   "author": "je",
   "license": "ISC",
   "scripts": {
-    "start": "webpack-dev-server --config webpack/webpackConfig/webpack.config.js --mode development --hot --inline",
-    "build": "webpack --config webpack/webpackConfig/webpack.config.js --mode production",
+    "start": "webpack-dev-server --config .webpack/webpackConfig/webpack.config.js --mode development --hot --inline",
+    "build": "webpack --config .webpack/webpackConfig/webpack.config.js --mode production",
     "dev": "webpack-dashboard -- node index.js",
     "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write",
     "check-staged": "lint-staged",
-    "figam-gen": "figma-theme JDAMhYaQ9pStIBndyZUCcY4A --out-dir .figma"
+    "figma-gen": "figma-theme JDAMhYaQ9pStIBndyZUCcY4A --out-dir .figma"
   },
   "husky": {
     "hooks": {
