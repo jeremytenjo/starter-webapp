@@ -18,7 +18,7 @@ const Home = () => (
 
 //Style
 const Wrapper = styled.div`
-  background-color: green;
+  background-color: var(--color-Secondary);
 `
 
 export default Home

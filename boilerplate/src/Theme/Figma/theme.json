@@ -1,11 +1,91 @@
 {
   "colors": {
+    "Primary": "#6200ee",
     "Secondary": "#b3f8fc",
-    "Primary": "#471db5"
+    "White — High Emphasis": "#ffffff",
+    "White — Medium Emphasis": "#ffffff"
   },
-  "textStyles": {},
-  "fonts": [],
-  "fontSizes": [],
-  "fontWeights": [],
-  "lineHeights": []
+  "textStyles": {
+    "H2 / Roboto Light": {
+      "fontFamily": "Roboto",
+      "fontWeight": 300,
+      "fontSize": 60,
+      "lineHeight": 1
+    },
+    "H4 / Roboto Regular": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 34,
+      "lineHeight": 1
+    },
+    "H2": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 60,
+      "lineHeight": 1
+    },
+    "H1": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 96,
+      "lineHeight": 1
+    },
+    "P": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 14,
+      "lineHeight": 1.2190476190476192
+    },
+    "H6": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "lineHeight": 1
+    },
+    "H5": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 24,
+      "lineHeight": 1
+    },
+    "H4": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 34,
+      "lineHeight": 1
+    },
+    "H3": {
+      "fontFamily": "Roboto",
+      "fontWeight": 400,
+      "fontSize": 48,
+      "lineHeight": 1
+    },
+    "H6 / Roboto Medium": {
+      "fontFamily": "Roboto",
+      "fontWeight": 500,
+      "fontSize": 20,
+      "lineHeight": 1
+    }
+  },
+  "fonts": [
+    "Roboto"
+  ],
+  "fontSizes": [
+    14,
+    20,
+    24,
+    34,
+    48,
+    60,
+    96
+  ],
+  "fontWeights": [
+    300,
+    400,
+    500
+  ],
+  "lineHeights": [
+    1,
+    1.2190476190476192
+  ]
 }

@@ -1,10 +1,10 @@
 const figamValues = require('./Figma/theme.json')
 
-const { colors, fontSizes, fonts } = figamValues
+const { colors, fonts, textStyles } = figamValues
 
 const themeManifest = {
   colors,
-  fontSizes,
+  textStyles,
   fonts,
   transitions: {
     duration: '0.2s',

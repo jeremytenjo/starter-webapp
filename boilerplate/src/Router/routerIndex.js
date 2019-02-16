@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 //Routes
-import AccessRoutes from '../Pages/Access/accessRoutes'
-import HomeRoutes from '../Pages/Home/homeRoutes'
-import Page2Routes from '../Pages/Page2/page2Routes'
+import AccessRoutes from '../Pages/Access/access.routes'
+import HomeRoutes from '../Pages/Home/home.routes'
+import Page2Routes from '../Pages/Page2/page2.routes'
 
 const Routes = withRouter(({ history }) => {
   window.historyRouter = history

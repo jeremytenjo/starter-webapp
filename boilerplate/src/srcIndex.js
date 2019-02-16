@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 
 //Settings
 import './Configs/configFirebase'
-import { swRegister } from './ServiceWorker/swIndex'
+// import { swRegister } from './ServiceWorker/swIndex'
 import Store from './Store/storeIndex'
 import Router from './Router/routerIndex'
 import Theme from './Theme/theme.index'
@@ -23,6 +23,6 @@ ReactDOM.render(
   document.getElementById('root'),
 )
 
-swRegister()
+// swRegister()
 apiSetUrl()
 addToHomeScreenInit()

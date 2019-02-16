@@ -6,18 +6,18 @@ import { Route, Switch } from 'react-router-dom'
 import PrivateRoute from '../../User/userAuth/privateRoute'
 import CoreTemplate from '../../Components/Templates/core'
 
-const Page2 = lazy(() => import(/* webpackChunkName: 'Page2Index' */ './Page2Index'))
+const Home = lazy(() => import(/* webpackChunkName: 'home.index' */ './home.index'))
 
 export default () => (
   <Switch>
     <Route
       exact
-      path='/Page2'
+      path='/'
       render={() => (
         <PrivateRoute>
           <CoreTemplate>
             <Suspense fallback={null}>
-              <Page2 />
+              <Home />
             </Suspense>
           </CoreTemplate>
         </PrivateRoute>

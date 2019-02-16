@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Access from './accessIndex'
+import Access from './access.index'
 
 export default () => (
   <Switch>
