@@ -11,7 +11,7 @@ import ThemeManifestModule from './theme.manifest'
 const { ThemeManifest } = ThemeManifestModule
 
 // Global
-// import './tags/tagBody.css'
+import './tags/tagBody.css'
 // import './fonts/fonts.css'
 // import './properties/colors.css'
 // import './properties/transition.css'
