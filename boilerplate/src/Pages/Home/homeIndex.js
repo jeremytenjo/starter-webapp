@@ -17,6 +17,8 @@ const Home = () => (
 )
 
 //Style
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  background-color: red;
+`
 
 export default Home
