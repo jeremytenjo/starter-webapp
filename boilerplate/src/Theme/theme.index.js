@@ -12,9 +12,9 @@ const { ThemeManifest } = ThemeManifestModule
 
 // Global
 import './tags/tagBody.css'
-// import './fonts/fonts.css'
-// import './properties/colors.css'
-// import './properties/transition.css'
+import './fonts/fonts.css'
+import './properties/colors.css'
+import './properties/transition.css'
 
 // CSS Variables
 // setVariables(ThemeManifest)
