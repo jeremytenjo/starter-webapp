@@ -6,6 +6,7 @@ deploy_production:
   only:
     - master
   script:
+    - cd boilerplate
     - npm install -g firebase-tools
     - yarn install
     - yarn build
