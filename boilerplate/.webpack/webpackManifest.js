@@ -27,7 +27,7 @@ exports.manifest = {
       analytics: gaManifestModules,
     },
   },
-  // theme,
+  theme,
   webpack: {
     plugins: {
       html: {
