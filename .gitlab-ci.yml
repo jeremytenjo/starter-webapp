@@ -1,5 +1,8 @@
 image: node:latest
 
+stages:
+  - deploy
+ 
 deploy_production:
   stage: deploy
   environment: Production
@@ -7,6 +10,8 @@ deploy_production:
     - master
   script:
     - cd boilerplate
+    - npm config set '@bit:registry' https://node.bitsrc.io
+    - npm login --registry=https://node.bitsrc.io --scope=@bit
     - npm install -g firebase-tools
     - npm install
     - npm build
