@@ -13,8 +13,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write",
     "check-staged": "lint-staged",
-    "figma-generate": "figma-theme JDAMhYaQ9pStIBndyZUCcY4A --out-dir src/Theme/Figma",
-    "figma-update": "yarn figma-generate && yarn build"
+    "figma-generate": "figma-theme JDAMhYaQ9pStIBndyZUCcY4A --out-dir src/Theme/Figma"
   },
   "husky": {
     "hooks": {
