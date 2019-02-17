@@ -15,5 +15,6 @@ deploy_production:
     - npm-cli-login
     - npm install -g firebase-tools
     - npm install
+    - npm run pretty
     - npm run build
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
