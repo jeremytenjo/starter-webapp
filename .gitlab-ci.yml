@@ -1,0 +1,20 @@
+image: node:latest
+
+stages:
+  - deploy
+ 
+deploy_production:
+  stage: deploy
+  environment: Production
+  only:
+    - master
+  script:
+    - cd boilerplate
+    - npm install -g npm-cli-login
+    - npm config set '@bit:registry' https://node.bitsrc.io
+    - npm-cli-login
+    - npm install -g firebase-tools
+    - npm install
+    - npm run pretty
+    - npm run build
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
