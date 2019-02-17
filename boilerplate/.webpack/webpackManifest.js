@@ -1,8 +1,8 @@
 const localIp = require('get-my-local-ip')
 
 // Theme Manifest
-const ThemeManifestModule = require('../src/Theme/Theme.manifest')
-const { ThemeManifest: theme } = ThemeManifestModule
+// const ThemeManifestModule = require('../src/Theme/Theme.manifest')
+// const { ThemeManifest: theme } = ThemeManifestModule
 
 // logo
 const logoStringModule = require('../src/Images/logo/logo')
@@ -27,7 +27,7 @@ exports.manifest = {
       analytics: gaManifestModules,
     },
   },
-  theme,
+  // theme,
   webpack: {
     plugins: {
       html: {
