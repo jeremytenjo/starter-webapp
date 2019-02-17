@@ -14,6 +14,7 @@ const Home = () => (
   <Wrapper>
     Home
     <H1Custom>This is a H1</H1Custom>
+    UPDATE
     <br />
     <Link to='/Page2'>page2</Link>
     <AddToHomeScreenButton Button={Buttons} onClick={() => console.log('clicked')} />

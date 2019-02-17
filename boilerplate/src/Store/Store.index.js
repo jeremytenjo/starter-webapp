@@ -3,7 +3,7 @@ import React, { setGlobal } from 'reactn'
 
 // States
 import { userInitState as user } from '../User/User.state'
-import ThemeManifestModule from '../theme/theme.manifest'
+import ThemeManifestModule from '../theme/Manifest'
 
 const { ThemeManifest: theme } = ThemeManifestModule
 
