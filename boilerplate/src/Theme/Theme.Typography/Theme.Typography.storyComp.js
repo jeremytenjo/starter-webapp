@@ -4,10 +4,12 @@ import * as Types from './Theme.Typography.get'
 const Typography = () => {
   // State
   const [Typos, setTypos] = useState([])
+
   // Effect
   useEffect(() => {
     createTypes()
-  })
+  }, [])
+
   // Functions
   const createTypes = () => {
     const allTypes = { ...Types }
@@ -31,5 +33,6 @@ const Typography = () => {
     </>
   )
 }
+
 // Exports
 export default Typography

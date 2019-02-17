@@ -10,7 +10,7 @@ import './Theme.Resets/tagBody.css'
 import './Theme.Resets/Animations/transition.css'
 import './Theme.Fonts/fonts.css'
 
-// Theme
+// Set Globals
 const { colors } = ThemeManifest
 
 setColors(colors)
