@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
 // Data
-import userState from '../User/userState'
+import userState from '../User/User.state'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   // Global State

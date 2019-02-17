@@ -6,7 +6,7 @@ import authCheck from './userAuthCheck'
 import { hideSplashPage } from '../../Components/atoms/SpashPage'
 
 // Data
-import userState from '../userState'
+import userState from '../User.state'
 
 const UserAuthentication = ({ children }) => {
   // Global State
