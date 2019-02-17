@@ -29,6 +29,7 @@ module.exports = {
     'no-undef': 'error',
     'no-unreachable': 'error',
     'no-unused-vars': 'warn',
+    'no-debugger': 'warn',
     'no-console': 'off',
     'constructor-super': 'warn',
     'valid-typeof': 'warn',

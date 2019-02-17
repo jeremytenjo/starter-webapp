@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Page2 = () => {
   const [name, ,] = useState('Jeremy')
 
-  return <Wrapper>{name}</Wrapper>
+  return <Wrapper>{name}PAGE @</Wrapper>
 }
 
 //Style

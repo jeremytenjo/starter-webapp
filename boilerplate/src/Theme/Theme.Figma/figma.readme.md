@@ -8,7 +8,7 @@ Automatic generate colors, fonts, typography from figma design
 
 ### Installtion
 
-- add FIGMA_TOKEN=< Figma token> to `.env` file
+- add FIGMA_TOKEN=<Figma token> to `.env` file
 - add to `package.json`
 
   - ```json

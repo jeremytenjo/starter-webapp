@@ -2,8 +2,8 @@
 import React, { useState, useEffect, memo } from 'react'
 
 // Functions
-import authCheck from './userAuthCheck'
-import { hideSplashPage } from '../../Components/atoms/SpashPage'
+import authCheck from './User.authenticate'
+import { hideSplashPage } from '../../Misc/SpashPage'
 
 // Data
 import userState from '../User.state'
