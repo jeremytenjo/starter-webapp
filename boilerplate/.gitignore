@@ -13,6 +13,9 @@
 # Linaria
 .linaria-cache
 
+# Firebase 
+# .firebase
+
 # misc
 .DS_Store
 .env.local
