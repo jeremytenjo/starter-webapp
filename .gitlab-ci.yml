@@ -10,7 +10,7 @@ deploy_production:
     - master
   script:
     - cd boilerplate
-    - npm install-g npm-cli-login
+    - npm install -g npm-cli-login
     - npm config set '@bit:registry' https://node.bitsrc.io
     - npm-cli-login
     - npm install -g firebase-tools
