@@ -13,6 +13,7 @@ const Colors = () => {
 
   colorSetFinal = getColorCOllection(colorSet)
   colorSetFinalLength = colorSetFinal.length
+
   // Template
   return (
     <Wrapper colorSetFinalLength={colorSetFinalLength}>

@@ -1,6 +1,6 @@
 // Vendors
 import React from 'react'
-import MaterialUI from './Theme.vendors/MaterialUi'
+import MaterialUI from './Theme.Vendors/MaterialUi'
 // Theme Manifest
 import { ThemeManifest } from './Theme.manifest'
 // Figma
