@@ -14,7 +14,7 @@
 .linaria-cache
 
 # Firebase 
-# .firebase
+.firebase
 
 # misc
 .DS_Store
