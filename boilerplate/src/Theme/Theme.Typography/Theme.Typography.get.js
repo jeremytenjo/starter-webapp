@@ -1,7 +1,8 @@
 // Vendors
-import { styled } from 'linaria/react'
+import styled from 'styled-components'
+
 // Figma
-import { textStyles } from './Figma/theme.json'
+import { textStyles } from '../Theme.Figma/theme.json'
 
 let { H1, H2, H3, H4, H5, H6, P } = textStyles
 

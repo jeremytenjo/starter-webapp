@@ -1,18 +1,16 @@
 // Vendors
 import React from 'react'
-import MaterialUI from './vendors/MaterialUi'
+import MaterialUI from './Theme.vendors/MaterialUi'
 // Theme Manifest
-import { ThemeManifest } from './theme.manifest'
+import { ThemeManifest } from './Theme.manifest'
 // Figma
-import { setColors } from './Figma/Figma.index'
-
+import setColors from './Theme.Colors/Figma.Colors.set'
 // Global
-// import './tags/tagBody.css'
-// import './fonts/fonts.css'
-// import './properties/transition.css'
+import './Theme.Resets/tagBody.css'
+import './Theme.Resets/Animations/transition.css'
+import './Theme.Fonts/fonts.css'
 
 // Theme
-console.log(ThemeManifest)
 const { colors } = ThemeManifest
 
 setColors(colors)

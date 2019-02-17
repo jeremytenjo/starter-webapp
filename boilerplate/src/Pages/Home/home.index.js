@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { AddToHomeScreenButton } from '../../Utilities/Misc/AddToHomeScreen/addToHomeScreen.index'
 
-import { H1 } from '../../Theme/Theme.Typography'
+import { H1 } from '../../Theme/Theme.Typography/Theme.Typography.get'
 
 const Buttons = ({ onClick }) => <button onClick={onClick}>Custom Button</button>
 
