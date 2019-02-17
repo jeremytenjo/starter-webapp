@@ -1,7 +1,7 @@
 const localIp = require('get-my-local-ip')
 
 // Theme Manifest
-const ThemeManifestModule = require('../src/Theme/Manifest')
+const ThemeManifestModule = require('../src/Theme/Theme.manifest')
 const { ThemeManifest: theme } = ThemeManifestModule
 
 // logo

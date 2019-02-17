@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ThemeManifest } from '../Manifest'
+import { ThemeManifest } from '../Theme.manifest'
 import getColorCOllection from './Figma.Colors.set'
 
 const Colors = () => {
