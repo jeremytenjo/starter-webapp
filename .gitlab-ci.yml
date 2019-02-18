@@ -1,9 +1,8 @@
 image: node:latest
 
-pages:
- cache:
-  paths:
-   - boilerplate/node_modules/
+cache:
+ paths:
+  - boilerplate/node_modules/
    
 stages:
   - build
