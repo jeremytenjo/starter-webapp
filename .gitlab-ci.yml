@@ -2,7 +2,7 @@ image: node:latest
 
 stages:
   - build
-  - test
+  - lint
   - deploy
   
 build_production: 
@@ -17,10 +17,10 @@ build_production:
     - npm-cli-login
     - npm install -g firebase-tools
     - npm install
-    - npm run build
+    - yarn build
     
-test_production:
-  stage: test
+lint_production:
+  stage: lint
   environment: Production
   only:
     - master
