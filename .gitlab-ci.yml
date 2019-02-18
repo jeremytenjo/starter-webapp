@@ -12,7 +12,7 @@ stages:
   - lint
   - deploy
   
-build_production: 
+build: 
   stage: build
   environment: Production
   script:
@@ -22,7 +22,7 @@ build_production:
     - yarn
     - yarn build
     
-lint_production:
+lint:
   stage: lint
   environment: Production
   script:
