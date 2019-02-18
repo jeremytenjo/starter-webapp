@@ -15,23 +15,18 @@ stages:
 build_production: 
   stage: build
   environment: Production
-  only:
-    - master
   script:
     - npm install -g npm-cli-login
     - npm config set '@bit:registry' https://node.bitsrc.io
     - npm-cli-login
-    - npm install -g firebase-tools
-    - npm install
+    - yarn
     - yarn build
     
 lint_production:
   stage: lint
   environment: Production
-  only:
-    - master
   script:
-  - npm run pretty
+  - yarn pretty
   
 deploy_production:
   stage: deploy
@@ -39,4 +34,5 @@ deploy_production:
   only:
     - master
   script:
+    - npm install -g firebase-tools
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
