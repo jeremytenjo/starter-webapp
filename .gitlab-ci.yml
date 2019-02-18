@@ -1,9 +1,5 @@
 image: node:latest
 
-cache:
- paths:
-  - boilerplate/node_modules/
-   
 stages:
   - build
   - test
@@ -21,7 +17,7 @@ build_production:
     - npm-cli-login
     - npm install -g firebase-tools
     - npm install
-    - yarn build
+    - yarn run build
     
 test_production:
   stage: test
