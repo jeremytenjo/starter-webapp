@@ -3,6 +3,7 @@ image: node:latest
 cache:
   paths:
     - boilerplate/node_modules/
+    - boilerplate/build
     
 before_script:
   - cd boilerplate
