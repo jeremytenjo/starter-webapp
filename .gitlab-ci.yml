@@ -2,7 +2,7 @@ image: node:latest
 
 stages:
   - build
-  - test
+  - lint
   - deploy
   
 build_production: 
@@ -19,8 +19,8 @@ build_production:
     - npm install
     - yarn build
     
-test_production:
-  stage: test
+lint_production:
+  stage: lint
   environment: Production
   only:
     - master
