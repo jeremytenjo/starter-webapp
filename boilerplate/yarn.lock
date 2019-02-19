@@ -14709,10 +14709,10 @@ temp@^0.8.1:
     os-tmpdir "^1.0.0"
     rimraf "~2.2.6"
 
-tenjo-webpack-config@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/tenjo-webpack-config/-/tenjo-webpack-config-1.1.0.tgz#7e6d38f2f77385aedcb15018d1dbb1d0ddd13612"
-  integrity sha512-raQi9zVcQmEkDaxQTnpVlB2/OgHPI9BpL+bJtbJeZViIWsGzxIK5Jt+yedYIPYKcd1eoTs/lbtZkfUvHeO+r3w==
+tenjo-webpack-config@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/tenjo-webpack-config/-/tenjo-webpack-config-1.5.0.tgz#7de7c6987181d4df8186a4cd98b81e4ce2fcd81c"
+  integrity sha512-r4ZInY2qPvESTBwOppXmGm99K1i6xufYi6tUMsOeZFG1cp/C6jU7DN/21u761UZaQxu/E5dYzBMBkLqJaP1Z2Q==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-proposal-class-properties" "^7.3.3"
