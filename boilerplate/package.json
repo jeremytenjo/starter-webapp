@@ -6,9 +6,9 @@
   "author": "je",
   "license": "ISC",
   "scripts": {
-    "start": "npx tenjo-webpack-config start",
-    "build": "npx tenjo-webpack-config build",
-    "dev": "webpack-dashboard -- node index.js",
+    "start": "webpack-scripts start",
+    "build": "webpack-scripts build",
+    "deploy": "yarn lint && yarn pretty && yarn build && gpush && <deploy call>",
     "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write",
@@ -22,11 +22,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix-dry-run",
-      "prettier --list-different",
-      "git add"
-    ]
+    "*.{js,jsx}": ["eslint --fix-dry-run", "prettier --list-different", "git add"]
   },
   "devDependencies": {
     "eslint": "^5.14.1",
@@ -65,7 +61,6 @@
     "storybook-addon-figma": "^0.1.0",
     "storybook-addon-jsx": "^6.0.0",
     "styled-components": "^4.1.3",
-    "svg2react-icon": "^3.0.10",
-    "tenjo-webpack-config": "^1.5.0"
+    "svg2react-icon": "^3.0.10"
   }
 }

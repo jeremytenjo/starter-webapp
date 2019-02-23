@@ -32,6 +32,8 @@ call yarn start
 
 ## Deploy / Continuours Integration
 
+Husk is a pre commit linter
+
 Add the fllowing enviroment variables to Gitlab
 
 - FIREBASE_TOKEN
