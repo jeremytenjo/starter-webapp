@@ -43,6 +43,10 @@ Add the fllowing enviroment variables to Gitlab
 - NPM_REGISTRY
 - NPM_SCOPE
 
+## Babel
+
+Babel extendable in `babelrc.js` (Do not rmove):
+
 **If using @big components ensure CI file inlcudes https://www.npmjs.com/package/npm-cli-login**
 
 Stages:

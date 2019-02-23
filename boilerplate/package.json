@@ -8,13 +8,14 @@
   "scripts": {
     "start": "webpack-scripts start",
     "build": "webpack-scripts build",
-    "deploy": "yarn lint && yarn pretty && yarn build && gpush && <deploy call>",
+    "deploy": "yarn lint && yarn pretty && yarn build && gpush && firebase deploy",
     "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write",
     "check-staged": "lint-staged",
     "figma-generate": "figma-theme JDAMhYaQ9pStIBndyZUCcY4A  --out-dir src/Theme/Theme.Figma",
-    "icons-build": "svg2react-icon src/Images/icons src/Misc/Icons/Icons.Set"
+    "icons-build": "svg2react-icon src/Images/icons src/Misc/Icons/Icons.Set",
+    "lint": "eslint ./src"
   },
   "husky": {
     "hooks": {
@@ -22,7 +23,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix-dry-run", "prettier --list-different", "git add"]
+    "*.{js,jsx}": [
+      "eslint --fix-dry-run",
+      "prettier --list-different",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint": "^5.14.1",
@@ -39,6 +44,7 @@
     "@storybook/addon-options": "^4.1.12",
     "@storybook/addon-viewport": "^4.1.12",
     "@storybook/react": "^5.0.0-rc.1",
+    "babel-eslint": "^10.0.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-babel": "^5.3.0",
     "figma-js": "^1.6.0",
