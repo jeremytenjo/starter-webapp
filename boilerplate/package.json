@@ -6,8 +6,8 @@
   "author": "je",
   "license": "ISC",
   "scripts": {
-    "start": "webpack-scripts start",
-    "build": "webpack-scripts build",
+    "start": "yarn webpack-scripts start",
+    "build": "yarn webpack-scripts build",
     "deploy": "yarn lint && yarn pretty && yarn build && gpush && firebase deploy",
     "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -23,12 +23,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix-dry-run",
-      "prettier --list-different",
-      "git add"
-    ]
+    "*.{js,jsx}": ["eslint --fix-dry-run", "prettier --list-different", "git add"]
   },
+  "browserslist": ["> 0.5%", "last 2 versions", "not dead"],
   "devDependencies": {
     "eslint": "^5.14.1",
     "eslint-config-react-app": "^3.0.6",
@@ -36,7 +33,7 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.0.1",
+    "eslint-plugin-react-hooks": "^1.2.0",
     "storybook-addon-prettier-source": "^2.1.2"
   },
   "dependencies": {
@@ -67,6 +64,7 @@
     "storybook-addon-figma": "^0.1.0",
     "storybook-addon-jsx": "^6.0.0",
     "styled-components": "^4.1.3",
-    "svg2react-icon": "^3.0.10"
+    "svg2react-icon": "^3.0.10",
+    "tenjo-webpack-config": "^2.10.0"
   }
 }

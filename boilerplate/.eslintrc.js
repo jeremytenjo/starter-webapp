@@ -38,5 +38,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-fragments': ['off', 'syntax'],
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 }
