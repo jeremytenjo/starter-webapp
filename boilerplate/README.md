@@ -47,7 +47,11 @@ Add the fllowing enviroment variables to Gitlab
 
 Babel extendable in `babelrc.js` (Do not rmove):
 
-**If using @big components ensure CI file inlcudes https://www.npmjs.com/package/npm-cli-login**
+```js
+module.exports = { extends: './node_modules/@tenjo/webpack-config/.babelrc' }
+```
+
+**If using @bit components ensure CI file inlcudes https://www.npmjs.com/package/npm-cli-login**
 
 Stages:
 
