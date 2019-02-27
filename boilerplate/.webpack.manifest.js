@@ -12,9 +12,6 @@ const { logoStringModule: logoString } = logoStringModule
 const gaManifestModules = require('./analytics/google/googleAnalytics/gaManifest')
 
 exports.manifest = {
-  entry: './src/srcIndex.js',
-  port: 3001,
-  host: localIp.address,
   projectInfo: {
     name: 'Webapp',
     shortName: 'Webapp',
@@ -30,6 +27,11 @@ exports.manifest = {
   },
   theme,
   webpack: {
+    devServer: {
+      port: 3001,
+      host: localIp.address,
+    },
+    entry: './src/srcIndex.js',
     plugins: {
       html: {
         bodyHtmlSnippet: logoString,

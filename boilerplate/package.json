@@ -8,8 +8,8 @@
   "scripts": {
     "start": "yarn webpack-scripts start",
     "build": "yarn webpack-scripts build",
+    "analyse": "yarn webpack-scripts analyse",
     "deploy": "yarn lint && yarn pretty && yarn webpack-scripts build && gpush && firebase deploy",
-    "bundle-analyzer": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write",
     "check-staged": "lint-staged",
@@ -41,7 +41,7 @@
     "@storybook/addon-options": "^4.1.12",
     "@storybook/addon-viewport": "^4.1.12",
     "@storybook/react": "^5.0.0-rc.1",
-    "@tenjo/webpack-config": "^2.18.0",
+    "@tenjo/webpack-config": "^3.0.0",
     "babel-eslint": "^10.0.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-babel": "^5.3.0",
