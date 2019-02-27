@@ -21,12 +21,8 @@ const Home = () => (
 )
 
 //Style
-const Wrapper = styled.div`
-  background-color: var(--color-Primary);
-`
+const Wrapper = styled.div``
 
-const H1Custom = styled(H1)`
-  color: red;
-`
+const H1Custom = styled(H1)``
 
 export default Home
