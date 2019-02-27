@@ -9,7 +9,7 @@ const logoStringModule = require('./src/Images/logo/logo')
 const { logoStringModule: logoString } = logoStringModule
 
 // Google Analytics manifest
-const gaManifestModules = require('./analytics/google/googleAnalytics/gaManifest')
+// const gaManifestModules = require('./analytics/google/googleAnalytics/gaManifest')
 
 exports.manifest = {
   projectInfo: {
@@ -22,7 +22,7 @@ exports.manifest = {
   },
   analytics: {
     google: {
-      analytics: gaManifestModules,
+      analytics: '',
     },
   },
   theme,
