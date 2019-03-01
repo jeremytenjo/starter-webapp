@@ -9,6 +9,8 @@ import { H1 } from '../../Theme/Theme.Typography/Theme.Typography.get'
 
 const Buttons = ({ onClick }) => <button onClick={onClick}>Custom Button</button>
 
+// const hi = Buttons ? true : false
+
 const Home = () => (
   <Wrapper>
     Home
