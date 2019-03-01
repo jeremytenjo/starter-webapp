@@ -1908,10 +1908,10 @@
     "@svgr/plugin-svgo" "^4.0.3"
     loader-utils "^1.1.0"
 
-"@tenjo/webpack-config@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@tenjo/webpack-config/-/webpack-config-3.4.0.tgz#c386023e6794164f17dce86d6ba41945406fec2f"
-  integrity sha512-krb3+H2aPqIfnQLqvxMSwN1VFZWsmjUsGuzl9m1SmT4SBz8/Vo6+WFe9lt4IrRsSJMYg1+oPv48EMud0zBn2pg==
+"@tenjo/webpack-config@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@tenjo/webpack-config/-/webpack-config-3.5.0.tgz#5d658b283145356e033ff3f289ca89fc56f9feae"
+  integrity sha512-dzw+n9zMDQ9CrDjjr8UjcXp0rdMfSI47Usx7Nu/S5/m7o0mylENCnmskK0Pz/zFb5p1hEO9kEwuI79rAFVFgkw==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-proposal-class-properties" "^7.3.3"
