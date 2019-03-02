@@ -23,7 +23,9 @@ const Home = () => (
 )
 
 //Style
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  background-color: lightcoral;
+`
 
 const H1Custom = styled(H1)``
 
