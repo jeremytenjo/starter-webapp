@@ -8,7 +8,7 @@
   "scripts": {
     "start": "yarn webpack-scripts start",
     "build": "yarn webpack-scripts build",
-    "analyse": "yarn webpack-scripts analyse",
+    "analyze": "yarn webpack-scripts build && yarn webpack-scripts analyze",
     "deploy": "yarn lint && yarn pretty && yarn webpack-scripts build && gpush && firebase deploy",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "pretty": "prettier \"**/*.js\" --write",
@@ -23,17 +23,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix-dry-run",
-      "prettier --list-different",
-      "git add"
-    ]
+    "*.{js,jsx}": ["eslint --fix-dry-run", "prettier --list-different", "git add"]
   },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "not dead"
-  ],
+  "browserslist": ["> 0.5%", "last 2 versions", "not dead"],
   "devDependencies": {
     "eslint": "^5.14.1",
     "storybook-addon-prettier-source": "^2.1.2"
