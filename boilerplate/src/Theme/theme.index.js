@@ -5,6 +5,8 @@ import MaterialUI from './Vendors/MaterialUi'
 import { ThemeManifest } from './Theme.manifest'
 // Figma
 import setColors from './Theme.Colors/Figma.Colors.set'
+// Resets
+import './Typography/Typography.resets.css'
 // Global
 import './Theme.Resets/tagBody.css'
 import './Theme.Resets/Animations/transition.css'
