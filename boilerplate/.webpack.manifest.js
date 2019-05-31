@@ -19,6 +19,7 @@ exports.manifest = {
     logo: {
       path: 'src/images/logo/logo.png',
     },
+    colors: { primary: '#6700ca' },
   },
   analytics: {
     google: {

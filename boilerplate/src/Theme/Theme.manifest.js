@@ -1,10 +1,5 @@
-const figamValues = require('./Theme.Figma/theme.json')
-
-const { colors, textStyles } = figamValues
-
 const themeManifest = {
-  colors,
-  textStyles,
+  colors: { primary: '#C5E1A5' },
 }
 
 // Exports
