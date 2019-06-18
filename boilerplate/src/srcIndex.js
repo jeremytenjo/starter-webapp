@@ -1,16 +1,8 @@
-//Vendors
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { List } from '@tenjo/web-features'
+import List from '@tenjojeremy/web-toolkit/Data-Display/List/Ui/React/list.index'
+console.log(List)
 
-//Settings
-// import './Configs/configFirebase'
-// import { swRegister } from './ServiceWorker/swIndex'
-// import UserAuthentication from './User/userAuth/User.authentication.js'
-// Wrapp render with <UserAuthentication> to enable authenicatin and set user initial state to null
-
-// import { apiSetUrl } from './Api/apiIndex'
-// import { addToHomeScreenInit } from './Utilities/Misc/AddToHomeScreen/addToHomeScreen.index'
 const dataSet1 = ['block', 'block', 'block', 'block']
 const itemComponent = ({ item }) => <p>{item}</p>
 
@@ -20,7 +12,3 @@ ReactDOM.render(
   </div>,
   document.getElementById('root'),
 )
-
-// swRegister()
-// apiSetUrl()
-// addToHomeScreenInit()
