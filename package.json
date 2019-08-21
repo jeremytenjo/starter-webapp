@@ -1,0 +1,53 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "webapp",
+  "main": "index.js",
+  "author": "Jeremy Tenjo",
+  "license": "ISC",
+  "scripts": {
+    "start": "yarn webpack-scripts start",
+    "build": "yarn webpack-scripts build",
+    "build:analyze": "yarn webpack-scripts build && yarn webpack-scripts analyze",
+    "deploy": "yarn lint && yarn pretty && yarn webpack-scripts build && gpush && firebase deploy",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "pretty": "prettier \"**/*.js\" --write",
+    "check-staged": "lint-staged",
+    "lint:fix": "eslint ./src --fix",
+    "lint:check": "eslint ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix-dry-run",
+      "prettier --list-different",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "dependencies": {
+    "@tenjojeremy/eslint-config": "^1.7.0",
+    "@tenjojeremy/web-toolkit": "^3.58.0",
+    "@tenjojeremy/webpack-config": "^1.9.0",
+    "firebase": "^6.1.1",
+    "get-my-local-ip": "^0.1.16",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.1.0",
+    "prettier": "^1.16.4",
+    "react": "^16.8.1",
+    "react-devtools": "^3.4.3",
+    "react-dom": "^16.8.1",
+    "react-hot-loader": "^4.8.8",
+    "react-router-dom": "^5.0.1",
+    "reactn": "^2.1.4",
+    "styled-components": "^4.1.3"
+  }
+}
