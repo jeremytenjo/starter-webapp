@@ -11,6 +11,7 @@
     "build:analyze": "yarn webpack-scripts build && yarn webpack-scripts analyze",
     "deploy": "yarn lint && yarn pretty && yarn webpack-scripts build && gpush && firebase deploy",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "start:functions": "firebase serve --only functions",
     "pretty": "prettier \"**/*.js\" --write",
     "check-staged": "lint-staged",
     "lint:fix": "eslint ./src --fix",
@@ -22,17 +23,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix-dry-run",
-      "prettier --list-different",
-      "git add"
-    ]
+    "*.{js,jsx}": ["eslint --fix-dry-run", "prettier --list-different", "git add"]
   },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "not dead"
-  ],
+  "browserslist": ["> 0.5%", "last 2 versions", "not dead"],
   "dependencies": {
     "@storybook/react": "^5.1.11",
     "@tenjojeremy/eslint-config": "latest",
