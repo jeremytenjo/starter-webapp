@@ -2,7 +2,7 @@ import React from 'react'
 import AccessPage from '@tenjojeremy/web-toolkit/build/Authentication/Ui/React/AccessPage/accessPage.index.js'
 
 import BASE_URL from '../../Router/router.constants'
-import UserState from '../../User/user.state'
+import UserState from '../../User/User.state'
 
 const AccessIndex = () => {
   const historyRouter = window.historyRouter

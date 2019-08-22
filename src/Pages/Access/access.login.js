@@ -1,6 +1,6 @@
 import React, { useState, memo, useEffect } from 'react'
 
-import UserState from '../../User/user.state'
+import UserState from '../../User/User.state'
 import signIn from '../../User/Auth/auth.signIn'
 import BASE_URL from '../../Router/router.constants'
 
@@ -43,19 +43,8 @@ const Login = () => {
   // TEmplate
   return (
     <form>
-      <input
-        type='text'
-        value={email}
-        onChange={onchangeEmail}
-        placeholder='email'
-      />
-      <input
-        value={password}
-        onChange={onchangePassword}
-        placeholder='password'
-        type='password'
-        autoComplete='on'
-      />
+      <input type='text' value={email} onChange={onchangeEmail} placeholder='email' />
+      <input value={password} onChange={onchangePassword} placeholder='password' type='password' autoComplete='on' />
       <button onClick={signUserIn}>Sign In </button>
       <span>{msgError}</span>
     </form>
