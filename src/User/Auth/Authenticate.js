@@ -1,7 +1,7 @@
 import React, { useEffect, memo } from 'react'
 import { hideSplashPage } from '@tenjojeremy/web-toolkit/build/Feedback/SplashPage/SplashPage'
 
-import UserState from '../user.state'
+import UserState from '../User.state'
 
 import useAuth from './useAuth'
 

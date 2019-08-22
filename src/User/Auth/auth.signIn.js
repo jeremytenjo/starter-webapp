@@ -1,4 +1,4 @@
-import validateAgainstUserSchema from '../user.schema'
+import validateAgainstUserSchema from '../User.schema'
 
 import fbLogin from './Vendors/FirebaseAuth/SignIn/signIn.email'
 import { cmSave } from './WebApis/CredentialMangment/cm.index'
