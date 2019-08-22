@@ -1,6 +1,6 @@
 import { object, string, number, array } from 'yup'
 
-var userSchema = object().shape({
+const userSchema = object().shape({
   _id: string(),
   displayName: string(),
   phone_number: number(),

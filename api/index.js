@@ -1,25 +1,8 @@
-// Vendors
 const functions = require('firebase-functions')
-const express = require('express')
-const app = express()
-const cors = require('cors')
 
-// Routes
-const Example = require('./routes/Example/_exmapleIndex.js')
+// Create and Deploy Your First Cloud Functions
+// https://firebase.google.com/docs/functions/write-firebase-functions
 
-// Middleware
-app.use(cors())
-app.options('*', cors())
-
-// Router
-app.use('/Example', Example)
-
-// Exports
-exports.api = functions.https.onRequest(app)
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+exports.helloWorld = functions.https.onRequest((request, response) => {
+  response.send('Hello from Firebase!')
+})

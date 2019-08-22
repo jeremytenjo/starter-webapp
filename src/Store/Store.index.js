@@ -1,13 +1,26 @@
-// Vendors
-import React, { setGlobal } from 'reactn'
+import React, { cloneElement } from 'react'
+import { ToastProvider } from '@tenjojeremy/web-toolkit/build/Feedback/Toast/toast.index'
 
-// States
-import { userInitState as user } from '../User/User.state'
-import ThemeManifestModule from '../Theme/Theme.manifest'
+import { UploadsProvider } from '../Data/Uploads/uploads.state'
+import { UserProvider } from '../User/user.state'
 
-const { ThemeManifest: theme } = ThemeManifestModule
+const providers = [
+  <UploadsProvider key={1} />,
+  <UserProvider key={2} />,
+  <ToastProvider key={3} />,
+]
 
-setGlobal({ user, theme })
+const ProviderComposer = ({ contexts, children }) =>
+  contexts.reduceRight(
+    (kids, parent) =>
+      cloneElement(parent, {
+        children: kids,
+      }),
+    children,
+  )
 
-// Exports
-export default ({ children }) => <>{children}</>
+const ContextProvider = ({ children }) => (
+  <ProviderComposer contexts={providers}>{children}</ProviderComposer>
+)
+
+export default ContextProvider

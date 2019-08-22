@@ -1,45 +1,47 @@
 const localIp = require('get-my-local-ip')
+const { colors } = require('./src/Theme/Colors/colors.index.js')
 
-// Theme Manifest
-const ThemeManifestModule = require('./src/Theme/Theme.manifest')
-const { ThemeManifest: theme } = ThemeManifestModule
-
-// logo
 const logoStringModule = require('./src/Images/logo/logo')
 const { logoStringModule: logoString } = logoStringModule
 
-// Google Analytics manifest
-// const gaManifestModules = require('./analytics/google/googleAnalytics/gaManifest')
+const { headCss } = require('./src/Theme/Head/theme.head')
 
 exports.manifest = {
   projectInfo: {
     name: 'Webapp',
     shortName: 'Webapp',
-    description: 'Webapp Template',
+    description: 'Webapp',
+    startUrl: '/',
+    colors,
     logo: {
-      path: 'src/images/logo/logo.png',
+      path: 'src/Images/Logo/logo.png',
     },
-    colors: { primary: '#6700ca' },
+    share_target: {
+      action: '/profile/photos/',
+      method: 'GET',
+      enctype: 'application/x-www-form-urlencoded',
+      params: {
+        title: 'Upload image to Webapp',
+        text: 'text',
+        url: 'url',
+      },
+    },
   },
   analytics: {
     google: {
-      analytics: '',
+      analytics: { gAnalyticFunctions: { onlyViewsScript: '' } },
     },
   },
-  theme,
   webpack: {
     devServer: {
       port: 3001,
       host: localIp.address,
     },
-    entry: './src/srcIndex.js',
+    entry: './src/src.index.js',
     plugins: {
       html: {
         bodyHtmlSnippet: logoString,
-      },
-      workbox: {
-        swSrc: './src/ServiceWorker/sw.js',
-        swDest: 'sw.js',
+        headCss,
       },
     },
   },

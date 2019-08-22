@@ -1,20 +1,35 @@
-// Vendors
-import { useGlobal } from 'reactn'
+import React, { useState, createContext, useContext } from 'react'
 
-// Init State
-export const userInitState = true
+export const UserContext = createContext(null)
 
-// Main
-const UserState = () => {
+const initUser = {
+  id: '',
+  displayName: '',
+  phone_number: '',
+  email: '',
+  location: '',
+  categories: [],
+  rating: 0,
+  photoURL: '',
+}
+
+export const UserProvider = ({ children }) => {
   // State
-  const [user, setUser] = useGlobal('user')
+  const [user, setUser] = useState(initUser)
 
   // Functions
   const updateUser = (data) => setUser(data)
 
-  // Send back the wholse state plus functions
-  return { user, updateUser }
+  return (
+    <UserContext.Provider
+      value={{
+        user,
+        updateUser,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  )
 }
 
-// Exports
-export default UserState
+export default () => useContext(UserContext)
