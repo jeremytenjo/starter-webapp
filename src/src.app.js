@@ -4,6 +4,7 @@ import './Vendors/Firebase/firebase.index'
 import '@tenjojeremy/web-toolkit/build/Data-Display/Map/Vendors/Google/config'
 import { catchAddToHomeScreenPrompt } from '@tenjojeremy/web-toolkit/build/Misc-Utils/AddToHomeScreen/addToHomeScreen.index'
 
+import setApiUrl from './Api/api.setUrl'
 import Store from './Store/Store.index'
 import Theme from './Theme/theme.index'
 import Router from './Router/router.index'
@@ -21,3 +22,4 @@ export default hot(() => (
 
 // Load asynchronous
 catchAddToHomeScreenPrompt()
+setApiUrl()

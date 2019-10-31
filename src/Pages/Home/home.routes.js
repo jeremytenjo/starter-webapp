@@ -1,19 +1,11 @@
-import React, { lazy, Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
-const Home = lazy(() => import(/* webpackChunkName: 'Home' */ './home.index'))
+import Home from './home.index'
 
 export default () => (
-  <Route
-    path='/'
-    render={() => (
-      <>
-        <Suspense fallback={null}>
-          <Switch>
-            <Route exact path='/' component={Home} />
-          </Switch>
-        </Suspense>
-      </>
-    )}
-  />
+  <Switch>
+    <Route exact path='/' render={() => <Redirect to='/movies' />} />
+    <Route path='/movies' component={Home} />
+  </Switch>
 )
