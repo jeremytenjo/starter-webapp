@@ -9,7 +9,11 @@
     "start": "yarn webpack-scripts start",
     "build": "yarn webpack-scripts build",
     "build:analyze": "yarn webpack-scripts build && yarn webpack-scripts analyze",
+<<<<<<< HEAD
     "deploy": "yarn lint:fix && yarn pretty && yarn webpack-scripts build && gpush && firebase deploy",
+=======
+    "deploy": "yarn lint:check && yarn pretty && yarn webpack-scripts build && gpush && firebase deploy",
+>>>>>>> 4255970660d9e2af8aee7d8e8ac99424ca2be9c2
     "storybook": "start-storybook -p 9001 -c .storybook",
     "start:functions": "firebase serve --only functions",
     "pretty": "prettier \"**/*.js\" --write",
