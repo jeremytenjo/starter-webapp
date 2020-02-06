@@ -1,6 +1,4 @@
-# Webapp
-
-## Features:
+#### Features:
 
 `Google analytics = usage analysis`
 
@@ -21,7 +19,7 @@
   - prettier
   - eslint
 
-## Start development
+#### Start development
 
 ```sh
 call yarn icons-build
@@ -30,7 +28,7 @@ call yarn build
 call yarn start
 ```
 
-## Deploy / Continuours Integration
+#### Deploy / Continuours Integration
 
 Husk is a pre commit linter
 
@@ -43,7 +41,7 @@ Add the fllowing enviroment variables to Gitlab
 - NPM_REGISTRY
 - NPM_SCOPE
 
-## Babel
+#### Babel
 
 Babel extendable in `babelrc.js` (Do not rmove):
 
