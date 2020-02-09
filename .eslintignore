@@ -1,7 +1,0 @@
-# Build
-/build/*
-/src/serviceWorker/sw.js
-/node_modules
-/api/node_modules
-
-

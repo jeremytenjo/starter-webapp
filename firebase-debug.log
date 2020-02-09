@@ -1,0 +1,62 @@
+[debug] [2020-02-09T20:31:36.726Z] ----------------------------------------------------------------------
+[debug] [2020-02-09T20:31:36.729Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jeremy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2020-02-09T20:31:36.729Z] CLI Version:   7.11.0
+[debug] [2020-02-09T20:31:36.729Z] Platform:      win32
+[debug] [2020-02-09T20:31:36.729Z] Node Version:  v12.13.1
+[debug] [2020-02-09T20:31:36.730Z] Time:          Sun Feb 09 2020 15:31:36 GMT-0500 (Eastern Standard Time)
+[debug] [2020-02-09T20:31:36.730Z] ----------------------------------------------------------------------
+[debug] [2020-02-09T20:31:36.730Z] 
+[debug] [2020-02-09T20:31:36.741Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-09T20:31:36.742Z] > authorizing via signed-in user
+[debug] [2020-02-09T20:31:36.742Z] [iam] checking project webapp-jt for permissions ["firebase.projects.get"]
+[debug] [2020-02-09T20:31:36.743Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/webapp-jt:testIamPermissions  
+
+[debug] [2020-02-09T20:31:37.041Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-09T20:31:37.043Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/webapp-jt  
+ 
+[debug] [2020-02-09T20:31:37.258Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "10" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\Dev\Personal_Projects\other\starter-webapp\api" for Cloud Functions...
+[debug] [2020-02-09T20:31:40.112Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-09T20:31:40.112Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-09T20:31:40.112Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-09T20:31:40.113Z] [worker-~diagnostic~-fb8ad44f-c941-42f0-99b2-51ccba635340]: Assigning socketPath: \\?\pipe\C:\Dev\Personal_Projects\other\starter-webapp\api\15744
+[debug] [2020-02-09T20:31:40.113Z] [worker-~diagnostic~-fb8ad44f-c941-42f0-99b2-51ccba635340]: BUSY
+[debug] [2020-02-09T20:31:40.648Z] [runtime-status] [15744] Functions runtime initialized. {"cwd":"C:\\Dev\\Personal_Projects\\other\\starter-webapp\\api","node_version":"12.13.1"}
+[debug] [2020-02-09T20:31:40.650Z] [runtime-status] [15744] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-02-09T20:31:40.690Z] [worker-~diagnostic~-fb8ad44f-c941-42f0-99b2-51ccba635340]: exited
+[debug] [2020-02-09T20:31:40.690Z] [worker-~diagnostic~-fb8ad44f-c941-42f0-99b2-51ccba635340]: FINISHED
+[debug] [2020-02-09T20:44:32.078Z] ----------------------------------------------------------------------
+[debug] [2020-02-09T20:44:32.080Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jeremy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2020-02-09T20:44:32.080Z] CLI Version:   7.11.0
+[debug] [2020-02-09T20:44:32.080Z] Platform:      win32
+[debug] [2020-02-09T20:44:32.080Z] Node Version:  v12.13.1
+[debug] [2020-02-09T20:44:32.082Z] Time:          Sun Feb 09 2020 15:44:32 GMT-0500 (Eastern Standard Time)
+[debug] [2020-02-09T20:44:32.082Z] ----------------------------------------------------------------------
+[debug] [2020-02-09T20:44:32.082Z] 
+[debug] [2020-02-09T20:44:32.090Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-09T20:44:32.091Z] > authorizing via signed-in user
+[debug] [2020-02-09T20:44:32.091Z] [iam] checking project webapp-jt for permissions ["firebase.projects.get"]
+[debug] [2020-02-09T20:44:32.093Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/webapp-jt:testIamPermissions  
+
+[debug] [2020-02-09T20:44:32.469Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-09T20:44:32.470Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/webapp-jt  
+ 
+[debug] [2020-02-09T20:44:32.766Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "10" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\Dev\Personal_Projects\other\starter-webapp\api" for Cloud Functions...
+[debug] [2020-02-09T20:44:35.294Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-09T20:44:35.294Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-09T20:44:35.295Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-09T20:44:35.295Z] [worker-~diagnostic~-2fa66d09-e6ba-4687-acb5-1a37eb523981]: Assigning socketPath: \\?\pipe\C:\Dev\Personal_Projects\other\starter-webapp\api\17132
+[debug] [2020-02-09T20:44:35.295Z] [worker-~diagnostic~-2fa66d09-e6ba-4687-acb5-1a37eb523981]: BUSY
+[debug] [2020-02-09T20:44:35.752Z] [runtime-status] [17132] Functions runtime initialized. {"cwd":"C:\\Dev\\Personal_Projects\\other\\starter-webapp\\api","node_version":"12.13.1"}
+[debug] [2020-02-09T20:44:35.754Z] [runtime-status] [17132] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-02-09T20:44:35.776Z] [worker-~diagnostic~-2fa66d09-e6ba-4687-acb5-1a37eb523981]: exited
+[debug] [2020-02-09T20:44:35.776Z] [worker-~diagnostic~-2fa66d09-e6ba-4687-acb5-1a37eb523981]: FINISHED
