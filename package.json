@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "webapp",
   "scripts": {
-    "start": "wapp start withFirebaseFunctions",
+    "start": "wapp start",
     "build": "wapp build",
     "build:analyze": "wapp build && wapp analyze",
     "docs": "wapp docs",
