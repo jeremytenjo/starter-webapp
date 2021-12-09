@@ -10,6 +10,7 @@ const firebaseApp = initializeApp(firebaseConfig)
 const auth = getAuth()
 const db = getFirestore()
 // const functions = getFunctions()
+// const messaging = getMessaging()
 
 initializeFirebaseEmulator({ auth, db, enable: process.env.NODE_ENV === 'development' })
 
