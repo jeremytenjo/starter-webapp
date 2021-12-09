@@ -36,11 +36,6 @@ const appConfig: AppConfigTypes = {
       },
     ],
   },
-  analytics: {
-    google: {
-      measurementId: 'G-83D8302GLZ',
-    },
-  },
   server: {
     local: {
       port: 3001,
@@ -64,18 +59,28 @@ export type AppConfigTypes = {
     theme_color: string
     background_color: string
     start_url: string
-    screenshots: {
+    screenshots?: {
       src: string
       sizes: string
       type: string
     }[]
+    shortcuts?: {
+      name?: string
+      short_name?: string
+      description?: string
+      url?: string
+      icons?: {
+        src: string
+        sizes: string
+      }[]
+    }[]
   }
-  analytics: {
-    google: {
+  analytics?: {
+    google?: {
       measurementId: string
     }
   }
-  server: {
+  server?: {
     local: {
       port: number
       IPAddress: string
