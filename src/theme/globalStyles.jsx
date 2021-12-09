@@ -19,8 +19,6 @@ export default () => (
       body: {
         webkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
         boxSizing: 'border-box',
-        backgroundColor: '#1C1929',
-        color: 'white',
         margin: 0,
         fontFamily: 'SourceSandProRegular',
         overscrollBehaviorY: 'contain',

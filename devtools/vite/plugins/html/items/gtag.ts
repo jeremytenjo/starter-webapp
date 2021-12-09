@@ -1,7 +1,8 @@
 import { PayloadTypes } from '../../../config'
 
 export default function gTag({ appConfig }: PayloadTypes) {
-  return `
+  return appConfig?.analytics?.google?.measurementId
+    ? `
      <!-- Global site tag (gtag.js) - Google Analytics -->
      <script async src="https://www.googletagmanager.com/gtag/js?id=${appConfig.analytics.google.measurementId}"></script>
      <script>
@@ -10,4 +11,5 @@ export default function gTag({ appConfig }: PayloadTypes) {
        gtag('js', new Date());  
        gtag('config', '${appConfig.analytics.google.measurementId}');
      </script>`
+    : ''
 }
