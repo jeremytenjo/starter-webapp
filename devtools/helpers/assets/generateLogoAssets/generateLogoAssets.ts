@@ -1,63 +1,74 @@
 import path from 'path'
 
-import generateIcons from '../../../utils/generateIcons.js'
-import type { IconType } from '../../../utils/generateIcons.js'
+import convertImage from '../../../utils/images/convertImage.js'
+import type { Props as ConvertImageProps } from '../../../utils/images/convertImage.js'
 
 export default async function generateLogoAssets() {
-  const rootPath = path.join(process.cwd(), 'public', 'logo')
+  const rootPath = path.join(process.cwd(), 'public', 'images', 'logo')
   const logoPath = path.join(rootPath, 'logo.svg')
   const folderOutputPath = path.join(rootPath, 'assets')
   const applePath = path.join(folderOutputPath, 'apple')
-  const iconsPath = path.join(folderOutputPath, 'icons')
+  const sizesPath = path.join(folderOutputPath, 'sizes')
+  const pngLogoPath = path.join(folderOutputPath, 'logo.png')
+
+  const getSizeIconName = (name: string) => path.join(sizesPath, name)
+  const getAppleIconName = (name: string) => path.join(applePath, name)
 
   const iconList = [
     {
-      outputPath: applePath,
-      name: 'apple-touch-icon',
+      filePath: logoPath,
+      outputPath: pngLogoPath,
+      format: 'png',
+      width: 512,
+      height: 512,
+    },
+    {
+      outputPath: getAppleIconName('apple-touch-icon.png'),
+      filePath: logoPath,
       format: 'png',
       width: 152,
       height: 152,
     },
     {
-      outputPath: iconsPath,
-      name: '152x152',
+      outputPath: getSizeIconName('152x152.png'),
+      filePath: logoPath,
       format: 'png',
       width: 152,
       height: 152,
     },
     {
-      outputPath: iconsPath,
-      name: '192x192',
+      outputPath: getSizeIconName('192x192.png'),
+      filePath: logoPath,
       format: 'png',
       width: 192,
       height: 192,
     },
     {
-      outputPath: iconsPath,
-      name: '256x256',
+      outputPath: getSizeIconName('256x256.png'),
+      filePath: logoPath,
       format: 'png',
       width: 256,
       height: 256,
     },
     {
-      outputPath: iconsPath,
-      name: '384x384',
+      outputPath: getSizeIconName('384x384.png'),
+      filePath: logoPath,
       format: 'png',
       width: 384,
       height: 384,
     },
     {
-      outputPath: iconsPath,
-      name: '512x512',
+      outputPath: getSizeIconName('512x512.png'),
+      filePath: logoPath,
       format: 'png',
       width: 512,
       height: 512,
     },
-  ] as IconType[]
+  ] as ConvertImageProps[]
 
   await Promise.all(
     iconList.map(async (icon) => {
-      await generateIcons(logoPath, icon)
+      await convertImage(icon)
     }),
   )
 }
