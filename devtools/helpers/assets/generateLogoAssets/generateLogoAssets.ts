@@ -1,12 +1,7 @@
 import path from 'path'
 
-type IconType = {
-  outputPath: string
-  name: string
-  format: string
-  width: number
-  height: number
-}
+import generateIcons from '../../../utils/generateIcons.js'
+import type { IconType } from '../../../utils/generateIcons.js'
 
 export default async function generateLogoAssets() {
   const rootPath = path.join(process.cwd(), 'public', 'logo')
@@ -61,12 +56,8 @@ export default async function generateLogoAssets() {
   ] as IconType[]
 
   await Promise.all(
-    iconList.map((icon) => {
-      generateIcons(logoPath, icon)
+    iconList.map(async (icon) => {
+      await generateIcons(logoPath, icon)
     }),
   )
-}
-
-const generateIcons = (iconToConvertPath: string, iconData: IconType) => {
-  console.log({ iconToConvertPath, iconData })
 }
