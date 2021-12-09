@@ -7,6 +7,7 @@
   "main": "src/firebase/functions/build/index.js",
   "scripts": {
     "dev": "node --loader ts-node/esm ./devtools/scripts/dev.ts",
+    "dev:with-firebase-functions": "concurrently 'npm run dev' 'npm run functions:build:watch' 'npm run functions:serve'",
     "dev:app": "node --loader ts-node/esm ./devtools/vite/scripts/startDevServer.ts",
     "dev:storybook": "start-storybook -c ./devtools/storybook -p 6007 -s ./public --quiet --ci",
     "dev:prod": "node --loader ts-node/esm ./devtools/vite/scripts/runBuild.ts",
