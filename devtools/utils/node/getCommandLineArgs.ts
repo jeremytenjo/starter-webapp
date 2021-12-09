@@ -1,14 +1,16 @@
 import commandLineArgs from 'command-line-args'
 
-/**
- * Get script options eg --watch
- * {@link https://github.com/75lb/command-line-args#readme|Docs}
- */
-
 type ArgOptions = {
   name: string
   type: any
 }
+
+/**
+ * [Docs](https://github.com/75lb/command-line-args#readme)
+ *
+ * @example
+ * const scriptArgs = getCommandLineArgs([{ name: 'hello', type: String }])
+ */
 export default function getCommandLineArgs(argOptions: ArgOptions[]) {
   const options = commandLineArgs(argOptions)
 

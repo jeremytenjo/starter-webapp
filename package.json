@@ -19,6 +19,7 @@
     "build": "node --loader ts-node/esm ./devtools/vite/scripts/buildApp.ts",
     "emulators:start": "firebase emulators:start --only auth,firestore",
     "emulators:firestore:export-data": "firebase emulators:export src/data/firestoreEmulatorData",
+    "helpers:generate-logo-assets": "node --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "tests:run": "./devtools/scripts/tests/run",
