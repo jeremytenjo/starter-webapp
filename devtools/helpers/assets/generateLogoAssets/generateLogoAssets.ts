@@ -3,6 +3,9 @@ import path from 'path'
 import convertImage from '../../../utils/images/convertImage.js'
 import type { Props as ConvertImageProps } from '../../../utils/images/convertImage.js'
 
+/**
+ * Updates logo assests based on public/images/logo/logo.svg
+ */
 export default async function generateLogoAssets() {
   const rootPath = path.join(process.cwd(), 'public', 'images', 'logo')
   const logoPath = path.join(rootPath, 'logo.svg')
