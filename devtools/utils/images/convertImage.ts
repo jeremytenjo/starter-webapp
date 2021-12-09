@@ -7,6 +7,7 @@ export type Props = {
   width?: number
   height?: number
 }
+
 /**
  * [Sharp Docs](https://sharp.pixelplumbing.com/api-output)
  */

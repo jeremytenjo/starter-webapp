@@ -67,7 +67,7 @@ export default async function generateLogoAssets() {
   ] as ConvertImageProps[]
 
   await Promise.all(
-    iconList.map(async (icon) => {
+    iconList.map(async (icon: ConvertImageProps) => {
       await convertImage(icon)
     }),
   )

@@ -11,7 +11,7 @@ export default function viteHtmlPlugin(payload: PayloadTypes) {
     data: {
       title: `<title>${payload.appConfig.manifestJson.name}</title>`,
       description: `<meta name="description" content="${payload.appConfig.manifestJson.description}" />`,
-      icons: `<link rel="apple-touch-icon" href="images/logo/logo-152x152.png">`,
+      icons: `<link rel="apple-touch-icon" href="images/logo/assets/sizes/152x152.png">`,
       gtag: gtag(payload),
       registerServiceWorker: registerServiceWorker({ isProdMode: payload.isProdMode }),
     },
