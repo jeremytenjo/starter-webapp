@@ -6,6 +6,6 @@ export type IconType = {
   height: number
 }
 
-export default function generateIcons(iconToConvertPath: string, iconData: IconType) {
-  console.log({ iconToConvertPath, iconData })
+export default function generateIcons(iconPath: string, iconData: IconType) {
+  console.log({ iconPath, iconData })
 }
