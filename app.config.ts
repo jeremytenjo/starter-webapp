@@ -5,8 +5,8 @@ import themeTokens from './src/theme/tokens/tokens'
 
 const appConfig: AppConfigTypes = {
   manifestJson: {
-    name: 'APPNAME',
-    short_name: 'APPNAME',
+    name: 'starter',
+    short_name: 'starter',
     description: pkg.description,
     start_url: '/',
     orientation: 'any',
