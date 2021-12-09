@@ -1,6 +1,6 @@
 export default function generateLogoAssets() {
-  const logoPath = ''
-  const folderOutputPath = ''
+  const logoPath = 'pubic/logo/logo.svg'
+  const folderOutputPath = 'public/logo/assets'
   // generate apple icons
   //   - apple touch ison
   // - 152x152.png
