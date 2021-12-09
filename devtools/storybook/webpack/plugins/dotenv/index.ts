@@ -1,6 +1,6 @@
 import path from 'path'
 
-import parseEnvFile from '../../../../nodeUtils/parseEnvFile'
+import parseEnvFile from '../../../../utils/node/parseEnvFile'
 import deepMerge from '../../../../utils/deepMerge'
 
 export default function webpackDotEnv(defaultEnvs) {
