@@ -1,23 +1,19 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
 import { FirebaseProvider } from '@useweb/use-firebase'
-import initializeFirebaseEmulator from '@useweb/start-firebase-emulator'
+// import initializeFirebaseEmulator from '@useweb/start-firebase-emulator'
+// import { getFirestore } from 'firebase/firestore'
+// import { getAuth } from 'firebase/auth'
 
 import firebaseConfig from './config'
 
 const firebaseApp = initializeApp(firebaseConfig)
-const auth = getAuth()
-const db = getFirestore()
+// const auth = getAuth()
+// const db = getFirestore()
 // const functions = getFunctions()
 // const messaging = getMessaging()
 
-initializeFirebaseEmulator({ auth, db, enable: process.env.NODE_ENV === 'development' })
+// initializeFirebaseEmulator({ auth, db, enable: process.env.NODE_ENV === 'development' })
 
 export default function Firebase({ children }) {
-  return (
-    <FirebaseProvider firebaseApp={firebaseApp} auth={auth} db={db}>
-      {children}
-    </FirebaseProvider>
-  )
+  return <FirebaseProvider firebaseApp={firebaseApp}>{children}</FirebaseProvider>
 }
