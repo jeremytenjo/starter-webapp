@@ -1,0 +1,11 @@
+{
+  "testFiles": "**/*cy.js",
+  "video": false,
+  "integrationFolder": "src",
+  "downloadsFolder": "devtools/cypress/downloads",
+  "fixturesFolder": "devtools/cypress/fixtures",
+  "pluginsFile": "devtools/cypress/plugins/index.js",
+  "screenshotsFolder": "devtools/cypress/screenshots",
+  "supportFile": "devtools/cypress/support/index.js",
+  "videosFolder": "devtools/cypress/videos"
+}
