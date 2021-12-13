@@ -1,5 +1,4 @@
-import getIpAdress from 'my-local-ip'
-
+import getIpAdress from './devtools/utils/node/getIpAdress.js'
 import pkg from './package.json'
 import themeTokens from './src/theme/tokens/tokens.js'
 
