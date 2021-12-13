@@ -3,7 +3,7 @@ import { create } from '@storybook/theming/create'
 
 import Firebase from '../../src/firebase/firebase'
 
-import StorybookTheme from './theme'
+import StorybookTheme from './theme/storybookTheme'
 
 const theme = create({
   base: 'light',
