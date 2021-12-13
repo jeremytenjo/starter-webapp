@@ -1,6 +1,6 @@
-import webpack from './webpack'
+const webpack = require('./webpack/webpack.cjs')
 
-export default {
+module.exports = {
   stories: ['../../src/**/*.stories.@(tsx|mdx)'],
   staticDirs: ['./public '],
   addons: ['@storybook/addon-docs', '@storybook/addon-controls'],

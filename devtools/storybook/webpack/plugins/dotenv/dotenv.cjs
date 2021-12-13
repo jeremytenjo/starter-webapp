@@ -1,9 +1,9 @@
-import path from 'path'
+const path = require('path')
 
-import parseEnvFile from '../../../../utils/node/parseEnvFile'
-import deepMerge from '../../../../utils/deepMerge'
+const parseEnvFile = require('../../../../utils/node/parseEnvFile')
+const deepMerge = require('../../../../utils/deepMerge')
 
-export default function webpackDotEnv(defaultEnvs) {
+module.exports = function webpackDotEnv(defaultEnvs) {
   if (!defaultEnvs.definitions['process.env']) {
     return defaultEnvs
   }

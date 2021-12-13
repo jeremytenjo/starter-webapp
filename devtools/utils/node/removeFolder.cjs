@@ -1,6 +1,6 @@
-import fs from 'fs'
+const fs = require('fs')
 
-export default function removeFolder(path: string): Promise<void> {
+module.exports = function removeFolder(path) {
   return new Promise((resolve) => {
     fs.rm(path, { recursive: true }, () => resolve())
   })

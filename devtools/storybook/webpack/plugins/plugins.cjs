@@ -1,6 +1,6 @@
-import dotenv from './dotenv'
+const dotenv = require('./dotenv')
 
-export default (storybookDefaultPlugins) => {
+module.exports = (storybookDefaultPlugins) => {
   const updatedPlugins = storybookDefaultPlugins.map((plugin) => {
     switch (plugin.constructor.name) {
       case 'DefinePlugin':

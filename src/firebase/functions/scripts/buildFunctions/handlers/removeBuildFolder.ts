@@ -1,6 +1,6 @@
 import path from 'path'
 
-import removeFolder from '../../../../../../devtools/utils/node/removeFolder.js'
+import removeFolder from '../../../../../../devtools/utils/node/removeFolder.cjs'
 
 type Props = {
   rootPath: string

@@ -1,4 +1,4 @@
-import concurrently from 'concurrently'
+const concurrently = require('concurrently')
 
 /**
  * @example
@@ -8,7 +8,7 @@ import concurrently from 'concurrently'
 // run concurrently
  * shell(['npm run start:app', 'npm run start:storybook'])
  */
-export default function shell(commands) {
+module.exports = function shell(commands) {
   const _commands = typeof commands === 'string' ? [commands] : commands
 
   concurrently(_commands, {
