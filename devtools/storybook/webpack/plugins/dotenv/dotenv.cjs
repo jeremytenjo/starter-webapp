@@ -1,7 +1,7 @@
 const path = require('path')
 
-const parseEnvFile = require('../../../../utils/node/parseEnvFile')
-const deepMerge = require('../../../../utils/deepMerge')
+const parseEnvFile = require('../../../../utils/node/parseEnvFile.cjs')
+const deepMerge = require('../../../../utils/deepMerge.cjs')
 
 module.exports = function webpackDotEnv(defaultEnvs) {
   if (!defaultEnvs.definitions['process.env']) {

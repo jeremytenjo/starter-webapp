@@ -1,4 +1,4 @@
-const dotenv = require('./dotenv')
+const dotenv = require('./dotenv/dotenv.cjs')
 
 module.exports = (storybookDefaultPlugins) => {
   const updatedPlugins = storybookDefaultPlugins.map((plugin) => {
