@@ -2,7 +2,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
 import colors from '../tokens/colors'
-import typography from '../tokens/typography'
+import typography from '../tokens/typography/typography'
 
 import CssBaselineOverrides from './CssBaseline'
 

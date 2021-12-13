@@ -1,7 +1,8 @@
 import webpack from './webpack'
 
-module.exports = {
-  stories: ['../../src/**/*.stories.@(js|mdx)'],
+export default {
+  stories: ['../../src/**/*.stories.@(tsx|mdx)'],
+  staticDirs: ['./public '],
   addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
   webpackFinal: async (defaultConfig) => {
     return webpack(defaultConfig)
