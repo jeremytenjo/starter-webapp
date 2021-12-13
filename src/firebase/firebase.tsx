@@ -1,3 +1,4 @@
+import React from 'react'
 import { initializeApp } from 'firebase/app'
 import { FirebaseProvider } from '@useweb/use-firebase'
 // import initializeFirebaseEmulator from '@useweb/start-firebase-emulator'

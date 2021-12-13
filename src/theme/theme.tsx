@@ -1,3 +1,5 @@
+import React from 'react'
+
 import GlobalStyles from './globalStyles'
 import MaterialUiThemeProvider from './materialui/MaterialUiThemeProvider'
 

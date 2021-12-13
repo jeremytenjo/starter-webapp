@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import { Suspense } from 'react'
+import React, { Suspense } from 'react'
 
 import HomeRoutes from './HomePage/routes'
 

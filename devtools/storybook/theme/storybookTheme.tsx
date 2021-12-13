@@ -1,3 +1,4 @@
+import React from 'react'
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
 
 import './storybookTheme.css'
