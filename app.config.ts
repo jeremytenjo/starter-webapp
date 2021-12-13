@@ -1,7 +1,7 @@
 import getIpAdress from 'my-local-ip'
 
 import pkg from './package.json'
-import themeTokens from './src/theme/tokens/tokens'
+import themeTokens from './src/theme/tokens/tokens.js'
 
 const appConfig: AppConfigTypes = {
   manifestJson: {

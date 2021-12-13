@@ -1,25 +1,30 @@
 import { spawn } from 'child_process'
 
 import * as React from 'react'
-// https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
-import stripAnsi from 'strip-ansi'
 // https://github.com/vadimdemedes/ink
 import { render, Text, Box } from 'ink'
 
 console.clear()
+
+export type CommandProps = {
+  label: string
+  command: string
+  port?: number
+  color?: string
+}
 
 export default function commandDashboard({ commands }) {
   const SubprocessOutput = () => {
     return (
       <Box flexDirection='row'>
         {commands.map((arg) => (
-          <Command key={arg.label} command={arg.command} label={arg.label} />
+          <Command key={arg.label} {...arg} />
         ))}
       </Box>
     )
   }
 
-  const Command = ({ label, command }) => {
+  const Command = ({ label, command, port, color }: CommandProps) => {
     const [output, setOutput] = React.useState('')
 
     React.useEffect(() => {
@@ -27,15 +32,19 @@ export default function commandDashboard({ commands }) {
       commandArgs.shift()
       const wc = spawn('npm', commandArgs)
 
+      // https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
       wc.stdout.on('data', (data) => {
-        const lines = stripAnsi(data.toString('utf8')).split('\n')
-        setOutput(lines.slice(-5).join('\n'))
+        const lines = data.toString('utf8')
+        setOutput(lines)
       })
     }, [setOutput])
 
     return (
-      <Box>
-        <Text>{label}:</Text>
+      <Box flexBasis={'100%'} flexDirection='column'>
+        <Text color={color}>{label}: </Text>
+        <br />
+        <br />
+        {port && <Text dimColor>http://localhost:{port}</Text>}
         <Box marginTop={1}>
           <Text>{output}</Text>
         </Box>

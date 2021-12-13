@@ -6,7 +6,7 @@
   "type": "module",
   "main": "src/firebase/functions/build/index.js",
   "scripts": {
-    "dev": "node --loader ts-node/esm ./scripts/dev/run.ts",
+    "dev": "node --experimental-json-modules --loader ts-node/esm ./scripts/dev/run.ts",
     "dev:with-firebase-functions": "concurrently 'npm run dev' 'npm run functions:build-watch' 'npm run functions:serve'",
     "app:dev": "node --loader ts-node/esm ./devtools/vite/scripts/startDevServer.ts",
     "app:build": "node --loader ts-node/esm ./devtools/vite/scripts/buildApp.ts",
