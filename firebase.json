@@ -11,14 +11,11 @@
     "auth": {
       "port": 9005
     },
-    "hosting": {
-      "port": 9001
-    },
     "functions": {
-      "port": 5001
+      "port": 5002
     },
     "firestore": {
-      "port": 9003
+      "port": 9009
     },
     "pubsub": {
       "port": 9004

@@ -1,10 +1,9 @@
 export default {
-  apiKey: 'AIzaSyDtEKGq2RHg-1Yuq47hgJeuYE73VMp0880',
-  authDomain: 'movies-series-guide.firebaseapp.com',
-  databaseURL: 'https://movies-series-guide.firebaseio.com',
-  projectId: 'movies-series-guide',
-  storageBucket: 'movies-series-guide.appspot.com',
-  messagingSenderId: '100376056146',
-  appId: '1:100376056146:web:7e22396b09291bcb',
-  measurementId: 'G-TBDRCFSD9H',
+  apiKey: 'AIzaSyA-avceh0MDbRTqIBEfluvcdDWedGpmXog',
+  authDomain: 'starter-webapp-jt.firebaseapp.com',
+  projectId: 'starter-webapp-jt',
+  storageBucket: 'starter-webapp-jt.appspot.com',
+  messagingSenderId: '289244348405',
+  appId: '1:289244348405:web:a5a9ebf8a9fb87346faabc',
+  measurementId: 'G-WVR476ERZE',
 }

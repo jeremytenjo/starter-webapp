@@ -7,7 +7,6 @@
   "main": "src/firebase/functions/build/index.js",
   "scripts": {
     "dev": "node --experimental-json-modules --loader ts-node/esm ./scripts/dev/run.ts",
-    "dev:with-firebase-functions": "concurrently 'npm run dev' 'npm run functions:build-watch' 'npm run functions:serve'",
     "app:dev": "node --loader ts-node/esm ./devtools/vite/scripts/startDevServer/run.ts",
     "app:build": "node --loader ts-node/esm ./devtools/vite/scripts/buildApp/run.ts",
     "app:serve": "node --loader ts-node/esm ./devtools/vite/scripts/runBuild/run.ts",
@@ -25,7 +24,8 @@
     "tests:run": "./scripts/tests/run",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "lint": "eslint ./ --fix && tsc --noemit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "asdfasdf": "firebase emulators:start --only auth,functions,firestore"
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",
