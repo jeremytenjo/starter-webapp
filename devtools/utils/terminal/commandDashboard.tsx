@@ -42,8 +42,7 @@ export default function commandDashboard({ commands }) {
     return (
       <Box flexBasis={'100%'} flexDirection='column'>
         <Text color={color}>{label}: </Text>
-        <br />
-        <br />
+
         {port && <Text dimColor>http://localhost:{port}</Text>}
         <Box marginTop={1}>
           <Text>{output}</Text>
