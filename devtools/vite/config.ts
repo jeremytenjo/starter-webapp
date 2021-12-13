@@ -17,7 +17,7 @@ export default defineConfig(async ({ mode }) => {
   }
 
   return {
-    plugins: await (await import('./plugins')).default(payload),
-    build: (await import('./build')).default(payload),
+    plugins: await (await import('./plugins/plugins')).default(payload),
+    build: (await import('./build/build')).default(payload),
   }
 })

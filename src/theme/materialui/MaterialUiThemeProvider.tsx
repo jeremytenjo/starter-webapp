@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import colors from '../tokens/colors'
 import typography from '../tokens/typography/typography'
 
-import CssBaselineOverrides from './CssBaseline'
+import CssBaselineOverrides from './CssBaseline/CssBaseline'
 
 export const materialTheme = createTheme({
   palette: colors,
