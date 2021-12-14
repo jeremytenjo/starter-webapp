@@ -20,9 +20,12 @@ export default async function dev() {
   ]
 
   if (firebaseJson.emulators) {
+    const command = firebaseJson.emulators.functions.port
+      ? 'npm run functions:dev'
+      : 'npm run emulators:start'
     commands.push({
       label: `Firebase Emulators`,
-      command: `npm run emulators:start`,
+      command,
       port: 4000,
       color: '#FFCB2E',
     })
