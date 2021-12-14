@@ -6,6 +6,6 @@ import * as functions from 'firebase-functions'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const helloWorld = functions.https.onCall((data, context) => {
   return {
-    hello: 'hello my name is',
+    hello: 'hello my name is s',
   }
 })

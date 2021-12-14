@@ -2,7 +2,7 @@ import { spawn } from 'child_process'
 
 import * as React from 'react'
 // https://github.com/vadimdemedes/ink
-import { render, Text, Box } from 'ink'
+import { render, Text, Box, useInput } from 'ink'
 
 console.clear()
 
@@ -15,21 +15,35 @@ export type CommandProps = {
   command: string
   port?: number
   color?: string
+  index?: number
 }
 
 export default function commandDashboard({ commands }: Props) {
   const SubprocessOutput = () => {
     return (
       <Box flexDirection='row'>
-        {commands.map((arg) => (
-          <Command key={arg.label} {...arg} />
+        {commands.map((arg, index) => (
+          <Command key={arg.label} {...arg} index={index} />
         ))}
       </Box>
     )
   }
 
-  const Command = ({ label, command, port, color }: CommandProps) => {
+  const Command = ({ label, command, port, color, index }: CommandProps) => {
+    const shellRef = React.useRef(null)
     const [output, setOutput] = React.useState('')
+    const restardInput = (index + 1).toString()
+
+    useInput((input) => {
+      if (input === restardInput) {
+        restartCommand()
+      }
+    })
+
+    const restartCommand = () => {
+      shellRef.current.kill()
+      startCommand()
+    }
 
     const startCommand = () => {
       const commandArgs = command.split(' ')
@@ -45,6 +59,8 @@ export default function commandDashboard({ commands }: Props) {
       shell.on('error', (error) => {
         setOutput(error.toString())
       })
+
+      shellRef.current = shell
     }
 
     React.useEffect(() => {
@@ -56,6 +72,7 @@ export default function commandDashboard({ commands }: Props) {
         <Text color={color}>{label}: </Text>
 
         {port && <Text dimColor>http://localhost:{port}</Text>}
+        <Text dimColor>Press {restardInput} to restart</Text>
         <Box marginTop={1}>
           <Text>{output}</Text>
         </Box>

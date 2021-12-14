@@ -13,7 +13,7 @@ export default async function dev() {
     },
     {
       label: `Storybook`,
-      command: `npm run storybook:dev `,
+      command: `npm run storybook:dev`,
       port: 6007,
       color: '#FF4785',
     },
