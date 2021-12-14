@@ -6,6 +6,10 @@ import { render, Text, Box } from 'ink'
 
 console.clear()
 
+export type Props = {
+  commands: CommandProps[]
+}
+
 export type CommandProps = {
   label: string
   command: string
@@ -13,7 +17,7 @@ export type CommandProps = {
   color?: string
 }
 
-export default function commandDashboard({ commands }) {
+export default function commandDashboard({ commands }: Props) {
   const SubprocessOutput = () => {
     return (
       <Box flexDirection='row'>
@@ -27,7 +31,7 @@ export default function commandDashboard({ commands }) {
   const Command = ({ label, command, port, color }: CommandProps) => {
     const [output, setOutput] = React.useState('')
 
-    React.useEffect(() => {
+    const startCommand = () => {
       const commandArgs = command.split(' ')
       commandArgs.shift()
       const shell = spawn('npm', commandArgs)
@@ -41,6 +45,10 @@ export default function commandDashboard({ commands }) {
       shell.on('error', (error) => {
         setOutput(error.toString())
       })
+    }
+
+    React.useEffect(() => {
+      startCommand()
     }, [setOutput])
 
     return (
