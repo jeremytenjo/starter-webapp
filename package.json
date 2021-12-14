@@ -16,7 +16,7 @@
     "functions:build-watch": "node --loader ts-node/esm src/firebase/functions/scripts/buildFunctions/run.js --watch",
     "functions:serve": "firebase emulators:start --only functions",
     "functions:deploy": "firebase deploy --only functions",
-    "emulators:start": "firebase emulators:start --only auth,firestore",
+    "emulators:start": "firebase emulators:start --only auth,firestore,functions",
     "emulators:firestore:export-data": "firebase emulators:export src/data/firestoreEmulatorData",
     "helpers:generate-logo-assets": "node --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
     "cypress:open": "cypress open",

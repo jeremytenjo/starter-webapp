@@ -20,34 +20,12 @@ export default async function dev() {
   ]
 
   if (firebaseJson.emulators) {
-    if (
-      firebaseJson.emulators?.auth ||
-      firebaseJson.emulators?.firestore ||
-      firebaseJson.emulators?.functions ||
-      firebaseJson.emulators?.pubsub
-    ) {
-      const emulatorsList = []
-
-      for (const [key] of Object.entries(firebaseJson.emulators)) {
-        if (
-          key === 'auth' ||
-          key === 'firestore' ||
-          key === 'functions' ||
-          key === 'functions'
-        ) {
-          if (!emulatorsList.includes(',' + key)) {
-            emulatorsList.push(key)
-          }
-        }
-      }
-
-      commands.push({
-        label: `Firebase Emulators`,
-        command: `firebase emulators:start --only ${emulatorsList.join(',')}`,
-        port: 4000,
-        color: '#FFCB2E',
-      })
-    }
+    commands.push({
+      label: `Firebase Emulators`,
+      command: `npm run emulators:start`,
+      port: 4000,
+      color: '#FFCB2E',
+    })
   }
 
   commandDashboard({ commands })
