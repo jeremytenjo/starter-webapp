@@ -22,8 +22,7 @@
     "tests:run": "./scripts/tests/run",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "lint": "eslint ./ --fix && tsc --noemit",
-    "prepare": "husky install",
-    "asdfasdf": "firebase emulators:start --only auth,functions,firestore"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",

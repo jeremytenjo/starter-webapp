@@ -1,10 +1,12 @@
-const webpack = require('./webpack/webpack.cjs')
-
 module.exports = {
-  stories: ['../../src/**/sb.stories.@(tsx|mdx)'],
+  stories: ['../../src/**/sb.stories.tsx'],
   staticDirs: ['../../public'],
-  addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
-  webpackFinal: async (defaultConfig) => {
-    return webpack(defaultConfig)
-  },
+  addons: [
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+      },
+    },
+  ],
 }
