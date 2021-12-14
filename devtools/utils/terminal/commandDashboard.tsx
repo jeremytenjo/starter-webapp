@@ -70,9 +70,9 @@ export default function commandDashboard({ commands }: Props) {
     return (
       <Box flexBasis={'100%'} flexDirection='column'>
         <Text color={color}>{label}: </Text>
-
         {port && <Text dimColor>http://localhost:{port}</Text>}
         <Text dimColor>Press {restardInput} to restart</Text>
+
         <Box marginTop={1}>
           <Text>{output}</Text>
         </Box>
