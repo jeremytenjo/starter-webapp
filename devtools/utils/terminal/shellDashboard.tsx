@@ -18,7 +18,7 @@ export type CommandProps = {
   index?: number
 }
 
-export default function commandDashboard({ commands }: Props) {
+export default function shellDashboard({ commands }: Props) {
   const SubprocessOutput = () => {
     return (
       <Box flexDirection='row'>

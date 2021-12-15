@@ -1,6 +1,6 @@
-import commandDashboard from '../../devtools/utils/terminal/commandDashboard.js'
+import shellDashboard from '../../devtools/utils/terminal/shellDashboard.js'
 import appConfig from '../../app.config.js'
-import type { CommandProps } from '../../devtools/utils/terminal/commandDashboard.js'
+import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
 import firebaseJson from '../../firebase.json'
 
 export default async function dev() {
@@ -31,5 +31,5 @@ export default async function dev() {
     })
   }
 
-  commandDashboard({ commands })
+  shellDashboard({ commands })
 }
