@@ -4,14 +4,17 @@ const esbuild = require('esbuild')
 
 const getCommandLineArgs = require('./handlers/getCommandLineArgs.js')
 const removeBuildFolder = require('./handlers/removeBuildFolder.js')
+const getExternals = require('./handlers/getExternals.js')
 
 module.exports = async function buildFunctions() {
   const args = getCommandLineArgs()
   const rootPath = path.join(process.cwd(), 'functions')
   const entryPoint = path.join(rootPath, 'src', 'index.js')
   const outfile = path.join(rootPath, 'build', 'index.js')
+  const packageJson = require(path.join(rootPath, 'package.json'))
 
   await removeBuildFolder({ rootPath })
+  const external = getExternals({ packageJson })
 
   esbuild.build({
     entryPoints: [entryPoint],
@@ -21,6 +24,6 @@ module.exports = async function buildFunctions() {
     format: 'cjs',
     target: 'es2017',
     watch: args.watch,
-    external: ['firebase-admin', 'firebase-functions'],
+    external,
   })
 }
