@@ -18,8 +18,9 @@ export default {
   args: { text: 'hello', variant: 'h1' },
 }
 
-const Template = (args) => <Text {...args} />
-
+const Template = (args) => {
+  return <Text {...args} />
+}
 export const Default = Template.bind({})
 
 export { Typography }
