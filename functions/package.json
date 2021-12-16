@@ -1,5 +1,6 @@
 {
   "name": "functions",
+  "private": true,
   "engines": {
     "node": "14"
   },
@@ -10,6 +11,5 @@
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
+  }
 }
