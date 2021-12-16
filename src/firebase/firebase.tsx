@@ -18,7 +18,12 @@ const functions = getFunctions()
 
 export default function Firebase({ children }) {
   return (
-    <FirebaseProvider firebaseApp={firebaseApp} functions={functions}>
+    <FirebaseProvider
+      firebaseApp={firebaseApp}
+      functions={functions}
+      firebaseConfig={firebaseConfig}
+      envIsDev={process.env.NODE_ENV === 'development'}
+    >
       {children}
     </FirebaseProvider>
   )
