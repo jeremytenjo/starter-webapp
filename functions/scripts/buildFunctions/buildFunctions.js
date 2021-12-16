@@ -20,7 +20,7 @@ module.exports = async function buildFunctions() {
     entryPoints: [entryPoint],
     outfile,
     bundle: true,
-    // minify: true,
+    minify: true,
     format: 'cjs',
     target: 'es2017',
     watch: args.watch,
