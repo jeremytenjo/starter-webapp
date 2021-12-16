@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "main": "src/firebase/functions/build/index.js",
   "scripts": {
     "dev": "node --experimental-json-modules --loader ts-node/esm ./scripts/dev/run.ts",
     "app:dev": "node --loader ts-node/esm ./devtools/vite/scripts/startDevServer/run.ts",
@@ -12,8 +11,8 @@
     "app:serve": "node --loader ts-node/esm ./devtools/vite/scripts/runBuild/run.ts",
     "storybook:dev": "start-storybook -c ./devtools/storybook -p 6007 --quiet --ci",
     "functions:dev": "concurrently 'npm run functions:build-watch' 'npm run emulators:start'",
-    "functions:build": "node --loader ts-node/esm src/firebase/functions/scripts/buildFunctions/run.js",
-    "functions:build-watch": "node --loader ts-node/esm src/firebase/functions/scripts/buildFunctions/run.js --watch",
+    "functions:build": "node --loader ts-node/esm ./functions/scripts/buildFunctions/run.js",
+    "functions:build-watch": "node --loader ts-node/esm ./functions/scripts/buildFunctions/run.js --watch",
     "functions:deploy": "npm run functions:build && firebase deploy --only functions",
     "emulators:start": "firebase emulators:start --only auth,firestore,functions",
     "helpers:generate-logo-assets": "node --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
@@ -29,22 +28,20 @@
     "@emotion/styled": "^11.6.0",
     "@mui/lab": "^5.0.0-alpha.59",
     "@mui/material": "^5.2.3",
-    "@netlify/functions": "^0.10.0",
     "@storybook/addon-essentials": "^6.4.9",
-    "@useweb/array-db": "0.0.1",
+    "@useweb/array-db": "0.2.2",
     "@useweb/capitalize": "0.0.1",
     "@useweb/remove-last-character": "0.0.1",
-    "@useweb/start-firebase-emulator": "^1.0.3",
+    "@useweb/start-firebase-emulator": "^1.1.2",
     "@useweb/use-async": "^0.3.3",
+    "@useweb/use-data": "^1.0.3",
     "@useweb/use-event-listener": "^0.1.3",
     "@useweb/use-firebase": "^6.0.1",
     "@useweb/use-firebase-function": "^2.0.1",
     "@useweb/use-install-prompt": "^1.0.1",
-    "@useweb/use-local-storage": "^1.1.1",
+    "@useweb/use-local-storage": "^1.1.0",
     "@useweb/use-on-true": "0.0.1",
     "firebase": "^9.6.0",
-    "firebase-admin": "^10.0.0",
-    "firebase-functions": "^3.16.0",
     "history": "^5.1.0",
     "internal-ip": "^7.0.0",
     "lodash": "^4.17.21",
@@ -52,7 +49,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.0.2",
-    "swr": "^1.1.0",
+    "swr": "^1.0.0",
     "zustand": "^3.6.7"
   },
   "devDependencies": {
@@ -96,8 +93,5 @@
     "vite-plugin-compression": "^0.3.6",
     "vite-plugin-html": "^2.1.1",
     "vite-plugin-pwa": "^0.11.10"
-  },
-  "engines": {
-    "node": "14"
   }
 }
