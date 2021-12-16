@@ -29,6 +29,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/lab": "^5.0.0-alpha.59",
     "@mui/material": "^5.2.3",
+    "@netlify/functions": "^0.10.0",
     "@storybook/addon-essentials": "^6.4.9",
     "@useweb/array-db": "0.0.1",
     "@useweb/capitalize": "0.0.1",

@@ -6,7 +6,7 @@ firestore-debug.log
 ui-debug.log
 pubsub-debug.log
 dist
-
+.netlify
 # allow 
 !devtools/vite/build
 
