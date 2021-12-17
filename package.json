@@ -32,7 +32,6 @@
     "@useweb/array-db": "0.2.2",
     "@useweb/capitalize": "0.0.1",
     "@useweb/remove-last-character": "0.0.1",
-    "@useweb/start-firebase-emulator": "^1.1.2",
     "@useweb/use-async": "^0.3.10",
     "@useweb/use-data": "^1.0.3",
     "@useweb/use-event-listener": "^0.1.3",
