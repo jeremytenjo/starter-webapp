@@ -17,8 +17,8 @@ export default function Firebase({ children }) {
   return (
     <FirebaseProvider
       firebaseApp={firebaseApp}
-      functions={functions}
       firebaseConfig={firebaseConfig}
+      functions={functions}
       envIsDev={process.env.NODE_ENV === 'development'}
     >
       {children}
