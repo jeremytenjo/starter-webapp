@@ -2,6 +2,7 @@ import shellDashboard from '../../devtools/utils/terminal/shellDashboard.js'
 import appConfig from '../../app.config.js'
 import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
 import firebaseJson from '../../firebase.json'
+import addMockDataToFirestore from '../../src/firebase/emulator/addMockDataToFirestore.js'
 
 export default async function dev() {
   const commands: CommandProps[] = [
@@ -28,6 +29,9 @@ export default async function dev() {
       command,
       port: 4000,
       color: '#FFCB2E',
+      onStart: async () => {
+        await addMockDataToFirestore()
+      },
     })
   }
 

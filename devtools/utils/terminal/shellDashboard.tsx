@@ -16,6 +16,7 @@ export type CommandProps = {
   port?: number
   color?: string
   index?: number
+  onStart?: () => any
 }
 
 export default function shellDashboard({ commands }: Props) {
@@ -29,7 +30,14 @@ export default function shellDashboard({ commands }: Props) {
     )
   }
 
-  const Command = ({ label, command, port, color, index }: CommandProps) => {
+  const Command = ({
+    label,
+    command,
+    port,
+    color,
+    index,
+    onStart = () => null,
+  }: CommandProps) => {
     const shellRef = React.useRef(null)
     const [output, setOutput] = React.useState('')
     const restardInput = (index + 1).toString()
@@ -61,6 +69,7 @@ export default function shellDashboard({ commands }: Props) {
       })
 
       shellRef.current = shell
+      onStart()
     }
 
     React.useEffect(() => {
