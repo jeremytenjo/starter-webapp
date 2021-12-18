@@ -13,7 +13,7 @@ export default async function addMockDataToFirestore() {
   try {
     const keys = [...Array(10).keys()]
     keys.map(() =>
-      db.collection('user').add({
+      db.collection('users').add({
         author_name: 'Jeremy tenjo' + Math.random(),
       }),
     )
@@ -22,5 +22,3 @@ export default async function addMockDataToFirestore() {
     console.log(error, 'database seed failed')
   }
 }
-
-addMockDataToFirestore()
