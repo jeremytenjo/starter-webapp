@@ -48,6 +48,10 @@ export default {
           -webkit-appearance: none;
           margin: 0px;
         }
+
+        .firebase-emulator-warning {
+          display: none;
+        }
         `,
   },
 }
