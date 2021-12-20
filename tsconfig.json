@@ -14,7 +14,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["./devtools/ts/declaredModules/*"]
+    }
   },
-  "include": ["./src"]
+  "include": ["./src", "./functions/scripts", "./devtools/ts/declaredModules"]
 }
