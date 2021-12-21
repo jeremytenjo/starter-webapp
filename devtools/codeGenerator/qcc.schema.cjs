@@ -9,130 +9,76 @@ const generateUseVariable = (string) => {
 }
 
 const component = {
-  type: 'Simple Component',
-  files: [
-    {
-      path: ({ name }) => `${name}.tsx`,
-      template: ({ name, helpers }) => `        
-      import Box from 'lib/components/Box'
+  path: ({ name }) => `${name}.tsx`,
+  template: ({ name, helpers }) => `import React from 'react'       
+  import { Box } from '@mui/material'
 
-      import * as styles from './styles'
+  type Props = { name: string }
 
-      export default function ${helpers.changeCase.pascalCase(name)}() {
-        return (
-          <Box sx={styles.wrapper}>
-           ${name}
-          </Box>
-        );
-      }
-        `,
-    },
-    {
-      path: () => `styles.ts`,
-      template: () => `
-      export const wrapper = {}
-        `,
-    },
-    {
-      path: () => `stories/sb.stories.mdx`,
-      template: ({ name }) => `import { Meta, Story } from '@storybook/addon-docs/blocks'
-import ${name} from '../${name}'
-      
-<Meta 
-  title='Lib/components/${name}' 
-  component={${name}} 
-  argTypes={{}} 
-  args={{}} 
-/>
-
-# ${name}
-
-export const Template = (args) => (
-  <${name} {...args}>
-    ${name}
-  </${name}>
-)
-
-<Story name='default' argTypes={{}} args={{}}>
-  {Template.bind({})}
-</Story>
-`,
-    },
-  ],
+  export default function ${helpers.changeCase.pascalCase(name)}({ name }: Props) {
+    return (
+      <Box>
+       ${name}
+      </Box>
+    );
+  }
+    `,
 }
 
-const componentWithStory = {
-  type: 'Complete Component',
-  files: [
-    {
-      path: ({ name }) => `${name}.tsx`,
-      template: ({ name }) => `        
-      import use${name}Data from './use${name}Data'
-      import Ui from './ui/ui'
-      
-      export default function ${name}(props) {
-        const data = use${name}Data({ props })
-        return <Ui {...props} {...data} />
-      }
-        `,
-    },
-    {
-      path: () => `ui/ui.tsx`,
-      template: ({ name, helpers }) => `        
-      import * as S from './styles'
+const story = [
+  {
+    path: () => `stories/docs.mdx`,
+    template: ({ name }) => `# ${name}`,
+  },
+  {
+    path: () => `stories/sb.stories.tsx`,
+    template: ({ name }) => `//https://storybook.js.org/docs/react/writing-docs/docs-page
+    import React from 'react'
 
-      export default function ${helpers.changeCase.pascalCase(name)}() {
-        return (
-          <S.Wrapper>
-           ${name}
-          </S.Wrapper> 
-        );
-      }
-        `,
-    },
-    {
-      path: () => `ui/styles.ts`,
-      template: ({ helpers }) => `        
-      import styled from 'styled-components'
+    import ${name} from '../${name}'
 
-      export const Wrapper = styled.div${helpers.addEmptyTemplateLiteral()}
-        `,
-    },
-    {
-      path: ({ name }) => `use${name}Data/index.ts`,
-      template: ({ name }) => `        
-      export default function use${name}Data({ props }) {
-        console.log(props)
-        return {}
-      }
-        `,
-    },
-    {
-      path: () => `stories/sb.stories.mdx`,
-      template: ({ name }) => `import { Meta } from '@storybook/addon-docs/blocks'
-import ${name} from '../${name}'
-      
-<Meta title='Lib/components${name}' component={${name}} argTypes={{}} args={{}} />
+    import Docs from './docs.mdx'
 
-# ${name}
+    export default {
+      title: 'lib/components/${name}',
+      args: {},
+      // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
+      parameters: {
+        docs: {
+          page: Docs,
+        },
+      },
+    }
 
-export const Template = (args) => (
-  <${name} {...args}>
-    ${name}
-  </${name}>
-)
+    const Template = (args) => {
+      return <${name} {...args} />
+    };
 
-<Story name='default' argTypes={{}} args={{}}>
-  {Template.bind({})}
-</Story>
+    export const Example = Template.bind({});
+    Example.args = {};
 `,
-    },
-  ],
+  },
+]
+
+const componentTemplate = {
+  type: 'Component',
+  files: [component],
+}
+
+const componentwithStory = {
+  type: 'Component with story',
+  files: [component, ...story],
+}
+
+const storyTemplate = {
+  type: 'Story',
+  files: [...story],
 }
 
 module.exports = [
-  component,
-  componentWithStory,
+  componentTemplate,
+  componentwithStory,
+  storyTemplate,
   {
     type: 'Function',
     files: [
@@ -147,29 +93,23 @@ module.exports = [
     files: [
       {
         path: ({ name }) => `${name}.tsx`,
-        template: ({ name }) => `import ${name}Ui from './${name}Ui'
+        template: ({ name }) => `import ${name}Ui from './${name}Ui/${name}.ui'
         
         export default function ${name}() {        
           return <${name}Ui />
         }`,
       },
       {
-        path: ({ name }) => `${name}Ui/index.ts`,
-        template: ({ name }) => `import Box from 'lib/components/Box'
+        path: ({ name }) => `${name}Ui/${name}.ui.ts`,
+        template: ({ name }) => `import { Box } from '@mui/material'
 
-        import * as styles from './styles'
-        
         export default function ${name}Ui() {        
           return (
-            <Box sx={styles.wrapper}>
+            <Box>
               hello
             </Box>
           )
         }`,
-      },
-      {
-        path: ({ name }) => `${name}Ui/styles.ts`,
-        template: () => `export const wrapper = {}`,
       },
     ],
   },
