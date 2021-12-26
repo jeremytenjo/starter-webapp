@@ -4,6 +4,8 @@ import * as React from 'react'
 // https://github.com/vadimdemedes/ink
 import { render, Text, Box, useInput } from 'ink'
 
+import getIpAdress from '../node/getIpAdress.js'
+
 console.clear()
 
 export type Props = {
@@ -79,7 +81,15 @@ export default function shellDashboard({ commands }: Props) {
     return (
       <Box flexBasis={'100%'} flexDirection='column'>
         <Text color={color}>{label}: </Text>
-        {port && <Text dimColor>http://localhost:{port}</Text>}
+        {port && (
+          <Box flexDirection='row'>
+            <Text dimColor>http://localhost:{port}</Text>
+            <Text> - </Text>
+            <Text dimColor>
+              http://{getIpAdress()}:{port}
+            </Text>
+          </Box>
+        )}
         <Text dimColor>Press {restardInput} to restart</Text>
 
         <Box marginTop={1}>
