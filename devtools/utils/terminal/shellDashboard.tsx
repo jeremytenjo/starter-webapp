@@ -3,6 +3,7 @@ import { spawn } from 'child_process'
 import * as React from 'react'
 // https://github.com/vadimdemedes/ink
 import { render, Text, Box, useInput } from 'ink'
+import qrcode from 'qrcode-terminal'
 
 import getIpAdress from '../node/getIpAdress.js'
 
@@ -42,7 +43,9 @@ export default function shellDashboard({ commands }: Props) {
   }: CommandProps) => {
     const shellRef = React.useRef(null)
     const [output, setOutput] = React.useState('')
+    const [qrcodeString, setQrcodeString] = React.useState('')
     const restardInput = (index + 1).toString()
+    const networkUrl = `http://${getIpAdress()}:${port}`
 
     useInput((input) => {
       if (input === restardInput) {
@@ -59,6 +62,7 @@ export default function shellDashboard({ commands }: Props) {
       const commandArgs = command.split(' ')
       commandArgs.shift()
       const shell = spawn('npm', commandArgs)
+      qrcode.generate(networkUrl, { small: true }, (qr) => setQrcodeString(qr))
 
       // https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
       shell.stdout.on('data', (data) => {
@@ -82,13 +86,14 @@ export default function shellDashboard({ commands }: Props) {
       <Box flexBasis={'100%'} flexDirection='column'>
         <Text color={color}>{label}: </Text>
         {port && (
-          <Box flexDirection='row'>
-            <Text dimColor>http://localhost:{port}</Text>
-            <Text> - </Text>
-            <Text dimColor>
-              http://{getIpAdress()}:{port}
-            </Text>
-          </Box>
+          <>
+            <Box flexDirection='row'>
+              <Text dimColor>http://localhost:{port}</Text>
+              <Text> - </Text>
+              <Text dimColor>{networkUrl}</Text>
+            </Box>
+            <Text>{qrcodeString}</Text>
+          </>
         )}
         <Text dimColor>Press {restardInput} to restart</Text>
 
