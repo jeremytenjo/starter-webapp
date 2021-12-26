@@ -62,6 +62,7 @@ export default function shellDashboard({ commands }: Props) {
       const commandArgs = command.split(' ')
       commandArgs.shift()
       const shell = spawn('npm', commandArgs)
+      // https://www.npmjs.com/package/qrcode-terminal
       qrcode.generate(networkUrl, { small: true }, (qr) => setQrcodeString(qr))
 
       // https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
