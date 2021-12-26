@@ -30,6 +30,7 @@ export default async function dev() {
       command,
       port: 4000,
       color: '#FFCB2E',
+      disableQRCode: true,
       onStart: async () => {
         await tcpPortUsed.waitUntilUsed(firebaseJson.emulators.auth.port, 200, 200000)
         const addEmulatorData = await import(

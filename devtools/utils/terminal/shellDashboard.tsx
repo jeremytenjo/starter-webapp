@@ -19,6 +19,7 @@ export type CommandProps = {
   port?: number
   color?: string
   index?: number
+  disableQRCode?: boolean
   onStart?: () => any
 }
 
@@ -39,6 +40,7 @@ export default function shellDashboard({ commands }: Props) {
     port,
     color,
     index,
+    disableQRCode,
     onStart = () => null,
   }: CommandProps) => {
     const shellRef = React.useRef(null)
@@ -63,7 +65,8 @@ export default function shellDashboard({ commands }: Props) {
       commandArgs.shift()
       const shell = spawn('npm', commandArgs)
       // https://www.npmjs.com/package/qrcode-terminal
-      qrcode.generate(networkUrl, { small: true }, (qr) => setQrcodeString(qr))
+      !disableQRCode &&
+        qrcode.generate(networkUrl, { small: true }, (qr) => setQrcodeString(qr))
 
       // https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
       shell.stdout.on('data', (data) => {
@@ -93,7 +96,7 @@ export default function shellDashboard({ commands }: Props) {
               <Text> - </Text>
               <Text dimColor>{networkUrl}</Text>
             </Box>
-            <Text>{qrcodeString}</Text>
+            {!disableQRCode && <Text>{qrcodeString}</Text>}
           </>
         )}
         <Text dimColor>Press {restardInput} to restart</Text>
