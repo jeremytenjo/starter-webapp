@@ -39,6 +39,7 @@
     "@useweb/use-firebase-function": "^2.2.0",
     "@useweb/use-install-prompt": "^1.0.1",
     "@useweb/use-local-storage": "^1.1.0",
+    "@useweb/use-pull-to-refresh": "^1.0.3",
     "firebase": "^9.6.0",
     "firebase-admin": "^10.0.1",
     "history": "^5.1.0",

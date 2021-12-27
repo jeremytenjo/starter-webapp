@@ -1,3 +1,5 @@
+import colors from '../../tokens/colors'
+
 export default {
   MuiCssBaseline: {
     styleOverrides: `
@@ -52,6 +54,10 @@ export default {
         .firebase-emulator-warning {
           display: none;
         }
+
+        :root {
+          --use-pull-to-refresh-spinner-color: ${colors.primary.main};
+         }
         `,
   },
 }
