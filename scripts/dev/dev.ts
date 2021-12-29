@@ -34,7 +34,7 @@ export default async function dev() {
       onStart: async () => {
         await tcpPortUsed.waitUntilUsed(firebaseJson.emulators.auth.port, 200, 200000)
         const addEmulatorData = await import(
-          '../../src/firebase/emulator/addEmulatorData/addEmulatorData.js'
+          '../../src/services/firebase/emulator/addEmulatorData/addEmulatorData.js'
         )
         addEmulatorData.default()
       },

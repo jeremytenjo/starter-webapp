@@ -2,7 +2,7 @@ import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { create } from '@storybook/theming/create'
 
-import Firebase from '../../src/firebase/firebase'
+import Firebase from '../../src/services/firebase/firebase'
 
 import StorybookTheme from './theme/storybookTheme'
 
