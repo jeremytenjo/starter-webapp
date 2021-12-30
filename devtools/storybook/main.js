@@ -10,4 +10,10 @@ module.exports = {
     },
   ],
   framework: '@storybook/react',
+  features: {
+    storyStoreV7: true,
+  },
+  reactOptions: {
+    fastRefresh: true,
+  },
 }
