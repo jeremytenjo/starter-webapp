@@ -26,7 +26,7 @@ export default function Select({
   }
 
   return (
-    <Box sx={{ backgroundColor: 'red', width: '100%', position: 'relative' }}>
+    <Box sx={{ width: '100%', position: 'relative' }}>
       <label id={name} hidden>
         {label}
       </label>

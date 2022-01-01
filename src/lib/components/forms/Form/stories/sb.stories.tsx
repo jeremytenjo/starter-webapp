@@ -3,6 +3,7 @@ import React from 'react'
 
 import Form from '../Form'
 import Textfield from '../../TextField/TextField'
+import Select from '../../Select/Select'
 
 import Docs from './docs.mdx'
 
@@ -22,9 +23,17 @@ const Template = (args) => {
     console.log(values)
   }
 
+  const options = [
+    {
+      label: 'Season 1',
+      value: 1,
+    },
+  ]
+
   return (
     <Form onSubmit={onSubmit}>
       <Textfield name='test-textfield' />
+      <Select label='Season' name='selected_season' options={options} />
     </Form>
   )
 }
