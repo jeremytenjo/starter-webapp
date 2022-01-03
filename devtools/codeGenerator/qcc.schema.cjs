@@ -11,7 +11,7 @@ const generateUseVariable = (string) => {
 const component = {
   path: ({ name }) => `${name}.tsx`,
   template: ({ name, helpers }) => `import React from 'react'       
-  import { Box } from '@mui/material'
+  import Box from '@mui/material/Box'
 
   type Props = { name: string }
 
@@ -93,15 +93,23 @@ module.exports = [
     files: [
       {
         path: ({ name }) => `${name}.tsx`,
-        template: ({ name }) => `import ${name}Ui from './${name}Ui/${name}.ui'
+        template: ({ name }) => `import React from 'react'
+        
+        import ${name}Ui from './${name}Ui/${name}.ui'
+
+        type Props = { 
+          loading: boolean 
+          empty: boolean 
+        }
         
         export default function ${name}() {        
           return <${name}Ui />
         }`,
       },
       {
-        path: ({ name }) => `${name}Ui/${name}.ui.ts`,
-        template: ({ name }) => `import { Box } from '@mui/material'
+        path: ({ name }) => `${name}Ui/${name}.ui.tsx`,
+        template: ({ name }) => `import React from 'react'
+        import Box from '@mui/material/Box'
 
         export default function ${name}Ui() {        
           return (
