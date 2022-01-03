@@ -1,3 +1,4 @@
+// keep as JSX instead of TSX to prevent `...Button` false positive bug
 import React from 'react'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
