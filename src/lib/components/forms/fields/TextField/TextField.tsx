@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import { IconButton } from '@mui/material'
 import { useFormContext } from 'react-hook-form'
 
-import IconxSmall from '../../icons/IconxSmall'
+import IconxSmall from '../../../icons/IconxSmall'
 
 type Props = {
   name: string

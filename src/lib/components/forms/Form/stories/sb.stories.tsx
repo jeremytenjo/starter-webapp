@@ -2,8 +2,8 @@
 import React from 'react'
 
 import Form from '../Form'
-import Textfield from '../../TextField/TextField'
-import Select from '../../Select/Select'
+import Textfield from '../../fields/TextField/TextField'
+import Select from '../../fields/Select/Select'
 
 import Docs from './docs.mdx'
 
