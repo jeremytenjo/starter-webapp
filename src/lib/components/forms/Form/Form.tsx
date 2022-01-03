@@ -9,23 +9,25 @@ type Props = {
   sx?: object
 }
 
-const Form = forwardRef(({ children, onSubmit, defaultValues = {} }: Props, ref) => {
-  const methods = useForm({ defaultValues })
+const Form = forwardRef(
+  ({ children, onSubmit, defaultValues = {}, sx = {} }: Props, ref) => {
+    const methods = useForm({ defaultValues })
 
-  return (
-    <FormProvider {...methods}>
-      <FormElement onSubmit={onSubmit} ref={ref}>
-        {children}
-      </FormElement>
-    </FormProvider>
-  )
-})
+    return (
+      <FormProvider {...methods}>
+        <FormElement onSubmit={onSubmit} ref={ref} sx={sx}>
+          {children}
+        </FormElement>
+      </FormProvider>
+    )
+  },
+)
 
-const FormElement = forwardRef(({ children, onSubmit }: Props, ref) => {
+const FormElement = forwardRef(({ children, onSubmit, sx }: Props, ref) => {
   const { handleSubmit, register } = useFormContext()
 
   return (
-    <Box component='form' ref={ref} onSubmit={handleSubmit(onSubmit)}>
+    <Box component='form' ref={ref} onSubmit={handleSubmit(onSubmit)} sx={sx}>
       {Array.isArray(children)
         ? children.map((child) => {
             return child.props.name
