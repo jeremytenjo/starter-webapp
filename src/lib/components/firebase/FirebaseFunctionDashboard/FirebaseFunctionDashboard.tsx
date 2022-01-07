@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import LinearProgress from '@mui/material/LinearProgress'
 import useFirebaseFunction from '@useweb/use-firebase-function'
 
-import ReactJson from '../../ReactJson'
+import ReactJson from '../../ReactJson/ReactJson'
 
 type Props = { functionName: string; payload?: any }
 

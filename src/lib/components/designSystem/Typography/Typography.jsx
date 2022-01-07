@@ -1,7 +1,7 @@
 import React from 'react'
+import Box from '@mui/material/Box'
 
-import Box from '../../Box'
-import Text from '../../Text'
+import Text from '../../Text/Text'
 
 export default function DSTypography({ variantNames = [] }) {
   const text = 'The quick brown fox jumps over the lazy dog.'

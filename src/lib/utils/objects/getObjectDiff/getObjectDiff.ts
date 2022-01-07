@@ -1,4 +1,4 @@
-import areObjectsEqual from '../areObjectsEqual'
+import areObjectsEqual from '../areObjectsEqual/areObjectsEqual'
 
 export default function getObjectDiff(obj1, obj2) {
   const diff = Object.keys(obj1).reduce((result, key) => {

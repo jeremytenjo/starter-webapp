@@ -3,7 +3,7 @@ import React from 'react'
 import Typography from '../../../theme/tokens/stories/theme.typography'
 import { variantNames } from '../../../theme/tokens/typography/typography'
 
-import Text from '.'
+import Text from './Text'
 
 export default {
   title: 'Lib/Components/Text',

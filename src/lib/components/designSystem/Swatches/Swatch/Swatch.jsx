@@ -1,6 +1,6 @@
+import React from 'react'
 import lightOrDarkColor from '@check-light-or-dark/color'
-
-import Box from '../../../Box'
+import Box from '@mui/material/Box'
 
 import * as styles from './styles'
 

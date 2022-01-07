@@ -1,8 +1,10 @@
-import Box from '../../Box'
-import objectToArray from '../../../utils/objects/objectToArray'
-import flattenObject from '../../../utils/objects/flattenObject'
+import React from 'react'
+import Box from '@mui/material/Box'
 
-import Swatch from './Swatch'
+import objectToArray from '../../../utils/objects/objectToArray/objectToArray'
+import flattenObject from '../../../utils/objects/flattenObject/flattenObject'
+
+import Swatch from './Swatch/Swatch'
 import * as styles from './styles'
 
 export default function Swatches({ colors = {} }) {
