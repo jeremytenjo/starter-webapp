@@ -15,7 +15,7 @@
       "port": 5002
     },
     "firestore": {
-      "port": 9003
+      "port": 9002
     },
     "pubsub": {
       "port": 9004

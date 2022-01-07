@@ -9,7 +9,7 @@ const getExternals = require('./handlers/getExternals.js')
 module.exports = async function buildFunctions() {
   const args = getCommandLineArgs()
   const rootPath = path.join(process.cwd(), 'functions')
-  const entryPoint = path.join(rootPath, 'src', 'index.js')
+  const entryPoint = path.join(rootPath, 'src', 'functions.js')
   const outfile = path.join(rootPath, 'build', 'index.js')
   const packageJson = require(path.join(rootPath, 'package.json'))
 

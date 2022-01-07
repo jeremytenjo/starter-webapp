@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../../src/**/sb.stories.tsx'],
+  stories: ['../../src/**/sb.stories.tsx', '../../functions/src/**/sb.stories.tsx'],
   staticDirs: ['../../public'],
   addons: [
     {

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { UseInstallPromptProvider } from '@useweb/use-install-prompt'
 
-import './lib/utils/dom/keepScreenAwakeOnDev/keepScreenAwakeOnDev'
 import Firebase from './services/firebase/firebase'
 import Router from './pages/router'
 import Theme from './theme/theme'

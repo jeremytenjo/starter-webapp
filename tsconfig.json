@@ -17,8 +17,8 @@
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "*": ["./devtools/ts/declaredModules/*"]
+      "*": ["devtools/ts/declaredModules/*"]
     }
   },
-  "include": ["./src", "./functions/scripts", "./devtools/ts/declaredModules"]
+  "include": ["./src", "./functions/scripts", "devtools/ts/declaredModules/*"]
 }

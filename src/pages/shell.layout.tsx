@@ -1,5 +1,13 @@
 import React from 'react'
 
+import { SnackbarProvider } from '../lib/components/Snackbar/Snackbar'
+
 export default function ShellLayout({ children }) {
-  return <main>{children}</main>
+  return (
+    <>
+      <SnackbarProvider>
+        <main>{children}</main>
+      </SnackbarProvider>
+    </>
+  )
 }

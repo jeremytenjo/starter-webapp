@@ -1,3 +1,18 @@
+export type VariantOptions =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'subtitle1'
+  | 'subtitle2'
+  | 'body1'
+  | 'body2'
+  | 'button'
+  | 'caption'
+  | 'overline'
+
 const variants = {
   h1: {
     fontWeight: 300,
@@ -36,10 +51,10 @@ const variants = {
     letterSpacing: '0.0075em',
   },
   subtitle1: {
-    fontWeight: 400,
-    fontSize: '1rem',
-    lineHeight: 1.75,
-    letterSpacing: '0.00938em',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    letterSpacing: '0.15px',
   },
   subtitle2: {
     fontWeight: 500,
@@ -79,8 +94,9 @@ const variants = {
     letterSpacing: '0.08333em',
     textTransform: 'uppercase' as const,
   },
+  fontFamily: ['Poppins400', '-apple-system', 'Roboto'].join(','),
 }
 
-const variantNames = Object.keys(variants)
+const variantNames = Object.keys(variants).filter((variant) => variant !== 'fontFamily')
 
 export { variants, variantNames }

@@ -3,6 +3,9 @@ import pkg from './package.json'
 import themeTokens from './src/theme/tokens/tokens.js'
 
 const appConfig: AppConfigTypes = {
+  domain: {
+    main: 'https://starter-webapp.vercel.app/',
+  },
   manifestJson: {
     name: 'starter',
     short_name: 'starter',
@@ -87,5 +90,8 @@ export type AppConfigTypes = {
   }
   theme: {
     tokens: any
+  }
+  domain: {
+    main: string
   }
 }
