@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import type { ButtonProps } from '@mui/material/Button'
@@ -19,6 +19,7 @@ type Props = {
   color?: string
   onChange?: (value: any) => any
   buttonProps?: ButtonProps
+  value?: any
 }
 
 export default function Select({
@@ -29,13 +30,18 @@ export default function Select({
   register = () => null,
   sx = {},
   color = colors.grey.light,
-  onChange = () => null,
+  onChange,
   buttonProps = {},
+  value: parentValue,
 }: Props) {
-  const [value, setValue] = useState(defaultValue)
+  const [value, setValue] = useState(parentValue || defaultValue)
+
+  useEffect(() => {
+    if (parentValue) setValue(parentValue)
+  }, [parentValue])
 
   const handleValueChange = (event) => {
-    setValue(event.target.value)
+    !parentValue && setValue(event.target.value)
     onChange(event.target.value)
   }
 
@@ -51,7 +57,7 @@ export default function Select({
         }}
         variant='outlined'
         size='medium'
-        endIcon={<IconChevron sx={{ stroke: color, transform: 'translateY(8px)' }} />}
+        endIcon={<IconChevron sx={{ stroke: color, transform: 'translateY(7px)' }} />}
         {...buttonProps}
       >
         {label}
@@ -66,7 +72,7 @@ export default function Select({
         id={name}
         value={value}
         onChange={handleValueChange}
-        {...register(name)}
+        {...(!onChange ? register(name) : {})}
         sx={{
           width: '100%',
           height: '100%',
