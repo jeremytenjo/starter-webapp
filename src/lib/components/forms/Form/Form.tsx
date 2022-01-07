@@ -7,15 +7,24 @@ type Props = {
   onSubmit: (data: any) => any
   defaultValues?: object
   sx?: object
+  resetOnSubmission?: boolean
 }
 
 const Form = forwardRef(
-  ({ children, onSubmit, defaultValues = {}, sx = {} }: Props, ref) => {
+  (
+    { children, onSubmit, defaultValues = {}, sx = {}, resetOnSubmission }: Props,
+    ref,
+  ) => {
     const methods = useForm({ defaultValues })
 
     return (
       <FormProvider {...methods}>
-        <FormElement onSubmit={onSubmit} ref={ref} sx={sx}>
+        <FormElement
+          onSubmit={onSubmit}
+          ref={ref}
+          sx={sx}
+          resetOnSubmission={resetOnSubmission}
+        >
           {children}
         </FormElement>
       </FormProvider>
@@ -23,26 +32,33 @@ const Form = forwardRef(
   },
 )
 
-const FormElement = forwardRef(({ children, onSubmit, sx }: Props, ref) => {
-  const { handleSubmit, register } = useFormContext()
+const FormElement = forwardRef(
+  ({ children, onSubmit, sx, resetOnSubmission }: Props, ref) => {
+    const { handleSubmit, register, reset } = useFormContext()
 
-  return (
-    <Box component='form' ref={ref} onSubmit={handleSubmit(onSubmit)} sx={sx}>
-      {Array.isArray(children)
-        ? children.map((child) => {
-            return child.props.name
-              ? React.createElement(child.type, {
-                  ...{
-                    ...child.props,
-                    register,
-                    key: child.props.name,
-                  },
-                })
-              : child
-          })
-        : children}
-    </Box>
-  )
-})
+    const handleSumbit = (props) => {
+      resetOnSubmission && reset()
+      onSubmit(props)
+    }
+
+    return (
+      <Box component='form' ref={ref} onSubmit={handleSubmit(handleSumbit)} sx={sx}>
+        {Array.isArray(children)
+          ? children.map((child) => {
+              return child.props.name
+                ? React.createElement(child.type, {
+                    ...{
+                      ...child.props,
+                      register,
+                      key: child.props.name,
+                    },
+                  })
+                : child
+            })
+          : children}
+      </Box>
+    )
+  },
+)
 
 export default Form
