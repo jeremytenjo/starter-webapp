@@ -92,6 +92,7 @@
     "qrcode-terminal": "^0.12.0",
     "react-json-view": "^1.21.3",
     "rollup-plugin-manifest-json": "^1.5.1",
+    "rollup-plugin-visualizer": "^5.5.2",
     "sharp": "^0.29.3",
     "storybook": "^6.4.9",
     "style-loader": "^3.3.1",
