@@ -1,7 +1,7 @@
 import admin from 'firebase-admin'
 
 import firebaseJson from '../../../../../firebase.json'
-import firebaseConfig from '../../config.js'
+import firebaseConfig from '../../firebase.config.js'
 
 import addMockDataToFirestore from './handlers/addFirestoreEmulatorData.js'
 import addAuthEmulatorData from './handlers/addAuthEmulatorData.js'

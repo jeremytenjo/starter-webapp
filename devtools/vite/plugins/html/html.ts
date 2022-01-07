@@ -1,6 +1,6 @@
 import { injectHtml } from 'vite-plugin-html'
 
-import { PayloadTypes } from '../../config'
+import { PayloadTypes } from '../../vite'
 
 import gtag from './items/gtag'
 import registerServiceWorker from './items/serviceWorker'

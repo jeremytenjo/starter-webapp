@@ -1,4 +1,4 @@
-import { PayloadTypes } from '../config'
+import { PayloadTypes } from '../vite'
 
 export default async function getVitePlugins(payload: PayloadTypes) {
   return [

@@ -1,4 +1,4 @@
-import { PayloadTypes } from '../../../config'
+import { PayloadTypes } from '../../../vite'
 
 export default function gTag({ appConfig }: PayloadTypes) {
   return appConfig?.analytics?.google?.measurementId

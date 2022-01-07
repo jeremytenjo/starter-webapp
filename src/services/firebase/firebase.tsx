@@ -8,7 +8,7 @@ import { getAuth } from 'firebase/auth'
 import firebaseJson from '../../../firebase.json'
 
 import testUser from './emulator/testUser'
-import firebaseConfig from './config'
+import firebaseConfig from './firebase.config'
 
 const firebaseApp = initializeApp(firebaseConfig)
 const functions = getFunctions(firebaseApp)

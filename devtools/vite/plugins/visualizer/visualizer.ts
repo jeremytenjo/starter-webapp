@@ -2,7 +2,7 @@ import path from 'path'
 
 import { visualizer } from 'rollup-plugin-visualizer'
 
-import { PayloadTypes } from '../../config'
+import { PayloadTypes } from '../../vite'
 
 // https://github.com/anncwb/vite-plugin-compression
 export default function viteVisualizerPlugin({ isProdMode }: PayloadTypes) {

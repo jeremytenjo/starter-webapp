@@ -1,6 +1,6 @@
 import { VitePWA } from 'vite-plugin-pwa'
 
-import { PayloadTypes } from '../../config'
+import { PayloadTypes } from '../../vite'
 
 import getManifest from './manifest/manifest'
 import getWorkbox from './workbox/workbox'
