@@ -26,8 +26,6 @@ export default {
             box-sizing: border-box;
             margin: 0;
             overscroll-behavior-y: contain;
-            background-color: ${colors.black.main};
-            color: white;
           }
 
           p,

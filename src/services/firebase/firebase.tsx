@@ -20,7 +20,9 @@ const envIsDev = process.env.NODE_ENV === 'development'
 export default function Firebase({ children }) {
   return (
     <FirebaseProvider
+      firebaseConfig={firebaseConfig}
       firebaseApp={firebaseApp}
+      envIsDev={envIsDev}
       functions={functions}
       db={db}
       dbOptions={{ dbEmulatorPort: firebaseJson.emulators.firestore.port }}
@@ -30,8 +32,6 @@ export default function Firebase({ children }) {
         testUserPassword: testUser.password,
         authEmulatorPort: firebaseJson.emulators.auth.port,
       }}
-      firebaseConfig={firebaseConfig}
-      envIsDev={envIsDev}
     >
       {children}
     </FirebaseProvider>
