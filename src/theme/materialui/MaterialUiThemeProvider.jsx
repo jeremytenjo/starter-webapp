@@ -11,6 +11,7 @@ import CssBaselineOverrides from './CssBaseline/CssBaseline'
 export const materialTheme = createTheme({
   palette: colors,
   typography,
+  // https://mui.com/customization/theme-components/#global-style-overrides
   components: {
     ...CssBaselineOverrides,
   },
