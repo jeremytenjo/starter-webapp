@@ -14,6 +14,7 @@ export default function viteHtmlPlugin(payload: PayloadTypes) {
       icons: `<link rel="apple-touch-icon" href="images/logo/assets/apple/apple-touch-icon.png">`,
       gtag: gtag(payload),
       registerServiceWorker: registerServiceWorker({ isProdMode: payload.isProdMode }),
+      themeColor: `<meta name="theme-color" content="${payload.appConfig.manifestJson.theme_color}" />`,
     },
   })
 }
