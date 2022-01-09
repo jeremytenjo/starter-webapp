@@ -1,3 +1,5 @@
+const path = require('path')
+
 /**
  * Input `useDataStore` returns `dataStore`
  */
@@ -75,135 +77,163 @@ const storyTemplate = {
   files: [...story],
 }
 
+const functionTemplate = {
+  type: 'Function',
+  files: [
+    {
+      path: ({ name }) => `${name}.ts`,
+      template: ({ name }) => `export default function ${name}() {}`,
+    },
+  ],
+}
+
+const container = {
+  type: 'Container',
+  files: [
+    {
+      path: ({ name }) => `${name}.tsx`,
+      template: ({ name }) => `import React from 'react'
+      
+      import ${name}Ui from './${name}Ui/${name}.ui'
+
+      type Props = { 
+        loading: boolean 
+        empty: boolean 
+      }
+      
+      export default function ${name}() {        
+        return <${name}Ui />
+      }`,
+    },
+    {
+      path: ({ name }) => `${name}Ui/${name}.ui.tsx`,
+      template: ({ name }) => `import React from 'react'
+      import Box from '@mui/material/Box'
+
+      export default function ${name}Ui() {        
+        return (
+          <Box>
+            hello
+          </Box>
+        )
+      }`,
+    },
+  ],
+}
+
+const page = {
+  type: 'Page',
+  files: [
+    {
+      path: () => 'index.tsx',
+      template: ({ name }) => `export default function ${name}Page() {
+        return <>containers</>
+      }`,
+    },
+    {
+      path: () => 'routes.tsx',
+      template: ({ name }) => `const ${name} = lazy(() => import('./'))
+
+      export default function ${name}Routes() {
+        return (
+          <Routes>
+            <Route path='/' element={<${name} />} />
+          </Routes>
+        )
+      }`,
+    },
+  ],
+}
+
+const globalState = {
+  type: 'Global State',
+  files: [
+    {
+      path: () => 'index.ts',
+      template: ({ name }) => `import create from 'zustand'
+
+      const ${name}Store = create((set) => ({
+        ${generateUseVariable(`${name}`)}: true,
+      
+        setExample: (newValue) => set(() => ({ ${generateUseVariable(
+          `${name}`,
+        )}: newValue })),
+      }))
+
+      export default function ${name}() {
+        const ${generateUseVariable(`${name}Store`)} = ${name}Store()
+
+        const updateExample = (newValue) => {
+          ${generateUseVariable(`${name}Store`)}.setExample(newValue)
+        }
+
+        return {
+          ${generateUseVariable(`${name}`)}: ${generateUseVariable(
+        `${name}Store`,
+      )}.${generateUseVariable(`${name}`)},
+          updateExample
+        }
+      }`,
+    },
+  ],
+}
+
+const asyncHook = {
+  type: 'Async Hook',
+  files: [
+    {
+      path: () => 'index.ts',
+      template: ({ name }) => `import useAsync from '@useweb/use-async'
+      import useSnackbar from '../../../../../lib/components/Snackbar/useSnackbar'
+      import useShowError from '../../../../../lib/components/feedback/useShowError'
+      
+      export default function ${name}() {
+        const showError = useShowError()
+
+        const fetcher = async () => {
+          return true
+        }
+      
+        const ${generateUseVariable(`${name}`)} = useAsync(fetcher, {
+          onError: (error) => {
+            showError.show({ error, message: 'Error, please try again'})
+          }
+          onResult: (result) => {
+            console.log(result)
+          }
+        })
+      
+        return ${generateUseVariable(`${name}`)}
+      }`,
+    },
+  ],
+}
+
+const cloudFunction = {
+  path: ({ name }) => path.join(process.cwd(), 'functions', 'src', name, `${name}.tsx`),
+  template: ({ name, helpers }) => `
+  export default function ${helpers.changeCase.pascalCase(name)}() {
+    return 'hello'
+  }
+    `,
+}
+
+const cloudFunctionTemplate = {
+  type: 'Cloud Function',
+  files: [cloudFunction],
+  options: {
+    createNamedFolder: false,
+  },
+}
+
 module.exports = [
   componentTemplate,
   componentwithStory,
   storyTemplate,
-  {
-    type: 'Function',
-    files: [
-      {
-        path: ({ name }) => `${name}.ts`,
-        template: ({ name }) => `export default function ${name}() {}`,
-      },
-    ],
-  },
-  {
-    type: 'Container',
-    files: [
-      {
-        path: ({ name }) => `${name}.tsx`,
-        template: ({ name }) => `import React from 'react'
-        
-        import ${name}Ui from './${name}Ui/${name}.ui'
-
-        type Props = { 
-          loading: boolean 
-          empty: boolean 
-        }
-        
-        export default function ${name}() {        
-          return <${name}Ui />
-        }`,
-      },
-      {
-        path: ({ name }) => `${name}Ui/${name}.ui.tsx`,
-        template: ({ name }) => `import React from 'react'
-        import Box from '@mui/material/Box'
-
-        export default function ${name}Ui() {        
-          return (
-            <Box>
-              hello
-            </Box>
-          )
-        }`,
-      },
-    ],
-  },
-  {
-    type: 'Page',
-    files: [
-      {
-        path: () => 'index.tsx',
-        template: ({ name }) => `export default function ${name}Page() {
-          return <>containers</>
-        }`,
-      },
-      {
-        path: () => 'routes.tsx',
-        template: ({ name }) => `const ${name} = lazy(() => import('./'))
-
-        export default function ${name}Routes() {
-          return (
-            <Routes>
-              <Route path='/' element={<${name} />} />
-            </Routes>
-          )
-        }`,
-      },
-    ],
-  },
-  {
-    type: 'Global State',
-    files: [
-      {
-        path: () => 'index.ts',
-        template: ({ name }) => `import create from 'zustand'
-
-        const ${name}Store = create((set) => ({
-          ${generateUseVariable(`${name}`)}: true,
-        
-          setExample: (newValue) => set(() => ({ ${generateUseVariable(
-            `${name}`,
-          )}: newValue })),
-        }))
-
-        export default function ${name}() {
-          const ${generateUseVariable(`${name}Store`)} = ${name}Store()
-
-          const updateExample = (newValue) => {
-            ${generateUseVariable(`${name}Store`)}.setExample(newValue)
-          }
-
-          return {
-            ${generateUseVariable(`${name}`)}: ${generateUseVariable(
-          `${name}Store`,
-        )}.${generateUseVariable(`${name}`)},
-            updateExample
-          }
-        }`,
-      },
-    ],
-  },
-  {
-    type: 'Async Hook',
-    files: [
-      {
-        path: () => 'index.ts',
-        template: ({ name }) => `import useAsync from '@useweb/use-async'
-        import useSnackbar from '../../../../../lib/components/Snackbar/useSnackbar'
-        import useShowError from '../../../../../lib/components/feedback/useShowError'
-        
-        export default function ${name}() {
-          const showError = useShowError()
-
-          const fetcher = async () => {
-            return true
-          }
-        
-          const ${generateUseVariable(`${name}`)} = useAsync(fetcher, {
-            onError: (error) => {
-              showError.show({ error, message: 'Error, please try again'})
-            }
-            onResult: (result) => {
-              console.log(result)
-            }
-          })
-        
-          return ${generateUseVariable(`${name}`)}
-        }`,
-      },
-    ],
-  },
+  functionTemplate,
+  container,
+  page,
+  globalState,
+  asyncHook,
+  cloudFunctionTemplate,
 ]
