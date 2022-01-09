@@ -4,8 +4,7 @@ import appConfig from '../../app.config'
 
 import _helloWorld from './helloWorld/helloWorld'
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
+// https://firebase.google.com/docs/functions/get-started
 
 export const helloWorld = functions.https.onRequest(async (req, res) => {
   res.set('Access-Control-Allow-Origin', appConfig.domain.main)
