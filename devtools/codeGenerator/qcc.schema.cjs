@@ -217,10 +217,42 @@ const cloudFunction = {
   }
     `,
 }
+const cloudFunctionStory = {
+  path: ({ name }) =>
+    path.join(process.cwd(), 'functions', 'src', name, 'stories', `sb.stories.tsx`),
+  template: ({ name }) => `//https://storybook.js.org/docs/react/writing-docs/docs-page
+  import React from 'react'
+  
+  import FirebaseFunctionDashboard from '../../../../src/lib/components/firebase/FirebaseFunctionDashboard/FirebaseFunctionDashboard'
+  
+  import Docs from './docs.mdx'
+  
+  export default {
+    title: 'functions/${name}',
+    args: {},
+    // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
+    parameters: {
+      docs: {
+        page: Docs,
+      },
+    },
+  }
+  
+  const Template = () => {
+    return <FirebaseFunctionDashboard functionName='${name}' payload={payload} />
+  }
+  
+  export const Example = Template.bind({})`,
+}
+const cloudFunctionStoryDocs = {
+  path: ({ name }) =>
+    path.join(process.cwd(), 'functions', 'src', name, 'stories', `docs.mdx`),
+  template: ({ name }) => `# ${name}`,
+}
 
 const cloudFunctionTemplate = {
   type: 'Cloud Function',
-  files: [cloudFunction],
+  files: [cloudFunction, cloudFunctionStory, cloudFunctionStoryDocs],
   options: {
     createNamedFolder: false,
   },
