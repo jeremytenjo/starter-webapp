@@ -238,8 +238,8 @@ const cloudFunctionStory = {
     },
   }
   
-  const Template = () => {
-    return <FirebaseFunctionDashboard functionName='${name}' payload={payload} />
+  const Template = (args) => {
+    return <FirebaseFunctionDashboard functionName='${name}' payload={args} />
   }
   
   export const Example = Template.bind({})`,
