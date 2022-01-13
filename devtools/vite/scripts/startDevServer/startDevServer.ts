@@ -1,5 +1,8 @@
 import shell from '../../../utils/node/shell.cjs'
+import appConfig from '../../../../app.config.js'
 
 export default async function startDevServer() {
-  shell(`vite --config ./devtools/vite/vite.ts --host --port 3001`)
+  shell(
+    `vite --config ./devtools/vite/vite.ts --host --port ${appConfig.server.local.port}`,
+  )
 }
