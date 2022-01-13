@@ -16,7 +16,8 @@ module.exports = async function buildFunctions() {
   await removeBuildFolder({ rootPath })
   const external = getExternals({ packageJson })
 
-  esbuild.build({
+  // https://esbuild.github.io/api/#simple-options
+  await esbuild.build({
     entryPoints: [entryPoint],
     outfile,
     bundle: true,
