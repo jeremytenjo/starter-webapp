@@ -17,7 +17,7 @@
     "functions:deploy": "node ./functions/scripts/deployFunctions/run.js",
     "helpers:generate-logo-assets": "node --experimental-json-modules --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
     "helpers:update-useweb-deps": "npm-check-updates -f /@useweb/*/ -u && npm i",
-    "testing:run": "node --experimental-json-modules --loader ts-node/esm ./scripts/tests/run.ts",
+    "testing:testEverything": "node --experimental-json-modules --loader ts-node/esm ./scripts/tests/testEverything/run.ts",
     "testing:cypress:run": "node --experimental-json-modules --loader ts-node/esm ./devtools/testing/cypress/scripts/runCypress/run.ts",
     "testing:cypress:open": "node --experimental-json-modules --loader ts-node/esm ./devtools/testing/cypress/scripts/openCypress/run.ts",
     "testing:lint": "eslint ./ --fix",

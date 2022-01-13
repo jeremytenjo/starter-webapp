@@ -8,10 +8,12 @@ const concurrently = require('concurrently')
 // run concurrently
  * shell(['npm run start:app', 'npm run start:storybook'])
  */
-module.exports = function shell(commands) {
+module.exports = async function shell(commands) {
   const _commands = typeof commands === 'string' ? [commands] : commands
 
-  concurrently(_commands, {
+  const { result } = concurrently(_commands, {
     prefix: 'none',
   })
+
+  await result
 }

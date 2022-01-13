@@ -4,13 +4,15 @@ import * as React from 'react'
 // https://github.com/vadimdemedes/ink
 import { render, Text, Box, useInput } from 'ink'
 import qrcode from 'qrcode-terminal'
+import tcpPortUsed from 'tcp-port-used'
 
 import getIpAdress from '../node/getIpAdress.js'
 
-console.clear()
+// console.clear()
 
 export type Props = {
   commands: CommandProps[]
+  onCommandsRunning?: () => null
 }
 
 export type CommandProps = {
@@ -23,7 +25,39 @@ export type CommandProps = {
   onStart?: () => any
 }
 
-export default function shellDashboard({ commands }: Props) {
+export default async function shellDashboard({ commands, onCommandsRunning }: Props) {
+  // check if running
+  let commandsAreRunning = false
+  await Promise.all(
+    commands.map(async (command) => {
+      const commandIsRunning = await tcpPortUsed.check(command.port)
+      if (commandIsRunning) {
+        console.clear()
+        console.log('Dev commands running in another tab')
+        onCommandsRunning && onCommandsRunning()
+        commandsAreRunning = true
+      }
+    }),
+  )
+
+  if (commandsAreRunning) return
+
+  // handle onCommandsRunning callback
+  const commandsRunning = []
+  if (onCommandsRunning) {
+    Promise.all(
+      commands.map(async (command) => {
+        await tcpPortUsed.waitUntilUsed(command.port, 200, 200000)
+        commandsRunning.push(command.label)
+
+        if (commandsRunning.length === commands.length) {
+          onCommandsRunning()
+        }
+      }),
+    )
+  }
+
+  // output commands
   const SubprocessOutput = () => {
     return (
       <Box flexDirection='row'>

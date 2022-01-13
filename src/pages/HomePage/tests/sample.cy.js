@@ -1,3 +1,4 @@
+// https://docs.cypress.io/api/table-of-contents
 // https://docs.cypress.io/guides/core-concepts/retry-ability
 describe('My First Test', () => {
   it('Visits Homepage', () => {
