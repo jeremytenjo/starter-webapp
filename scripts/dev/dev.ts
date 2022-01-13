@@ -5,7 +5,11 @@ import appConfig from '../../app.config.js'
 import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
 import firebaseJson from '../../firebase.json'
 
-export default async function dev() {
+type Props = {
+  onReady?: () => any
+}
+
+export default async function dev({ onReady }: Props = { onReady: undefined }) {
   const commands: CommandProps[] = [
     {
       label: 'Vite',
@@ -41,5 +45,5 @@ export default async function dev() {
     })
   }
 
-  shellDashboard({ commands })
+  shellDashboard({ commands, onCommandsRunning: onReady })
 }

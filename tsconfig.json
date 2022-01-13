@@ -18,7 +18,8 @@
     "baseUrl": "./",
     "paths": {
       "*": ["devtools/ts/declaredModules/*"]
-    }
+    },
+    "types": ["cypress"]
   },
   "include": ["./src", "./functions/scripts", "devtools/ts/declaredModules/*"]
 }

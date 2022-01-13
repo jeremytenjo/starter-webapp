@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run prettify && npm run testing:lint
+npm run prettify && npm run testing:lint && npm run testing:check-types
