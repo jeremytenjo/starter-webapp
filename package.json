@@ -17,11 +17,11 @@
     "functions:deploy": "node ./functions/scripts/deployFunctions/run.js",
     "helpers:generate-logo-assets": "node --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
     "helpers:update-useweb-deps": "npm-check-updates -f /@useweb/*/ -u && npm i",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "tests:run": "./scripts/tests/run",
+    "testing:run": "./scripts/tests/run",
+    "testing:cypress:run": "cypress run",
+    "testing:cypress:open": "cypress open",
+    "testing:lint": "eslint ./ --fix && tsc --noemit",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
-    "lint": "eslint ./ --fix && tsc --noemit",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -53,7 +53,6 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
-    "npm-check-updates": "^12.1.0",
     "@check-light-or-dark/color": "^1.0.3",
     "@grpc/grpc-js": "^1.5.0",
     "@storybook/addon-controls": "^6.4.9",
@@ -67,7 +66,7 @@
     "command-line-args": "^5.2.0",
     "concurrently": "^7.0.0",
     "css-loader": "^6.5.1",
-    "cypress": "^9.2.0",
+    "cypress": "^9.2.1",
     "dotenv": "^10.0.0",
     "dotenv-parse-variables": "^2.0.0",
     "eslint": "^8.6.0",
@@ -86,6 +85,7 @@
     "live-server": "^1.2.1",
     "lodash": "^4.17.21",
     "node-emoji": "^1.11.0",
+    "npm-check-updates": "^12.1.0",
     "prettier": "^2.5.1",
     "qrcode-terminal": "^0.12.0",
     "react-json-view": "^1.21.3",
