@@ -8,7 +8,7 @@ import tcpPortUsed from 'tcp-port-used'
 
 import getIpAdress from '../node/getIpAdress.js'
 
-// console.clear()
+console.clear()
 
 export type Props = {
   commands: CommandProps[]
