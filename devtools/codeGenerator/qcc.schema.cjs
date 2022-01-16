@@ -125,14 +125,18 @@ const page = {
   type: 'Page',
   files: [
     {
-      path: () => 'index.tsx',
-      template: ({ name }) => `export default function ${name}Page() {
+      path: ({ name }) => `${name}.tsx`,
+      template: ({ name }) => `import React from 'react' 
+      export default function ${name}Page() {
         return <>containers</>
       }`,
     },
     {
       path: () => 'routes.tsx',
-      template: ({ name }) => `const ${name} = lazy(() => import('./'))
+      template: ({ name }) => `import React, { lazy } from 'react'
+      import { Routes, Route } from 'react-router-dom'
+      
+      const ${name} = lazy(() => import('./'))
 
       export default function ${name}Routes() {
         return (
