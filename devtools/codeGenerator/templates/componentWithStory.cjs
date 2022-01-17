@@ -1,5 +1,5 @@
-const component = require('./component')
-const story = require('./story')
+const component = require('./component.cjs')
+const story = require('./story.cjs')
 
 const template = {
   type: 'Component with story',

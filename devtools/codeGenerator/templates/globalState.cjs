@@ -1,4 +1,4 @@
-const generateUseVariable = require('../utils/generateUseVariable')
+const generateUseVariable = require('../utils/generateUseVariable.cjs')
 
 const files = [
   {
