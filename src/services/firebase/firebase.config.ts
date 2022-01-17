@@ -1,13 +1,9 @@
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_CONFIG_apiKey,
-  authDomain: import.meta.env.VITE_FIREBASE_CONFIG_authDomain,
-  projectId: import.meta.env.VITE_FIREBASE_CONFIG_projectId,
-  storageBucket: import.meta.env.VITE_FIREBASE_CONFIG_storageBucket,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_CONFIG_messagingSenderId,
-  appId: import.meta.env.VITE_FIREBASE_CONFIG_appId,
-  measurementId: import.meta.env.VITE_FIREBASE_CONFIG_measurementId,
+export default {
+  apiKey: 'AIzaSyA-avceh0MDbRTqIBEfluvcdDWedGpmXog',
+  authDomain: 'starter-webapp-jt.firebaseapp.com',
+  projectId: 'starter-webapp-jt',
+  storageBucket: 'starter-webapp-jt.appspot.com',
+  messagingSenderId: '289244348405',
+  appId: '1:289244348405:web:a5a9ebf8a9fb87346faabc',
+  measurementId: 'G-WVR476ERZE',
 }
-
-console.log(firebaseConfig)
-
-export default firebaseConfig
