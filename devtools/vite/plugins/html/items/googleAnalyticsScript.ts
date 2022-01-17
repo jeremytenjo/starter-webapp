@@ -1,6 +1,6 @@
 import { PayloadTypes } from '../../../vite'
 
-export default function gTag({ appConfig }: PayloadTypes) {
+export default function googleAnalyticsScript({ appConfig }: PayloadTypes) {
   return appConfig?.analytics?.google?.measurementId
     ? `
      <!-- Global site tag (gtag.js) - Google Analytics -->
