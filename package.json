@@ -30,6 +30,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.7",
     "@storybook/addon-essentials": "^6.4.9",
+    "@useweb/gtag": "^1.0.0",
     "@useweb/use-async": "^1.1.0",
     "@useweb/use-data": "^5.2.0",
     "@useweb/use-event-listener": "^0.2.0",
