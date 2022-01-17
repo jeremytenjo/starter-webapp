@@ -1,5 +1,5 @@
 import React from 'react'
-import { create } from '@storybook/theming/create'
+import { create } from '@storybook/theming'
 
 import Firebase from '../../src/services/firebase/firebase'
 
