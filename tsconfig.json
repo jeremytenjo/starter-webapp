@@ -19,7 +19,7 @@
     "paths": {
       "*": ["devtools/ts/declaredModules/*"]
     },
-    "types": ["cypress"]
+    "types": ["cypress", "vite/client"]
   },
   "include": ["./src", "./functions/scripts", "devtools/ts/declaredModules/*"]
 }
