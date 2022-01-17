@@ -27,20 +27,19 @@ export type CommandProps = {
 
 export default async function shellDashboard({ commands, onCommandsRunning }: Props) {
   // check if running
-  let commandsAreRunning = false
-  await Promise.all(
+  const commandsAreRunning = await Promise.all(
     commands.map(async (command) => {
       const commandIsRunning = await tcpPortUsed.check(command.port)
-      if (commandIsRunning) {
-        console.clear()
-        console.log('Dev commands running in another tab')
-        onCommandsRunning && onCommandsRunning()
-        commandsAreRunning = true
-      }
+      return commandIsRunning
     }),
   )
 
-  if (commandsAreRunning) return
+  // if all commands are running return onCommandsRunning
+  if (!commandsAreRunning.includes(false)) {
+    console.log('All commands are running in another tab')
+    onCommandsRunning && onCommandsRunning()
+    return
+  }
 
   // handle onCommandsRunning callback
   const commandsRunning = []
@@ -78,6 +77,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
     onStart = () => null,
   }: CommandProps) => {
     const shellRef = React.useRef(null)
+    const [runningInAnotherTab, setRunningInAnotherTab] = React.useState(false)
     const [output, setOutput] = React.useState('')
     const [qrcodeString, setQrcodeString] = React.useState('')
     const restardInput = (index + 1).toString()
@@ -90,8 +90,10 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
     })
 
     const restartCommand = () => {
-      shellRef.current.kill()
-      startCommand()
+      if (shellRef.current) {
+        shellRef.current.kill()
+        startCommand()
+      }
     }
 
     const startCommand = () => {
@@ -116,13 +118,34 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       onStart()
     }
 
+    const initialize = async () => {
+      const commandIsRunning = await tcpPortUsed.check(port)
+      if (commandIsRunning) setRunningInAnotherTab(true)
+      else startCommand()
+    }
+
     React.useEffect(() => {
-      startCommand()
+      initialize()
     }, [setOutput])
+
+    const CommandRunning = () => {
+      return <Text>Command running in another tab</Text>
+    }
+
+    const CommandOutput = () => {
+      return (
+        <>
+          <Box marginTop={1}>
+            <Text>{output}</Text>
+          </Box>
+        </>
+      )
+    }
 
     return (
       <Box flexBasis={'100%'} flexDirection='column'>
         <Text color={color}>{label}: </Text>
+
         {port && (
           <>
             <Box flexDirection='row'>
@@ -130,14 +153,14 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
               <Text> - </Text>
               <Text dimColor>{networkUrl}</Text>
             </Box>
+            {!runningInAnotherTab && (
+              <Text dimColor>Press {restardInput} to restart</Text>
+            )}
             {!disableQRCode && <Text>{qrcodeString}</Text>}
           </>
         )}
-        <Text dimColor>Press {restardInput} to restart</Text>
 
-        <Box marginTop={1}>
-          <Text>{output}</Text>
-        </Box>
+        {runningInAnotherTab ? <CommandRunning /> : <CommandOutput />}
       </Box>
     )
   }
