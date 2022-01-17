@@ -3,8 +3,8 @@ import runCypress from '../../../devtools/testing/cypress/scripts/runCypress/run
 
 export default async function testEverything() {
   try {
-    await shell('npm run testing:lint')
-    await shell('npm run testing:check-types')
+    await shell('npm run test:eslint')
+    await shell('npm run test:ts-types')
     await runCypress()
   } catch (error) {
     throw new Error(error)
