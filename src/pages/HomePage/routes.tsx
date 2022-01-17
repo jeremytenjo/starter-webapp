@@ -1,12 +1,5 @@
-import React, { lazy } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from 'react'
 
-const Home = lazy(() => import('./HomePage'))
-
-export default function HomePageRoutes() {
-  return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-    </Routes>
-  )
-}
+export default [
+  { path: '/', element: () => import('./HomePage').then((res) => <res.default />) },
+]

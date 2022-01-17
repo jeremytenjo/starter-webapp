@@ -1,12 +1,5 @@
-import React, { lazy } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from 'react'
 
-const NotFoundPage = lazy(() => import('./NotFoundPage'))
-
-export default function NotFoundPageRoutes() {
-  return (
-    <Routes>
-      <Route path='*' element={<NotFoundPage />} />
-    </Routes>
-  )
-}
+export default [
+  { path: '*', element: () => import('./NotFoundPage').then((res) => <res.default />) },
+]
