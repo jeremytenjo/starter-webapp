@@ -18,7 +18,7 @@ export default {
   },
 }
 
-const Template = (args) => {
+const Template = () => {
   const onSubmit = (values) => {
     console.log(values)
   }
