@@ -26,10 +26,18 @@ export type CommandProps = {
   onStart?: () => any
 }
 
+let commandsRunningTriggered = false
+
 export default async function shellDashboard({ commands, onCommandsRunning }: Props) {
   const ports = commands.map((command) => command.port)
 
   try {
+    const triggerCommandsRunning = () => {
+      if (!commandsRunningTriggered && onCommandsRunning) {
+        onCommandsRunning()
+        commandsRunningTriggered = true
+      }
+    }
     // check if running
     const commandsAreRunning = await Promise.all(
       commands.map(async (command) => {
@@ -41,7 +49,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
     // if all commands are running return onCommandsRunning
     if (!commandsAreRunning.includes(false)) {
       console.log('All commands are running in another tab')
-      onCommandsRunning && onCommandsRunning()
+      triggerCommandsRunning()
       return
     }
 
@@ -54,7 +62,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
           commandsRunning.push(command.label)
 
           if (commandsRunning.length === commands.length) {
-            onCommandsRunning()
+            triggerCommandsRunning()
           }
         }),
       )
