@@ -13,7 +13,8 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  reactOptions: {
-    fastRefresh: true,
+  core: {
+    // https://github.com/eirslett/storybook-builder-vite
+    builder: 'storybook-builder-vite',
   },
 }
