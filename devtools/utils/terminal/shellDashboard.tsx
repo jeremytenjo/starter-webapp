@@ -30,10 +30,10 @@ export type CommandProps = {
 let commandsRunningTriggered = false
 
 export default async function shellDashboard({ commands, onCommandsRunning }: Props) {
-  const ports = commands.map((command) => command.ports).flat(1)
+  const allPortsInCommands = commands.map((command) => command.ports).flat(1)
 
   try {
-    await killPortProcess(ports)
+    await killPortProcess(allPortsInCommands)
 
     const triggerCommandsRunning = () => {
       if (!commandsRunningTriggered && onCommandsRunning) {
@@ -42,7 +42,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       }
     }
 
-    onPortsRunning({ ports, onRunning: triggerCommandsRunning })
+    onPortsRunning({ ports: allPortsInCommands, onRunning: triggerCommandsRunning })
 
     // output commands
     const SubprocessOutput = () => {
@@ -137,7 +137,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
 
     render(<SubprocessOutput />)
   } catch (error) {
-    await killPortProcess(ports)
+    await killPortProcess(allPortsInCommands)
     throw new Error(error)
   }
 }
