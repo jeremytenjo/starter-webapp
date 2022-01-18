@@ -1,4 +1,4 @@
-import mockDatabase from '../../../../../data/_testing/mockDatabase/mockDatabase.js'
+import mockDatabase from '../../../../../data/_emulator/mockDatabase/mockDatabase.js'
 
 /**
  * [Docs](https://firebase.google.com/docs/emulator-suite/connect_firestore)
