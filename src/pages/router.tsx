@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactLocation, Router as ReactLocationRouter } from 'react-location'
 
-import ShellLayout from './shell.layout'
+import RootLayout from './root.layout'
 import HomeRoutes from './HomePage/routes'
 import NotFoundPageRoutes from './NotFoundPage/routes'
 
@@ -11,8 +11,8 @@ const routes = [...HomeRoutes, ...NotFoundPageRoutes]
 
 export default function Router() {
   return (
-    <ShellLayout>
+    <RootLayout>
       <ReactLocationRouter location={location} routes={routes} />
-    </ShellLayout>
+    </RootLayout>
   )
 }
