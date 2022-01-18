@@ -14,13 +14,13 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
     {
       label: 'Vite',
       command: 'npm run app:dev',
-      port: appConfig.server.local.port,
+      ports: [appConfig.server.local.port],
       color: '#01BF81',
     },
     {
       label: `Storybook`,
       command: `npm run storybook:dev`,
-      port: 6007,
+      ports: [6007],
       color: '#FF4785',
     },
   ]
@@ -32,7 +32,12 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
     commands.push({
       label: `Firebase Emulators`,
       command,
-      port: 4000,
+      ports: [
+        4000,
+        firebaseJson.emulators.firestore.port,
+        firebaseJson.emulators.auth.port,
+        firebaseJson.emulators.functions.port,
+      ],
       color: '#FFCB2E',
       disableQRCode: true,
       onStart: async () => {
