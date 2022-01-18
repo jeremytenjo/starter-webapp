@@ -23,7 +23,7 @@ export type CommandProps = {
   ports: number[]
   color?: string
   index?: number
-  disableQRCode?: boolean
+  enableQRCode?: boolean
   onCommandRunning?: () => any
 }
 
@@ -61,7 +61,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       ports,
       color,
       index,
-      disableQRCode,
+      enableQRCode,
       onCommandRunning = () => null,
     }: CommandProps) => {
       const [port] = ports
@@ -89,7 +89,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
         commandArgs.shift()
         const shell = spawn('npm', commandArgs)
         // https://www.npmjs.com/package/qrcode-terminal
-        !disableQRCode &&
+        enableQRCode &&
           qrcode.generate(networkUrl, { small: true }, (qr) => setQrcodeString(qr))
 
         // https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
@@ -126,7 +126,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
 
           <Text dimColor>Press {restardInput} to restart</Text>
 
-          {!disableQRCode && <Text>{qrcodeString}</Text>}
+          {enableQRCode && <Text>{qrcodeString}</Text>}
 
           <Box marginTop={1}>
             <Text>{output}</Text>

@@ -16,12 +16,14 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       command: 'npm run app:dev',
       ports: [appConfig.server.local.port],
       color: '#01BF81',
+      enableQRCode: true,
     },
     {
       label: `Storybook`,
       command: `npm run storybook:dev`,
       ports: [6007],
       color: '#FF4785',
+      enableQRCode: true,
     },
   ]
 
@@ -39,7 +41,6 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
         firebaseJson.emulators.functions.port,
       ],
       color: '#FFCB2E',
-      disableQRCode: true,
       onCommandRunning: async () => {
         const addEmulatorData = await import(
           '../../src/services/firebase/emulator/addEmulatorData/addEmulatorData.js'
