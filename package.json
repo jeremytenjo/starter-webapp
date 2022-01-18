@@ -23,7 +23,7 @@
     "test:eslint": "eslint ./ --fix",
     "test:ts-types": "tsc --noemit",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
-    "prepare": "husky install"
+    "prepare": "npx @arkweid/lefthook install"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -46,6 +46,7 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.7",
     "@check-light-or-dark/color": "^1.0.3",
     "@grpc/grpc-js": "^1.5.0",
     "@storybook/addon-controls": "^6.4.9",
@@ -74,7 +75,6 @@
     "filehound": "^1.17.5",
     "firebase-admin": "^10.0.1",
     "format-duration": "^1.4.0",
-    "husky": "^7.0.4",
     "ink": "^3.2.0",
     "internal-ip": "^7.0.0",
     "kill-port-process": "^3.0.1",

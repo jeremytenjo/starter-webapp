@@ -19,7 +19,7 @@ export type Props = {
 export type CommandProps = {
   label: string
   command: string
-  port: number
+  ports: number[]
   color?: string
   index?: number
   disableQRCode?: boolean
@@ -29,28 +29,16 @@ export type CommandProps = {
 let commandsRunningTriggered = false
 
 export default async function shellDashboard({ commands, onCommandsRunning }: Props) {
-  const ports = commands.map((command) => command.port)
+  const ports = commands.map((command) => command.ports).flat(1)
 
   try {
+    await killPortProcess(ports)
+
     const triggerCommandsRunning = () => {
       if (!commandsRunningTriggered && onCommandsRunning) {
         onCommandsRunning()
         commandsRunningTriggered = true
       }
-    }
-    // check if running
-    const commandsAreRunning = await Promise.all(
-      commands.map(async (command) => {
-        const commandIsRunning = await tcpPortUsed.check(command.port)
-        return commandIsRunning
-      }),
-    )
-
-    // if all commands are running return onCommandsRunning
-    if (!commandsAreRunning.includes(false)) {
-      console.log('All commands are running in another tab')
-      triggerCommandsRunning()
-      return
     }
 
     // handle onCommandsRunning callback
@@ -58,12 +46,16 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
     if (onCommandsRunning) {
       Promise.all(
         commands.map(async (command) => {
-          await tcpPortUsed.waitUntilUsed(command.port, 200, 200000)
-          commandsRunning.push(command.label)
+          await Promise.all(
+            command.ports.map(async (port) => {
+              await tcpPortUsed.waitUntilUsed(port, 200, 200000)
+              commandsRunning.push(command.label)
 
-          if (commandsRunning.length === commands.length) {
-            triggerCommandsRunning()
-          }
+              if (commandsRunning.length === commands.length) {
+                triggerCommandsRunning()
+              }
+            }),
+          )
         }),
       )
     }
@@ -82,14 +74,14 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
     const Command = ({
       label,
       command,
-      port,
+      ports,
       color,
       index,
       disableQRCode,
       onStart = () => null,
     }: CommandProps) => {
+      const [port] = ports
       const shellRef = React.useRef(null)
-      const [runningInAnotherTab, setRunningInAnotherTab] = React.useState(false)
       const [output, setOutput] = React.useState('')
       const [qrcodeString, setQrcodeString] = React.useState('')
       const restardInput = (index + 1).toString()
@@ -131,48 +123,30 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       }
 
       const initialize = async () => {
-        const commandIsRunning = await tcpPortUsed.check(port)
-        if (commandIsRunning) setRunningInAnotherTab(true)
-        else startCommand()
+        startCommand()
       }
 
       React.useEffect(() => {
         initialize()
       }, [setOutput])
 
-      const CommandRunning = () => {
-        return <Text>Command running in another tab</Text>
-      }
-
-      const CommandOutput = () => {
-        return (
-          <>
-            <Box marginTop={1}>
-              <Text>{output}</Text>
-            </Box>
-          </>
-        )
-      }
-
       return (
         <Box flexBasis={'100%'} flexDirection='column'>
           <Text color={color}>{label}: </Text>
 
-          {port && (
-            <>
-              <Box flexDirection='row'>
-                <Text dimColor>http://localhost:{port}</Text>
-                <Text> - </Text>
-                <Text dimColor>{networkUrl}</Text>
-              </Box>
-              {!runningInAnotherTab && (
-                <Text dimColor>Press {restardInput} to restart</Text>
-              )}
-              {!disableQRCode && <Text>{qrcodeString}</Text>}
-            </>
-          )}
+          <Box flexDirection='row'>
+            <Text dimColor>http://localhost:{port}</Text>
+            <Text> - </Text>
+            <Text dimColor>{networkUrl}</Text>
+          </Box>
 
-          {runningInAnotherTab ? <CommandRunning /> : <CommandOutput />}
+          <Text dimColor>Press {restardInput} to restart</Text>
+
+          {!disableQRCode && <Text>{qrcodeString}</Text>}
+
+          <Box marginTop={1}>
+            <Text>{output}</Text>
+          </Box>
         </Box>
       )
     }

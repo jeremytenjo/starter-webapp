@@ -1,6 +1,7 @@
-import appConfig from '../../../app.config.js'
+import getAppConfig from '../../../app.config.js'
 
-export default function getCypressConfig() {
+export default async function getCypressConfig() {
+  const appConfig = await getAppConfig()
   const cypressFolderPath = 'devtools/testing/cypress'
   // https://docs.cypress.io/guides/references/configuration#Options
   const cypressConfig: Cypress.ConfigOptions = {
