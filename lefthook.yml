@@ -1,4 +1,4 @@
-# https://github.com/evilmartians/lefthook/blob/master/docs/node.md
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
 
 pre-commit:
   commands:
@@ -6,6 +6,6 @@ pre-commit:
       run: npm run prettify && npm run test:eslint && npm run test:ts-types
 
 pre-push:
-  scripts:
-    "good.js":
-      runner: node
+  commands:
+    e2e:
+      run: npm run test:cypress:run
