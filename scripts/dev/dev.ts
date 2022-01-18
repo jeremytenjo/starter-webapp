@@ -1,5 +1,3 @@
-import tcpPortUsed from 'tcp-port-used'
-
 import shellDashboard from '../../devtools/utils/terminal/shellDashboard.js'
 import getAppConfig from '../../app.config.js'
 import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
@@ -42,8 +40,7 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       ],
       color: '#FFCB2E',
       disableQRCode: true,
-      onStart: async () => {
-        await tcpPortUsed.waitUntilUsed(firebaseJson.emulators.auth.port, 200, 200000)
+      onCommandRunning: async () => {
         const addEmulatorData = await import(
           '../../src/services/firebase/emulator/addEmulatorData/addEmulatorData.js'
         )

@@ -4,10 +4,11 @@ import * as React from 'react'
 // https://github.com/vadimdemedes/ink
 import { render, Text, Box, useInput } from 'ink'
 import qrcode from 'qrcode-terminal'
-import tcpPortUsed from 'tcp-port-used'
 import { killPortProcess } from 'kill-port-process'
 
 import getIpAdress from '../node/getIpAdress.js'
+
+import onPortsRunning from './onPortsRunning.js'
 
 console.clear()
 
@@ -23,7 +24,7 @@ export type CommandProps = {
   color?: string
   index?: number
   disableQRCode?: boolean
-  onStart?: () => any
+  onCommandRunning?: () => any
 }
 
 let commandsRunningTriggered = false
@@ -41,24 +42,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       }
     }
 
-    // handle onCommandsRunning callback
-    const commandsRunning = []
-    if (onCommandsRunning) {
-      Promise.all(
-        commands.map(async (command) => {
-          await Promise.all(
-            command.ports.map(async (port) => {
-              await tcpPortUsed.waitUntilUsed(port, 200, 200000)
-              commandsRunning.push(command.label)
-
-              if (commandsRunning.length === commands.length) {
-                triggerCommandsRunning()
-              }
-            }),
-          )
-        }),
-      )
-    }
+    onPortsRunning({ ports, onRunning: triggerCommandsRunning })
 
     // output commands
     const SubprocessOutput = () => {
@@ -78,7 +62,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       color,
       index,
       disableQRCode,
-      onStart = () => null,
+      onCommandRunning = () => null,
     }: CommandProps) => {
       const [port] = ports
       const shellRef = React.useRef(null)
@@ -119,11 +103,11 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
         })
 
         shellRef.current = shell
-        onStart()
       }
 
       const initialize = async () => {
         startCommand()
+        onPortsRunning({ ports, onRunning: onCommandRunning })
       }
 
       React.useEffect(() => {
