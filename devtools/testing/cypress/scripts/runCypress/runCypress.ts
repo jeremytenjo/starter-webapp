@@ -13,7 +13,7 @@ export default async function runCypress() {
         console.log('Running tests...')
         // https://docs.cypress.io/guides/guides/module-api#cypress-run
         const result = await cypress.run({
-          config: getCypressConfig(),
+          config: await getCypressConfig(),
         })
 
         if (result.status === 'failed') throw new Error(result.message)

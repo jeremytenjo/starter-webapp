@@ -6,6 +6,6 @@ pre-commit:
       run: npm run prettify && npm run test:eslint && npm run test:ts-types
 
 pre-push:
-  commands:
-    e2e:
-      run: npm run test:cypress:run
+  scripts:
+    "good.js":
+      runner: node
