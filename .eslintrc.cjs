@@ -8,11 +8,7 @@ module.exports = {
   },
   ignorePatterns: ['node_modules', 'build', '.env', 'ios', 'android', 'dist'],
   plugins: ['react', 'react-hooks', 'import', 'cypress'],
-  extends: [
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:storybook/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
