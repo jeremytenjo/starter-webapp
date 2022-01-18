@@ -1,7 +1,7 @@
 import tcpPortUsed from 'tcp-port-used'
 
 import shellDashboard from '../../devtools/utils/terminal/shellDashboard.js'
-import appConfig from '../../app.config.js'
+import getAppConfig from '../../app.config.js'
 import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
 import firebaseJson from '../../firebase.json'
 
@@ -10,6 +10,8 @@ type Props = {
 }
 
 export default async function dev({ onReady }: Props = { onReady: undefined }) {
+  const appConfig = await getAppConfig()
+
   const commands: CommandProps[] = [
     {
       label: 'Vite',

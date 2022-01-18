@@ -1,12 +1,13 @@
 import * as functions from 'firebase-functions'
 
-import appConfig from '../../app.config'
+import getAppConfig from '../../app.config'
 
 import _helloWorld from './helloWorld/helloWorld'
 
 // https://firebase.google.com/docs/functions/get-started
 
 export const helloWorld = functions.https.onRequest(async (req, res) => {
+  const appConfig = await getAppConfig()
   res.set('Access-Control-Allow-Origin', appConfig.domain.main)
 
   try {
