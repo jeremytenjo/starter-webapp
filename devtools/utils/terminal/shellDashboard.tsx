@@ -67,9 +67,11 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       const [port] = ports
       const shellRef = React.useRef(null)
       const [output, setOutput] = React.useState('')
+      const [error, setError] = React.useState(null)
       const [qrcodeString, setQrcodeString] = React.useState('')
       const restardInput = (index + 1).toString()
       const networkUrl = `http://${getIpAdress()}:${port}`
+      const outputRef = React.useRef('')
 
       useInput((input) => {
         if (input === restardInput) {
@@ -94,12 +96,20 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
 
         // https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
         shell.stdout.on('data', (data) => {
-          const lines = data.toString('utf8')
-          setOutput(lines)
+          const lines = outputRef.current + data.toString('utf8')
+          const errorLogged = lines.includes('exited with code 1')
+          outputRef.current = lines
+
+          if (errorLogged) {
+            shellRef.current.kill()
+            setError(lines)
+          } else {
+            setOutput(lines)
+          }
         })
 
-        shell.on('error', (error) => {
-          setOutput(error.toString())
+        shell.stdout.on('error', (error) => {
+          setError(error.toString())
         })
 
         shellRef.current = shell
@@ -118,19 +128,30 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
         <Box flexBasis={'100%'} flexDirection='column'>
           <Text color={color}>{label}: </Text>
 
-          <Box flexDirection='row'>
-            <Text dimColor>http://localhost:{port}</Text>
-            <Text> - </Text>
-            <Text dimColor>{networkUrl}</Text>
-          </Box>
+          {error ? (
+            <Box marginTop={1} flexDirection='column'>
+              <Box marginBottom={1}>
+                <Text color={'red'}>Error running `{command}`</Text>
+              </Box>
+              <Text>{error}</Text>
+            </Box>
+          ) : (
+            <>
+              <Box flexDirection='row'>
+                <Text dimColor>http://localhost:{port}</Text>
+                <Text> - </Text>
+                <Text dimColor>{networkUrl}</Text>
+              </Box>
 
-          <Text dimColor>Press {restardInput} to restart</Text>
+              <Text dimColor>Press {restardInput} to restart</Text>
 
-          {enableQRCode && <Text>{qrcodeString}</Text>}
+              {enableQRCode && <Text>{qrcodeString}</Text>}
 
-          <Box marginTop={1}>
-            <Text>{output}</Text>
-          </Box>
+              <Box marginTop={1}>
+                <Text>{output}</Text>
+              </Box>
+            </>
+          )}
         </Box>
       )
     }
