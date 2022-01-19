@@ -97,6 +97,7 @@
     "vite": "^2.7.12",
     "vite-plugin-compression": "^0.3.6",
     "vite-plugin-html": "^2.1.2",
-    "vite-plugin-pwa": "^0.11.12"
+    "vite-plugin-pwa": "^0.11.12",
+    "workbox-window": "^6.4.2"
   }
 }

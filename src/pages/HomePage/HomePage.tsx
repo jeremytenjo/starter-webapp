@@ -1,7 +1,4 @@
 import React from 'react'
-// import { registerSW } from 'virtual:pwa-register'
-
-// console.log(registerSW)
 
 export default function HomePage() {
   return (
