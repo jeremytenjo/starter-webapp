@@ -31,15 +31,21 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
     const command = firebaseJson.emulators.functions.port
       ? 'npm run functions:dev'
       : 'npm run emulators:start'
+
+    const emulatorPorts = []
+
+    for (const [, value] of Object.entries(firebaseJson.emulators)) {
+      emulatorPorts.push(value.port)
+    }
+
+    if (!emulatorPorts.length) {
+      throw new Error('Missing emulator ports in firebase.json')
+    }
+
     commands.push({
       label: `Firebase Emulators`,
       command,
-      ports: [
-        4000,
-        firebaseJson.emulators.firestore.port,
-        firebaseJson.emulators.auth.port,
-        firebaseJson.emulators.functions.port,
-      ],
+      ports: emulatorPorts,
       color: '#FFCB2E',
       onCommandRunning: async () => {
         const addEmulatorData = await import(

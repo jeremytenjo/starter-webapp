@@ -17,11 +17,9 @@
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "*": ["devtools/ts/declaredModules/*"],
-      "virtual:pwa-register": ["node_modules/vite-plugin-pwa"]
+      "*": ["devtools/ts/declaredModules/*"]
     },
-    "types": ["cypress", "vite/client", "vite-plugin-pwa/client"]
+    "types": ["vite/client", "cypress", "vite-plugin-pwa/client"]
   },
-  "include": ["./src", "./functions/scripts", "devtools/ts/declaredModules/*"],
-  "files": ["node_modules/vite-plugin-pwa/client.d.ts"]
+  "include": ["./src", "./functions/scripts", "devtools/ts/declaredModules/*"]
 }
