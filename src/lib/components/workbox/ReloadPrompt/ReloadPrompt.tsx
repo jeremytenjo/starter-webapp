@@ -3,7 +3,7 @@ import { useRegisterSW } from 'virtual:pwa-register/react'
 
 import './ReloadPrompt.css'
 
-function ReloadPrompt() {
+export default function ReloadPrompt() {
   const {
     offlineReady: [offlineReady, setOfflineReady],
     needRefresh: [needRefresh, setNeedRefresh],
@@ -49,5 +49,3 @@ function ReloadPrompt() {
     </div>
   )
 }
-
-export default ReloadPrompt

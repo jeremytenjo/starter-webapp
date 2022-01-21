@@ -85,7 +85,7 @@ export type AppConfigTypes = {
   server?: {
     local: {
       port: number
-      IPAddress: string
+      IPAddress: string | undefined
     }
   }
   theme: {

@@ -20,13 +20,13 @@ export default function TextField({
   placeholder = '',
   id,
 }: Props) {
-  const inputRef = useRef(null)
+  const inputRef = useRef<any>(null)
   const { register, setValue } = useFormContext()
   const { ref, ...restRegister } = register(name)
 
   const clearInput = () => {
     setValue(name, '', { shouldValidate: true })
-    inputRef.current.focus()
+    inputRef.current && inputRef.current.focus()
   }
 
   return (
@@ -49,7 +49,6 @@ export default function TextField({
       }}
     >
       <Box
-        name={name}
         component='input'
         placeholder={placeholder}
         {...restRegister}

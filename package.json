@@ -26,8 +26,6 @@
     "prepare": "npx @arkweid/lefthook install"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.7",
     "@storybook/addon-essentials": "^6.4.9",
     "@useweb/gtag": "^1.0.0",
@@ -46,8 +44,11 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@arkweid/lefthook": "^0.7.7",
     "@check-light-or-dark/color": "^1.0.3",
+    "@types/react-dom": "^17.0.11",
     "@grpc/grpc-js": "^1.5.0",
     "@storybook/addon-controls": "^6.4.9",
     "@storybook/addon-docs": "^6.4.9",

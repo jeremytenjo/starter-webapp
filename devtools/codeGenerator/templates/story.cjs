@@ -28,7 +28,7 @@ const files = [
     };
 
     export const Example = Template.bind({});
-    Example.args = {};
+    // Example.args = {};
 `,
   },
 ]

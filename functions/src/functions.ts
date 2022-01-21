@@ -15,7 +15,7 @@ export const helloWorld = functions.https.onRequest(async (req, res) => {
     const result = await _helloWorld({ payload })
 
     res.status(200).json(result)
-  } catch (error) {
+  } catch (error: any) {
     console.error(new Error(error))
     res.status(500).json({
       error: error.toString(),

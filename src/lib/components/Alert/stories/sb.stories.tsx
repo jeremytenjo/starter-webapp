@@ -17,9 +17,9 @@ export default {
   },
 }
 
-const Template = (args) => {
+const Template = (args: any) => {
   return <Alert {...args} />
 }
 
 export const Example = Template.bind({})
-Example.args = {}
+// Example.args = {}

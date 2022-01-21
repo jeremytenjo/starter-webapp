@@ -41,8 +41,9 @@ export default function Select({
   }, [parentValue])
 
   const handleValueChange = (event) => {
-    !parentValue && setValue(event.target.value)
-    onChange(event.target.value)
+    const value = event.target.value
+    !parentValue && setValue(value)
+    onChange && onChange(value)
   }
 
   return (

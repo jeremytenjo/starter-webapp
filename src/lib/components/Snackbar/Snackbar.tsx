@@ -4,17 +4,25 @@ import Alert from '@mui/material/Alert'
 import type { AlertColor } from '@mui/material/Alert'
 import Slide from '@mui/material/Slide'
 
-export const SnackbarContext = createContext(null)
+export const SnackbarContext = createContext<Return>({
+  show: () => null,
+  hide: () => null,
+})
 
 type ShowProps = {
-  message: string | number
+  message: string
   autoHideDuration?: number
   severity?: AlertColor
 }
 
+type Return = {
+  show: (props: ShowProps) => any
+  hide: () => any
+}
+
 export const SnackbarProvider = ({ children }) => {
-  const [open, setOpen] = useState(null)
-  const [message, setMessage] = useState(null)
+  const [open, setOpen] = useState(false)
+  const [message, setMessage] = useState('')
   const [autoHideDuration, setAutoHideDuration] = useState(3000)
   const [severity, setSeverity] = useState('info' as any)
 
@@ -47,11 +55,6 @@ export const SnackbarProvider = ({ children }) => {
       </Snackbar>
     </SnackbarContext.Provider>
   )
-}
-
-type Return = {
-  show: (props: ShowProps) => any
-  hide: () => any
 }
 
 const useSnackbar = () => useContext<Return>(SnackbarContext)

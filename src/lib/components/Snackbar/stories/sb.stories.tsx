@@ -45,4 +45,4 @@ const Template = () => {
 }
 
 export const Example = Template.bind({})
-Example.args = {}
+// Example.args = {}
