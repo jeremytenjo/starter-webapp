@@ -44,6 +44,7 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
+    "firebase-functions": "^3.16.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@arkweid/lefthook": "^0.7.7",
