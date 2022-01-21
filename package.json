@@ -23,6 +23,7 @@
     "test:eslint": "eslint ./ --fix",
     "test:ts-types": "tsc --noemit",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
+    "install-deps": "npm i && cd functions && npm i",
     "prepare": "npx @arkweid/lefthook install"
   },
   "dependencies": {
@@ -44,7 +45,6 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
-    "firebase-functions": "^3.16.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@arkweid/lefthook": "^0.7.7",
