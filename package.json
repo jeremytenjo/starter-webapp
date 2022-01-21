@@ -24,6 +24,7 @@
     "test:ts-types": "tsc --noemit",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "install-deps": "npm i && cd functions && npm i",
+    "postinstall": "functions && npm i",
     "prepare": "npx @arkweid/lefthook install"
   },
   "dependencies": {

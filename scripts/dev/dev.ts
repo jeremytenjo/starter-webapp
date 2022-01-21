@@ -49,7 +49,7 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       color: '#FFCB2E',
       onCommandRunning: async () => {
         const addEmulatorData = await import(
-          '../../src/services/firebase/emulator/addEmulatorData/addEmulatorData.js'
+          '../../src/lib/utils/firebase/emulator/addEmulatorData/addEmulatorData.js'
         )
         addEmulatorData.default()
       },

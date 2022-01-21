@@ -1,4 +1,4 @@
-import testUser from '../../testUser.js'
+import testUser from '../../../../../../services/firebase/emulator/testUser.js'
 
 /**
  * [Docs](https://firebase.google.com/docs/emulator-suite/connect_auth)
