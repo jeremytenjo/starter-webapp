@@ -4,11 +4,6 @@ import Alert from '@mui/material/Alert'
 import type { AlertColor } from '@mui/material/Alert'
 import Slide from '@mui/material/Slide'
 
-export const SnackbarContext = createContext<Return>({
-  show: () => null,
-  hide: () => null,
-})
-
 type ShowProps = {
   message: string
   autoHideDuration?: number
@@ -19,6 +14,11 @@ type Return = {
   show: (props: ShowProps) => any
   hide: () => any
 }
+
+export const SnackbarContext = createContext<Return>({
+  show: () => null,
+  hide: () => null,
+})
 
 export const SnackbarProvider = ({ children }) => {
   const [open, setOpen] = useState(false)
