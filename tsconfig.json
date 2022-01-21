@@ -21,5 +21,10 @@
     },
     "types": ["vite/client", "cypress", "vite-plugin-pwa/client"]
   },
-  "include": ["./src", "./functions/scripts", "devtools/ts/declaredModules/*"]
+  "include": [
+    "./src",
+    "./functions/scripts",
+    "./functions/src",
+    "devtools/ts/declaredModules/*"
+  ]
 }
