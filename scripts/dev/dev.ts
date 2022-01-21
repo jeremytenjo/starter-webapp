@@ -32,7 +32,7 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       ? 'npm run functions:dev'
       : 'npm run emulators:start'
 
-    const emulatorPorts = []
+    const emulatorPorts: number[] = []
 
     for (const [, value] of Object.entries(firebaseJson.emulators)) {
       emulatorPorts.push(value.port)

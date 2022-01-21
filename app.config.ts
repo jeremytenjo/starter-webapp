@@ -82,7 +82,7 @@ export type AppConfigTypes = {
       measurementId: string
     }
   }
-  server?: {
+  server: {
     local: {
       port: number
       IPAddress: string | undefined
