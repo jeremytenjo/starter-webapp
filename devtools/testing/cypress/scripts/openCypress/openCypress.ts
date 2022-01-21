@@ -2,9 +2,9 @@ import cypress from 'cypress'
 
 import getCypressConfig from '../../cypress.config.js'
 
-export default function openCypress() {
+export default async function openCypress() {
   // https://docs.cypress.io/guides/guides/module-api#cypress-open
   cypress.open({
-    config: getCypressConfig(),
+    config: await getCypressConfig(),
   })
 }

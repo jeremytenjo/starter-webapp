@@ -7,7 +7,7 @@ export default async function onPortsRunning({
   ports: number[]
   onRunning: () => any
 }) {
-  const commandsRunning = []
+  const commandsRunning: number[] = []
 
   await Promise.all(
     ports.map(async (port) => {

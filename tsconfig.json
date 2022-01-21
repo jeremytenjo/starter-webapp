@@ -26,6 +26,8 @@
     "./src",
     "./functions/scripts",
     "./functions/src",
+    "./devtools",
     "devtools/ts/declaredModules/*"
-  ]
+  ],
+  "exclude": ["./devtools/vite"]
 }

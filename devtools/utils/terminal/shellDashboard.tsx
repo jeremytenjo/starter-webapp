@@ -60,14 +60,14 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       command,
       ports,
       color,
-      index,
+      index = 1,
       enableQRCode,
       onCommandRunning = () => null,
     }: CommandProps) => {
       const [port] = ports
-      const shellRef = React.useRef(null)
+      const shellRef = React.useRef<any>(null)
       const [output, setOutput] = React.useState('')
-      const [error, setError] = React.useState(null)
+      const [error, setError] = React.useState<string>('')
       const [qrcodeString, setQrcodeString] = React.useState('')
       const restardInput = (index + 1).toString()
       const networkUrl = `http://${getIpAdress()}:${port}`
@@ -157,7 +157,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
     }
 
     render(<SubprocessOutput />)
-  } catch (error) {
+  } catch (error: any) {
     await killPortProcess(allPortsInCommands)
     throw new Error(error)
   }
