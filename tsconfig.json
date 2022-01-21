@@ -16,10 +16,10 @@
     "noEmit": true,
     "jsx": "react",
     "baseUrl": "./",
+    "types": ["vite/client", "cypress", "vite-plugin-pwa/client"],
     "paths": {
       "*": ["devtools/ts/declaredModules/*"]
-    },
-    "types": ["vite/client", "cypress", "vite-plugin-pwa/client"]
+    }
   },
   "include": [
     "./src",
