@@ -9,6 +9,12 @@ type Props = {
 
 export default async function dev({ onReady }: Props = { onReady: undefined }) {
   const appConfig = await getAppConfig()
+  const emulatorPorts: number[] = []
+  const waitForPortsMessage = 'Waiting for emulator data'
+
+  for (const [, value] of Object.entries(firebaseJson.emulators)) {
+    emulatorPorts.push(value.port)
+  }
 
   const commands: CommandProps[] = [
     {
@@ -17,6 +23,10 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       ports: [appConfig.server.local.port],
       color: '#01BF81',
       enableQRCode: true,
+      waitForPorts: {
+        ports: emulatorPorts,
+        message: waitForPortsMessage,
+      },
     },
     {
       label: `Storybook`,
@@ -24,6 +34,10 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       ports: [6007],
       color: '#FF4785',
       enableQRCode: true,
+      waitForPorts: {
+        ports: emulatorPorts,
+        message: waitForPortsMessage,
+      },
     },
   ]
 
@@ -31,12 +45,6 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
     const command = firebaseJson.emulators.functions.port
       ? 'npm run functions:dev'
       : 'npm run emulators:start'
-
-    const emulatorPorts: number[] = []
-
-    for (const [, value] of Object.entries(firebaseJson.emulators)) {
-      emulatorPorts.push(value.port)
-    }
 
     if (!emulatorPorts.length) {
       throw new Error('Missing emulator ports in firebase.json')

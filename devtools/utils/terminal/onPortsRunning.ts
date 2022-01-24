@@ -5,7 +5,7 @@ export default async function onPortsRunning({
   onRunning,
 }: {
   ports: number[]
-  onRunning: () => any
+  onRunning?: () => any
 }) {
   const commandsRunning: number[] = []
 
@@ -15,7 +15,7 @@ export default async function onPortsRunning({
       commandsRunning.push(port)
 
       if (commandsRunning.length === ports.length) {
-        onRunning()
+        onRunning && onRunning()
       }
     }),
   )

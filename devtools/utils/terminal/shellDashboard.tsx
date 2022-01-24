@@ -21,6 +21,10 @@ export type CommandProps = {
   label: string
   command: string
   ports: number[]
+  waitForPorts?: {
+    ports: number[]
+    message?: string
+  }
   color?: string
   index?: number
   enableQRCode?: boolean
@@ -59,6 +63,7 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
       label,
       command,
       ports,
+      waitForPorts,
       color,
       index = 1,
       enableQRCode,
@@ -86,7 +91,15 @@ export default async function shellDashboard({ commands, onCommandsRunning }: Pr
         }
       }
 
-      const startCommand = () => {
+      const startCommand = async () => {
+        if (waitForPorts) {
+          const waitForPortsMessage =
+            waitForPorts.message ||
+            'Waiting for ports ' + JSON.stringify(waitForPorts.message)
+          setOutput(waitForPortsMessage)
+          await onPortsRunning({ ports: waitForPorts.ports })
+        }
+
         const commandArgs = command.split(' ')
         commandArgs.shift()
         const shell = spawn('npm', commandArgs)
