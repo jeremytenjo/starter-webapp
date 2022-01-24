@@ -24,7 +24,7 @@
     "test:ts-types": "tsc --noemit",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "install-deps": "npm i && cd functions && npm i",
-    "postinstall": "functions && npm i",
+    "postinstall": "cd functions && npm i",
     "prepare": "npx @arkweid/lefthook install"
   },
   "dependencies": {
@@ -32,7 +32,7 @@
     "@storybook/addon-essentials": "^6.4.9",
     "@useweb/gtag": "^1.0.0",
     "@useweb/use-async": "^3.0.0",
-    "@useweb/use-data": "^5.2.0",
+    "@useweb/use-data": "^7.0.1",
     "@useweb/use-event-listener": "^0.2.0",
     "@useweb/use-firebase": "^7.2.2",
     "@useweb/use-firebase-function": "^3.0.0",
@@ -42,7 +42,6 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.5",
     "react-location": "^3.3.0",
-    "swr": "^1.1.2",
     "zustand": "^3.6.8"
   },
   "devDependencies": {
