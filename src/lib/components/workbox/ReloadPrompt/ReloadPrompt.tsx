@@ -9,8 +9,8 @@ export default function ReloadPrompt() {
   const snackbar = useSnackbar()
 
   const updateSW = () => {
-    updateServiceWorker(true)
     snackbar.hide()
+    updateServiceWorker(true)
   }
 
   const showRefreshPrompt = () => {
