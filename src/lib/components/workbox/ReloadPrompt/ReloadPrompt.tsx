@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 // https://vite-plugin-pwa.netlify.app/frameworks/react.html
 import { useRegisterSW } from 'virtual:pwa-register/react'
 import Button from '@mui/material/Button'
@@ -7,17 +7,13 @@ import useSnackbar from '../../Snackbar/Snackbar'
 
 export default function ReloadPrompt() {
   const snackbar = useSnackbar()
-  const {
-    needRefresh: [needRefresh],
-    updateServiceWorker,
-  } = useRegisterSW()
 
   const updateSW = () => {
     updateServiceWorker(true)
   }
 
-  useEffect(() => {
-    if (needRefresh) {
+  const { updateServiceWorker } = useRegisterSW({
+    onNeedRefresh: () => {
       snackbar.show({
         disableAutoHide: true,
         message: `App updates available`,
@@ -31,8 +27,8 @@ export default function ReloadPrompt() {
           </Button>
         ),
       })
-    }
-  }, [needRefresh])
+    },
+  })
 
   // keep as component in order to load inside Snackbar Provider
   return null
