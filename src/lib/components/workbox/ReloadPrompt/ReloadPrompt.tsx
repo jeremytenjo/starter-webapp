@@ -12,6 +12,10 @@ export default function ReloadPrompt() {
     updateServiceWorker,
   } = useRegisterSW()
 
+  const updateSW = () => {
+    updateServiceWorker(true)
+  }
+
   useEffect(() => {
     if (needRefresh) {
       snackbar.show({
@@ -22,7 +26,7 @@ export default function ReloadPrompt() {
           horizontal: 'center',
         },
         action: (
-          <Button color='inherit' size='small' onClick={() => updateServiceWorker(true)}>
+          <Button color='inherit' size='small' onClick={updateSW}>
             Update
           </Button>
         ),

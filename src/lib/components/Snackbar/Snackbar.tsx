@@ -17,7 +17,10 @@ type ShowProps = {
   anchorOrigin?: SnackbarOrigin
 }
 
-export const SnackbarContext = createContext<Return | null>(null)
+export const SnackbarContext = createContext<Return>({
+  show: () => null,
+  hide: () => null,
+})
 
 export const SnackbarProvider = ({ children }) => {
   const defaultSeverity = 'info' as any
