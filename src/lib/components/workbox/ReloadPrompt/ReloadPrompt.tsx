@@ -12,21 +12,25 @@ export default function ReloadPrompt() {
     updateServiceWorker(true)
   }
 
+  const showRefreshPrompt = () => {
+    snackbar.show({
+      disableAutoHide: true,
+      message: `App updates available`,
+      anchorOrigin: {
+        vertical: 'top',
+        horizontal: 'center',
+      },
+      action: (
+        <Button color='inherit' size='small' onClick={updateSW}>
+          Update
+        </Button>
+      ),
+    })
+  }
+
   const { updateServiceWorker } = useRegisterSW({
     onNeedRefresh: () => {
-      snackbar.show({
-        disableAutoHide: true,
-        message: `App updates available`,
-        anchorOrigin: {
-          vertical: 'top',
-          horizontal: 'center',
-        },
-        action: (
-          <Button color='inherit' size='small' onClick={updateSW}>
-            Update
-          </Button>
-        ),
-      })
+      showRefreshPrompt()
     },
   })
 
