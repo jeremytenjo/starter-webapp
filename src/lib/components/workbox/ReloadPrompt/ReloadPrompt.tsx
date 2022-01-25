@@ -1,24 +1,18 @@
-import React from 'react'
-import create from 'zustand'
+import React, { useRef } from 'react'
 // https://vite-plugin-pwa.netlify.app/frameworks/react.html
 import { useRegisterSW } from 'virtual:pwa-register/react'
 import Button from '@mui/material/Button'
 
 import useSnackbar from '../../Snackbar/Snackbar'
 
-const useUpdatedApp = create((set: any) => ({
-  updatedApp: false,
-  setUpdatedApp: (newValue) => set(() => ({ updatedApp: newValue })),
-}))
-
 export default function ReloadPrompt() {
   const snackbar = useSnackbar()
-  const updatedApp = useUpdatedApp()
+  const updatedAppRef = useRef(false)
 
   const showRefreshPrompt = () => {
-    const updateSW = () => {
+    const updateSW = async () => {
       snackbar.hide()
-      updateServiceWorker(true)
+      await updateServiceWorker(true)
     }
 
     snackbar.show({
@@ -43,9 +37,9 @@ export default function ReloadPrompt() {
 
   const { updateServiceWorker } = useRegisterSW({
     onNeedRefresh: () => {
-      if (!updatedApp.updatedApp) {
+      if (!updatedAppRef.current) {
         showRefreshPrompt()
-        updatedApp.setUpdatedApp(true)
+        updatedAppRef.current = true
       }
     },
   })
