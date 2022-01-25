@@ -10,6 +10,7 @@ export default function ReloadPrompt() {
 
   const updateSW = () => {
     updateServiceWorker(true)
+    snackbar.hide()
   }
 
   const showRefreshPrompt = () => {
