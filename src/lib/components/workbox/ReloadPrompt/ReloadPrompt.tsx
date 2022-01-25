@@ -15,12 +15,12 @@ export default function ReloadPrompt() {
   const snackbar = useSnackbar()
   const updatedApp = useUpdatedApp()
 
-  const updateSW = () => {
-    snackbar.hide()
-    updateServiceWorker(true)
-  }
-
   const showRefreshPrompt = () => {
+    const updateSW = () => {
+      snackbar.hide()
+      updateServiceWorker(true)
+    }
+
     snackbar.show({
       disableAutoHide: true,
       message: `App updates available`,
