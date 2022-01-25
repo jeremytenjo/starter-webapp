@@ -21,7 +21,12 @@ export default function ReloadPrompt() {
         horizontal: 'center',
       },
       action: (
-        <Button color='inherit' size='small' onClick={updateSW}>
+        <Button
+          color='inherit'
+          size='small'
+          onClick={updateSW}
+          sx={{ alignSelf: 'center' }}
+        >
           Update
         </Button>
       ),
