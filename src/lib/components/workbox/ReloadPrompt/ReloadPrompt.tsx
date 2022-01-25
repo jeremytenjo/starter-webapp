@@ -1,51 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+// https://vite-plugin-pwa.netlify.app/frameworks/react.html
 import { useRegisterSW } from 'virtual:pwa-register/react'
+import Button from '@mui/material/Button'
 
-import './ReloadPrompt.css'
+import useSnackbar from '../../Snackbar/Snackbar'
 
 export default function ReloadPrompt() {
+  const snackbar = useSnackbar()
   const {
-    offlineReady: [offlineReady, setOfflineReady],
-    needRefresh: [needRefresh, setNeedRefresh],
+    needRefresh: [needRefresh],
     updateServiceWorker,
-  } = useRegisterSW({
-    onRegistered(r) {
-      console.log('SW Registered: ' + r)
-    },
-    onRegisterError(error) {
-      console.log('SW registration error', error)
-    },
-  })
+  } = useRegisterSW()
 
-  const close = () => {
-    setOfflineReady(false)
-    setNeedRefresh(false)
-  }
+  useEffect(() => {
+    if (needRefresh) {
+      snackbar.show({
+        disableAutoHide: true,
+        message: `App updates available`,
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'center',
+        },
+        action: (
+          <Button color='inherit' size='small' onClick={() => updateServiceWorker(true)}>
+            Update
+          </Button>
+        ),
+      })
+    }
+  }, [needRefresh])
 
-  return (
-    <div className='ReloadPrompt-container'>
-      {(offlineReady || needRefresh) && (
-        <div className='ReloadPrompt-toast'>
-          <div className='ReloadPrompt-message'>
-            {offlineReady ? (
-              <span>App ready to work offline</span>
-            ) : (
-              <span>New content available, click on reload button to update.</span>
-            )}
-          </div>
-          {needRefresh && (
-            <button
-              className='ReloadPrompt-toast-button'
-              onClick={() => updateServiceWorker(true)}
-            >
-              Reload
-            </button>
-          )}
-          <button className='ReloadPrompt-toast-button' onClick={() => close()}>
-            Close
-          </button>
-        </div>
-      )}
-    </div>
-  )
+  // keep as component in order to load inside Snackbar Provider
+  return null
 }
