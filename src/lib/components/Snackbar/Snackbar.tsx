@@ -66,7 +66,6 @@ export const SnackbarProvider = ({ children }) => {
     >
       {children}
 
-      {/* https://mui.com/api/snackbar/#props */}
       <Snackbar
         open={open}
         autoHideDuration={autoHideDuration}
@@ -74,7 +73,6 @@ export const SnackbarProvider = ({ children }) => {
         TransitionComponent={Slide}
         anchorOrigin={alertAnchorOrigin}
       >
-        {/* https://mui.com/api/alert/#props */}
         <Alert severity={severity} action={alertAction}>
           {message}
         </Alert>
