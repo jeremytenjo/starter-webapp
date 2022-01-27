@@ -8,7 +8,7 @@ import { variants as typography } from '../tokens/typography/typography'
 
 import CssBaselineOverrides from './CssBaseline/CssBaseline'
 
-export const materialTheme = createTheme({
+export const muiTheme = createTheme({
   palette: colors,
   typography,
   // https://mui.com/customization/theme-components/#global-style-overrides
@@ -19,7 +19,7 @@ export const materialTheme = createTheme({
 
 export default function MaterialUiThemeProvider({ children }) {
   return (
-    <ThemeProvider theme={materialTheme}>
+    <ThemeProvider theme={muiTheme}>
       <CssBaseline />
       {children}
     </ThemeProvider>
