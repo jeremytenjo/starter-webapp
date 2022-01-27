@@ -1,5 +1,6 @@
 import path from 'path'
 
+import createFolder from '../../../utils/node/createFolder.js'
 import convertImage from '../../../utils/images/convertImage.js'
 import type { Props as ConvertImageProps } from '../../../utils/images/convertImage.js'
 
@@ -13,6 +14,8 @@ export default async function generateLogoAssets() {
   const applePath = path.join(outputFolderPath, 'apple')
   const sizesPath = path.join(outputFolderPath, 'sizes')
   const pngLogoPath = path.join(outputFolderPath, 'logo.png')
+
+  await createFolder({ paths: [outputFolderPath, applePath, sizesPath] })
 
   const getSizeIconName = (name: string) => path.join(sizesPath, name)
   const getAppleIconName = (name: string) => path.join(applePath, name)
