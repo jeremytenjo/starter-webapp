@@ -1,4 +1,5 @@
-import createFile from '../../../../../utils/node/createFile.js'
+import createFile from '../../../../utils/node/createFile.js'
+import convertSVGToReactSVG from '../../../../utils/svg/convertSVGToReactSVG.js'
 
 type Props = {
   name: string
@@ -7,11 +8,14 @@ type Props = {
 }
 
 export default async function create({ name, svgString, outputPath }: Props) {
+  const svgStringWithoutWidthHeight = await convertSVGToReactSVG({
+    svgString,
+  })
   const svg = `import React from 'react'
 import { createSvgIcon } from '@mui/material'
 
 export default createSvgIcon(
-  ${svgString},
+  ${svgStringWithoutWidthHeight},
   '${name}',
 )`
 
