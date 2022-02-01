@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 import colors from '../tokens/colors'
 import { variants as typography } from '../tokens/typography/typography'
+import Alert from '../../lib/components/Alert/mui/Alert.mui'
 
 import CssBaselineOverrides from './CssBaseline/CssBaseline'
 
@@ -14,6 +15,7 @@ export const muiTheme = createTheme({
   // https://mui.com/customization/theme-components/#global-style-overrides
   components: {
     ...CssBaselineOverrides,
+    ...Alert,
   },
 })
 
