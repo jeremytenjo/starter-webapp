@@ -10,7 +10,7 @@ type Props = {
 }
 
 /**
- * [Docs](https://nextjs.org/docs/api-reference/next/link)
+ * [Docs](https://react-location.tanstack.com/docs/api#link)
  * @example
  * <link href='/' />
  */
@@ -18,7 +18,6 @@ export default function Link(props: Props) {
   return <LinkContent content={props.children} sx={props.sx} {...props} />
 }
 
-// https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-functional-component
 const LinkContent = React.forwardRef(
   ({ onClick, href, content, sx, newTab }: any, ref) => {
     const newTabProps = newTab
