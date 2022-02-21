@@ -61,6 +61,7 @@ export type AppConfigTypes = {
     theme_color: string
     background_color: string
     start_url: string
+    gcm_sender_id?: string
     screenshots?: {
       src: string
       sizes: string
