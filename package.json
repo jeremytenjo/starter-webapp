@@ -35,7 +35,7 @@
     "@useweb/use-async": "^3.0.0",
     "@useweb/use-data": "^7.1.6",
     "@useweb/use-event-listener": "^0.2.0",
-    "@useweb/use-firebase": "^7.2.3",
+    "@useweb/use-firebase": "^8.0.0",
     "@useweb/use-firebase-function": "^3.0.0",
     "@useweb/use-install-prompt": "^1.2.1",
     "firebase": "^9.6.2",
