@@ -29,6 +29,10 @@ export default {
             overscroll-behavior-y: contain;
           }
 
+          a {
+            color:  ${colors.primary.main};
+          }
+
           p,
           h1,
           h2,
