@@ -1,6 +1,7 @@
 import { PayloadTypes } from '../../../vite'
 
 export default function googleAnalyticsScript({ appConfig, isDevMode }: PayloadTypes) {
+  // https://www.optimizesmart.com/understanding-measurement-id-in-ga4-google-analytics-4/#1-how-to-find-google-analytics-4-measurement-id-
   return appConfig?.analytics?.google?.measurementId
     ? `
      <!-- Global site tag (gtag.js) - Google Analytics -->
