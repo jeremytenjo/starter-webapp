@@ -14,7 +14,7 @@ export default async function appConfig(): Promise<AppConfigTypes> {
       start_url: '/',
       orientation: 'any',
       display: 'standalone',
-      theme_color: themeTokens.colors.primary.main,
+      theme_color: themeTokens.colors.themeColor,
       background_color: themeTokens.colors.black.main,
       screenshots: [
         {
