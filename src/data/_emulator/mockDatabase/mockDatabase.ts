@@ -6,7 +6,6 @@ const mockDatabase: CollectionType[] = [
   {
     name: 'users',
     data: users,
-    documentIdIsCreatedUserId: true,
   },
 ]
 

@@ -4,6 +4,7 @@ export type CollectionType = {
   name: string
   data: any[]
   documentIdIsCreatedUserId?: boolean
+  setUserIdToDataFromSignedInUser?: boolean
 }
 
 /**
