@@ -15,7 +15,7 @@ export default async function appConfig(): Promise<AppConfigTypes> {
       orientation: 'any',
       display: 'standalone',
       theme_color: themeTokens.colors.themeColor,
-      background_color: themeTokens.colors.black.main,
+      background_color: themeTokens.colors.backgroundColor,
       screenshots: [
         {
           src: 'images/manifest/screenshot-create.png',
