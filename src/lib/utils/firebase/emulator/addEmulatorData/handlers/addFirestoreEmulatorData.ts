@@ -1,6 +1,6 @@
 import mockDatabase from '../../../../../../data/_emulator/mockDatabase/mockDatabase.js'
 
-type CollectionType = {
+export type CollectionType = {
   name: string
   data: any[]
   documentIdIsCreatedUserId?: boolean
