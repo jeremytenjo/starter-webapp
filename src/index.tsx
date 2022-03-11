@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { UseInstallPromptProvider } from '@useweb/use-install-prompt'
 
 import Firebase from './services/firebase/firebase'
@@ -18,4 +18,6 @@ function App() {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const container = document.getElementById('root')
+const root = createRoot(container)
+root.render(<App />)
