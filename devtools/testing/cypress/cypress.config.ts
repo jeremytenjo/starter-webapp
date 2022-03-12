@@ -5,17 +5,17 @@ export default async function getCypressConfig() {
   const cypressFolderPath = 'devtools/testing/cypress'
   // https://docs.cypress.io/guides/references/configuration#Options
   const cypressConfig: Cypress.ConfigOptions = {
+    projectId: 'hy2gou',
+    testFiles: '**/*cy.js',
     baseUrl: `http://localhost:${appConfig.server.local.port}`,
+    integrationFolder: 'src',
     supportFile: false,
     pluginsFile: false,
-    testFiles: '**/*cy.js',
     video: false,
-    integrationFolder: 'src',
     downloadsFolder: `${cypressFolderPath}/downloads`,
     fixturesFolder: `${cypressFolderPath}/fixtures`,
     screenshotsFolder: `${cypressFolderPath}/screenshots`,
     videosFolder: `${cypressFolderPath}/videos`,
-    projectId: 'hy2gou',
   }
 
   return cypressConfig
