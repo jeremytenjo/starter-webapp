@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --experimental-json-modules --loader ts-node/esm ./scripts/dev/run.ts",
+    "dev:user-signedOut": "node --experimental-json-modules --loader ts-node/esm ./scripts/dev/run.ts --user signedOut",
     "app:dev": "node --experimental-json-modules --loader ts-node/esm ./devtools/vite/scripts/startDevServer/run.ts",
     "app:build": "node --experimental-json-modules --loader ts-node/esm ./devtools/vite/scripts/buildApp/run.ts",
     "app:serve": "node --experimental-json-modules --loader ts-node/esm ./devtools/vite/scripts/runBuild/run.ts",

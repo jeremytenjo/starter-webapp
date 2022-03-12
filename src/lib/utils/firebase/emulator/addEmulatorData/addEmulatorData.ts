@@ -2,6 +2,7 @@ import admin from 'firebase-admin'
 
 import firebaseJson from '../../../../../../firebase.json'
 import firebaseConfig from '../../../../../services/firebase/firebase.config.js'
+import getCommandLineArgs from '../../../../../../devtools/utils/node/getCommandLineArgs.js'
 
 import addMockDataToFirestore from './handlers/addFirestoreEmulatorData.js'
 import addAuthEmulatorData from './handlers/addAuthEmulatorData.js'
@@ -21,6 +22,11 @@ const db = admin.firestore()
 const auth = admin.auth()
 
 export default async function addEmulatorData() {
-  const createdUserId = addAuthData ? await addAuthEmulatorData({ auth }) : 'null'
+  const scriptArgs = getCommandLineArgs([{ name: 'user', type: String }])
+  const signInUser = scriptArgs?.user !== 'signedOut'
+  const createdUserId = addAuthData
+    ? await addAuthEmulatorData({ auth, signInUser })
+    : 'null'
+
   await addMockDataToFirestore({ db, createdUserId })
 }

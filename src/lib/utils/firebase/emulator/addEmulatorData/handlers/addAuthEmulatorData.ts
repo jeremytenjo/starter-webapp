@@ -3,7 +3,7 @@ import testUser from '../../../../../../services/firebase/emulator/testUser.js'
 /**
  * [Docs](https://firebase.google.com/docs/emulator-suite/connect_auth)
  */
-export default async function addAuthEmulatorData({ auth }) {
+export default async function addAuthEmulatorData({ auth, signInUser = true }) {
   try {
     const email = testUser.email
     const password = testUser.password
@@ -14,8 +14,8 @@ export default async function addAuthEmulatorData({ auth }) {
       emailVerified: true,
       displayName: 'John Doe',
       phoneNumber: '+11234567890',
-      photoURL: 'http://www.example.com/12345678/photo.png',
-      disabled: false,
+      photoURL: 'https://www.jeremytenjo.com/images/profile_photo.webp',
+      disabled: !signInUser,
     })
 
     console.log('User creation was successful')
