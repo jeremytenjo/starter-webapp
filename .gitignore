@@ -52,3 +52,5 @@ Thumbs.db
 *.wmv
 
 node_modules
+
+playwright-report/
