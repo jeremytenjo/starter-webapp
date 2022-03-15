@@ -1,7 +1,7 @@
 import { test } from '@playwright/test'
 
-import exampleTest from './testExampleTest'
+import exampleTest from './exampleTest.test'
 
-test('Create timer', async ({ page }) => {
+test('Home Page', async ({ page }) => {
   await exampleTest({ page })
 })
