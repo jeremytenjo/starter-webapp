@@ -2,11 +2,20 @@
 const files = [
   {
     path: ({ name }) => `${name}.test.ts`,
-    template: ({ name }) => {
-      return `// https://playwright.dev/docs/selectors
-import { expect } from '@playwright/test'
+    template: ({ name, helpers }) => {
+      const propsName = `${helpers.changeCase
+        .capitalCase(name)
+        .split(" ")
+        .join("")}Props`;
 
-export default async function ${name}({ page }) {
+      return `// https://playwright.dev/docs/selectors
+import { expect, type Page } from '@playwright/test'
+
+type ${propsName} = {
+  page: Page
+}
+
+export default async function ${name}({ page }: ${propsName}) {
   await page.goto('/')
 
   const header = await page.innerText('h1')
@@ -14,7 +23,7 @@ export default async function ${name}({ page }) {
 }
 
       
-      `
+      `;
     },
   },
   {
@@ -28,17 +37,17 @@ export default async function ${name}({ page }) {
         await ${name}({ page })
       })
       
-      `
+      `;
     },
   },
-]
+];
 
 const template = {
-  type: 'Playwright test',
+  type: "Playwright test",
   files,
-}
+};
 
 module.exports = {
   files,
   template,
-}
+};
