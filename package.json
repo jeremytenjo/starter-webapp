@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@mui/material": "^5.2.7",
-    "@playwright/test": "^1.19.2",
+    "@playwright/test": "^1.20.0",
     "@storybook/addon-essentials": "^6.4.9",
     "@useweb/gtag": "^1.0.0",
     "@useweb/use-async": "^3.1.0",

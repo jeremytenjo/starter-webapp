@@ -13,7 +13,7 @@ import { devices } from '@playwright/test'
  */
 const config: PlaywrightTestConfig = {
   testDir: path.join(process.cwd(), 'src'),
-  testMatch: /.*\.e2e\.js/,
+  testMatch: /.*\.e2e\.ts/,
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {

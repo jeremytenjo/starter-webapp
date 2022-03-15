@@ -5,6 +5,6 @@ export default async function runPlayWright() {
   await buildPlayWright()
 
   shell(
-    'npx playwright test --headed --config=devtools/testing/playwright/build/playwright.config.js',
+    'npx playwright test --config=devtools/testing/playwright/build/playwright.config.js',
   )
 }
