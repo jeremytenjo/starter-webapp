@@ -1,4 +1,4 @@
-// https://playwright.dev/docs/input#mouse-click
+// https://playwright.dev/docs/selectors
 import { expect } from '@playwright/test'
 
 export default async function exampleTest({ page }) {
