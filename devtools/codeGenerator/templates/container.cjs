@@ -1,31 +1,53 @@
 const files = [
   {
     path: ({ name }) => `${name}.tsx`,
-    template: ({ name }) => `import React from 'react'
+    template: ({ name, helpers }) => {
+      const propsName = `${helpers.changeCase.capitalCase(name).split(' ').join('')}Props`
+
+      return `import React from 'react'
     
     import ${name}Ui from './${name}Ui/${name}.ui'
 
-    type Props = { 
-      loading: boolean 
-      empty: boolean 
+    type ${propsName} = { 
+      name: string 
     }
     
-    export default function ${name}() {        
-      return <${name}Ui />
-    }`,
+    export default function ${name}({}: ${propsName}) {
+      const loading = true 
+      const empty = false 
+      const error = false  
+
+      return <${name}Ui loading={loading} empty={empty} error={error} />
+    }`
+    },
   },
   {
     path: ({ name }) => `${name}Ui/${name}.ui.tsx`,
-    template: ({ name }) => `import React from 'react'
+    template: ({ name, helpers }) => {
+      const propsName = `${helpers.changeCase.capitalCase(name).split(' ').join('')}Props`
+
+      return `import React from 'react'
     import Box from '@mui/material/Box'
 
-    export default function ${name}Ui() {        
+    type ${propsName} = {
+      loading: boolean 
+      empty: boolean
+      error: Error | boolean
+    }
+
+    export default function ${name}Ui({ loading, empty, error }: ${propsName}) {        
       return (
-        <Box>
-          hello
-        </Box>
+        <Wrapper>
+          ${name}
+        </Wrapper>
       )
-    }`,
+    }
+    
+    const Wrapper = ({ children }) => {
+      return <Box>{children}</Box>
+    }
+    `
+    },
   },
 ]
 
