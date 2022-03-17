@@ -20,7 +20,7 @@ const files = [
       const upperName = helpers.changeCase.capitalCase(name).split(' ').join('')
 
       return `
-      import ${upperName}Schema from './${name}.schema'
+      import type ${upperName}Schema from './${name}.schema'
 
       const ${upperName}Stubs: ${upperName}Schema[] = []
       
