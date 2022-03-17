@@ -42,7 +42,6 @@
     "@useweb/use-install-prompt": "^1.2.1",
     "firebase": "^9.6.2",
     "install": "^0.13.0",
-    "node-watch": "^0.7.3",
     "npm": "^8.5.5",
     "react": "^18.0.0-rc.2",
     "react-dom": "^18.0.0-rc.2",
@@ -53,6 +52,7 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.7",
+    "node-watch": "^0.7.3",
     "@check-light-or-dark/color": "^1.0.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
