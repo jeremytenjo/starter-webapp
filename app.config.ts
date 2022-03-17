@@ -8,8 +8,8 @@ export default async function appConfig(): Promise<AppConfigTypes> {
       main: 'https://starter-webapp.vercel.app/',
     },
     manifestJson: {
-      name: 'starter',
-      short_name: 'starter',
+      name: 'Webapp Starter',
+      short_name: 'Webapp Starter',
       description: pkg.description,
       start_url: '/',
       orientation: 'any',
