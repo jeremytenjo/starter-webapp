@@ -1,6 +1,6 @@
 import path from 'path'
 
-import watchFolders from '../../../../utils/node/watchFolders.js'
+import watchFolder from '../../../../utils/node/watchFolder.js'
 import shell from '../../../../utils/node/shell.cjs'
 import buildPlayWright from '../buildPlayWright/buildPlayWright.js'
 import getCommandLineArgs from '../../../../utils/node/getCommandLineArgs.js'
@@ -18,7 +18,7 @@ export default async function runPlayWright() {
   if (watch) {
     const folderToWatch = path.join(process.cwd(), 'src')
 
-    watchFolders({
+    watchFolder({
       folderToWatch,
       onChange: runPlaywrightTests,
     })

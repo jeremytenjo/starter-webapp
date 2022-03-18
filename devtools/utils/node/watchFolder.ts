@@ -5,11 +5,11 @@ import nodeWatch from 'node-watch'
  * 
  * @example
  *  const folderToWatch = path.join(process.cwd(), 'src')
-    watchFolders({
+    watchFolder({
       folderToWatch,
       onChange: runPlaywrightTests,
     })
  */
-export default function watchFolders({ folderToWatch, onChange }) {
+export default function watchFolder({ folderToWatch, onChange }) {
   nodeWatch(folderToWatch, { recursive: true }, onChange)
 }
