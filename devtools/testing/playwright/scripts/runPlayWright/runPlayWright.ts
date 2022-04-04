@@ -29,6 +29,6 @@ const runPlaywrightTests = async () => {
   await buildPlayWright()
 
   shell(
-    'npx playwright test --config=devtools/testing/playwright/build/playwright.config.js',
+    'npx playwright test --headed --config=devtools/testing/playwright/build/playwright.config.js',
   )
 }
