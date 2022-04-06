@@ -1,6 +1,7 @@
-import shellDashboard from '../../devtools/utils/terminal/shellDashboard.js'
+import shellDashboard, {
+  type CommandProps,
+} from '../../devtools/utils/terminal/shellDashboard.js'
 import getAppConfig from '../../app.config.js'
-import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
 import firebaseJson from '../../firebase.json'
 
 type Props = {
