@@ -1,5 +1,5 @@
 // build failing until this is fixed https://github.com/ericclemmons/click-to-component/issues/40
-import { ClickToComponent } from 'click-to-react-component'
+import ClickToComponent from '@useweb/click-to-component'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { UseInstallPromptProvider } from '@useweb/use-install-prompt'

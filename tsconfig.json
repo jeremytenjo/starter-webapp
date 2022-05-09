@@ -29,5 +29,5 @@
     "./devtools",
     "devtools/ts/declaredModules/*"
   ],
-  "exclude": ["./devtools/vite", "node_modules/click-to-react-component"]
+  "exclude": ["./devtools/vite"]
 }
