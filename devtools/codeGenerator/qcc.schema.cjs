@@ -13,6 +13,7 @@ const cloudFunction = require('./templates/cloudFunction.cjs')
 const muiOverride = require('./templates/muiOverride.cjs')
 const playwrightTest = require('./templates/playwrightTest.cjs')
 const data = require('./templates/data.cjs')
+const vitestTest = require('./templates/vitestTest.cjs')
 
 module.exports = [
   component.template,
@@ -27,4 +28,5 @@ module.exports = [
   globalState.template,
   asyncHook.template,
   cloudFunction.template,
+  vitestTest.template,
 ]

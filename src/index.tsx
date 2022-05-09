@@ -1,3 +1,5 @@
+// build failing until this is fixed https://github.com/ericclemmons/click-to-component/issues/40
+import { ClickToComponent } from 'click-to-react-component'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { UseInstallPromptProvider } from '@useweb/use-install-prompt'
@@ -20,4 +22,9 @@ function App() {
 
 const container = document.getElementById('root')
 const root = createRoot(container)
-root.render(<App />)
+root.render(
+  <>
+    <App />
+    <ClickToComponent />
+  </>,
+)
