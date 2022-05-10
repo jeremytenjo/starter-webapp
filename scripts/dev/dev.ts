@@ -30,8 +30,8 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
       },
     },
     {
-      label: `Storybook`,
-      command: `npm run storybook:dev`,
+      label: `Ladle`,
+      command: `npm run ladle:dev`,
       ports: [6007],
       color: '#FF4785',
       enableQRCode: true,
