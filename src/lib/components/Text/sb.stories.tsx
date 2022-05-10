@@ -1,26 +1,26 @@
 import React from 'react'
+import type { Story } from '@ladle/react'
 
 import Typography from '../../../theme/tokens/stories/theme.typography'
-import { variantNames } from '../../../theme/tokens/typography/typography'
 
-import Text from './Text'
+import Text, { type TextProps } from './Text'
 
 export default {
   title: 'Lib/Components/Text',
-  argTypes: {
-    variant: {
-      control: {
-        type: 'select',
-        options: variantNames,
-      },
-    },
-  },
-  args: { text: 'hello', variant: 'h1' },
 }
 
-const Template = (args) => {
-  return <Text {...args} />
+const Template: Story<TextProps> = (args) => {
+  return (
+    <>
+      <Text {...args} />
+    </>
+  )
 }
+
 export const Default = Template.bind({})
 
-export { Typography }
+const defaultArgs: TextProps = { text: 'hello', variant: 'h1' }
+
+Default.args = defaultArgs
+
+export const typography = Typography

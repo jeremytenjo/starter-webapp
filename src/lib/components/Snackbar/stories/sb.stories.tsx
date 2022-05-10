@@ -1,19 +1,10 @@
-//https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 
 import useSnackbar, { SnackbarProvider } from '../Snackbar'
 
-import Docs from './docs.mdx'
-
 export default {
   title: 'lib/components/Snackbar',
   args: {},
-  // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
-  parameters: {
-    docs: {
-      page: Docs,
-    },
-  },
 }
 
 const Provider = ({ children }) => {

@@ -2,6 +2,7 @@ import React from 'react'
 import { create } from '@storybook/theming'
 
 import Firebase from '../../src/services/firebase/firebase'
+import ClickToComponent from '../../src/lib/components/ClickToComponent/ClickToComponent'
 
 import StorybookTheme from './theme/storybookTheme'
 
@@ -13,11 +14,14 @@ const theme = create({
 export const decorators = [
   (Story) => {
     return (
-      <Firebase>
-        <StorybookTheme>
-          <Story />
-        </StorybookTheme>
-      </Firebase>
+      <>
+        <ClickToComponent />
+        <Firebase>
+          <StorybookTheme>
+            <Story />
+          </StorybookTheme>
+        </Firebase>
+      </>
     )
   },
 ]

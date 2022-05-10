@@ -11,17 +11,17 @@ const cloudFunction = {
 const cloudFunctionStory = {
   path: ({ name }) =>
     path.join(process.cwd(), 'functions', 'src', name, 'stories', `sb.stories.tsx`),
-  template: ({ name }) => `//https://storybook.js.org/docs/react/writing-docs/docs-page
+  template: ({ name }) => `
   import React from 'react'
   
   import FirebaseFunctionDashboard from '../../../../src/lib/components/firebase/FirebaseFunctionDashboard/FirebaseFunctionDashboard'
   
-  import Docs from './docs.mdx'
+  
   
   export default {
     title: 'functions/${name}',
     args: {},
-    // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
+    
     parameters: {
       docs: {
         page: Docs,

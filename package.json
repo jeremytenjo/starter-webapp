@@ -10,6 +10,8 @@
     "app:dev": "node --experimental-json-modules --loader ts-node/esm ./devtools/vite/scripts/startDevServer/run.ts",
     "app:build": "node --experimental-json-modules --loader ts-node/esm ./devtools/vite/scripts/buildApp/run.ts",
     "app:serve": "node --experimental-json-modules --loader ts-node/esm ./devtools/vite/scripts/runBuild/run.ts",
+    "ladle:dev": "ladle serve --config ./devtools/ladle --open none",
+    "ladle:build": "ladle build --config ./devtools/ladle",
     "storybook:dev": "start-storybook -c ./devtools/storybook -p 6007 --quiet --ci",
     "emulators:start": "firebase emulators:start --only auth,firestore,functions",
     "functions:dev": "concurrently 'npm run functions:build-watch' 'npm run emulators:start'",
@@ -32,6 +34,7 @@
     "prepare": "npx @arkweid/lefthook install"
   },
   "dependencies": {
+    "@ladle/react": "^0.15.0",
     "@mui/material": "^5.2.7",
     "@playwright/test": "^1.20.0",
     "@storybook/addon-essentials": "^6.4.9",
