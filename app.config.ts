@@ -1,4 +1,4 @@
-import getIpAdress from './devtools/utils/node/getIpAdress.js'
+import getIpAddress from './devtools/utils/node/getIpAddress.js'
 import pkg from './package.json'
 import themeTokens from './src/theme/tokens/tokens.js'
 
@@ -42,7 +42,7 @@ export default async function appConfig(): Promise<AppConfigTypes> {
     server: {
       local: {
         port: 3001,
-        IPAddress: getIpAdress(),
+        IPAddress: getIpAddress(),
       },
     },
     theme: {
