@@ -14,6 +14,7 @@ const muiOverride = require('./templates/muiOverride.cjs')
 const playwrightTest = require('./templates/playwrightTest.cjs')
 const data = require('./templates/data.cjs')
 const vitestTest = require('./templates/vitestTest.cjs')
+const script = require('./templates/script.cjs')
 
 module.exports = [
   component.template,
@@ -29,4 +30,5 @@ module.exports = [
   asyncHook.template,
   cloudFunction.template,
   vitestTest.template,
+  script.template,
 ]
