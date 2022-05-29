@@ -1,21 +1,14 @@
 module.exports = {
-  // https://storybook.js.org/docs/react/configure/overview#configure-your-storybook-project
-  stories: ['../../src/**/sb.stories.tsx', '../../functions/src/**/sb.stories.tsx'],
+  stories: ['../../src/**/*.stories.mdx', '../../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../../public'],
-  addons: [
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-      },
-    },
-  ],
+  features: { emotionAlias: false, storyStoreV7: true },
   framework: '@storybook/react',
-  features: {
-    storyStoreV7: true,
-  },
   core: {
-    // https://github.com/eirslett/storybook-builder-vite
-    builder: 'storybook-builder-vite',
+    builder: '@storybook/builder-vite',
   },
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+  ],
 }
