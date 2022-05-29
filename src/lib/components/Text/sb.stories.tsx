@@ -1,5 +1,5 @@
+/* eslint-disable storybook/prefer-pascal-case */
 import React from 'react'
-import type { Story } from '@ladle/react'
 
 import Typography from '../../../theme/tokens/stories/theme.typography'
 
@@ -9,7 +9,7 @@ export default {
   title: 'Lib/Components/Text',
 }
 
-const Template: Story<TextProps> = (args) => {
+const Template = (args) => {
   return (
     <>
       <Text {...args} />
@@ -17,7 +17,7 @@ const Template: Story<TextProps> = (args) => {
   )
 }
 
-export const Default = Template.bind({})
+export const Default = Template.bind({}) as any
 
 const defaultArgs: TextProps = { text: 'hello', variant: 'h1' }
 
