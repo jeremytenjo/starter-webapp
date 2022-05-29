@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "description": "App starter",
+  "description": "Webapp starter",
   "version": "0.0.1",
   "private": true,
   "type": "module",
