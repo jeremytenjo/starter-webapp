@@ -2,7 +2,7 @@ import shellDashboard, {
   type CommandProps,
 } from '../../devtools/utils/terminal/shellDashboard.js'
 import getAppConfig from '../../app.config.js'
-import firebaseJson from '../../firebase.json'
+import firebaseJson from '../../firebase.json' assert { type: 'json' }
 
 type Props = {
   onReady?: () => any
