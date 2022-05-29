@@ -48,6 +48,9 @@ export default async function appConfig(): Promise<AppConfigTypes> {
     theme: {
       tokens: themeTokens,
     },
+    storybook: {
+      port: 6006,
+    },
   }
 }
 
@@ -95,5 +98,8 @@ export type AppConfigTypes = {
   }
   domain: {
     main: string
+  }
+  storybook: {
+    port: number
   }
 }

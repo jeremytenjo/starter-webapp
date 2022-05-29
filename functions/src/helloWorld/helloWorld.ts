@@ -1,4 +1,4 @@
-type HelloWorldProps = {
+export type HelloWorldProps = {
   payload: {
     name: string
   }

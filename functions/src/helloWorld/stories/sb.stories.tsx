@@ -7,11 +7,14 @@ export default {
   args: {},
 }
 
-const Template = () => {
-  const payload = {
-    name: 'Jeremy',
-  }
-  return <FirebaseFunctionDashboard functionName='helloWorld' payload={payload} />
-}
+export const Default = {
+  render: (args) => {
+    const payload = {
+      name: 'Jeremy',
+    }
 
-export const Example = Template.bind({})
+    return (
+      <FirebaseFunctionDashboard functionName='helloWorld' payload={payload} {...args} />
+    )
+  },
+}
