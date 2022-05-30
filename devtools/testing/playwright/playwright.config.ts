@@ -10,7 +10,7 @@ import { devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: '../../../../src',
+  testDir: '../../../src',
   testMatch: /.*\.e2e\.ts/,
   fullyParallel: true,
   /* Maximum time one test can run for. */

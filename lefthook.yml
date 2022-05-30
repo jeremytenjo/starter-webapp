@@ -3,4 +3,4 @@
 pre-push:
   commands:
     test:
-      run: npm run prettify && npm run tests:eslint && npm run tests:unit:ci && npm run tests:ts-types
+      run: npm run prettify && npm run tests:everything
