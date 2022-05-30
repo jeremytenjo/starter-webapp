@@ -40,7 +40,12 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
     video: 'retain-on-failure',
   },
-
+  webServer: {
+    command: 'npm run dev:user-signedOut',
+    port: 3001,
+    timeout: 120 * 1000,
+    reuseExistingServer: !process.env.CI,
+  },
   /* Configure projects for major browsers */
   projects: [
     {
@@ -78,12 +83,6 @@ const config: PlaywrightTestConfig = {
     //   },
     // },
   ],
-  webServer: {
-    command: 'npm run dev:user-signedOut',
-    port: 3001,
-    timeout: 120 * 1000,
-    reuseExistingServer: !process.env.CI,
-  },
 }
 
 export default config
