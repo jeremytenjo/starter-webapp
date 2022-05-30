@@ -1,8 +1,8 @@
 import * as functions from 'firebase-functions'
 
-import getAppConfig from '../../app.config'
+import getAppConfig from '../../app.config.js'
 
-import _helloWorld from './helloWorld/helloWorld'
+import _helloWorld from './helloWorld/helloWorld.js'
 
 // https://firebase.google.com/docs/functions/get-started
 

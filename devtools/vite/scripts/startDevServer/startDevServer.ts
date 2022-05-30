@@ -1,4 +1,4 @@
-import shell from '../../../utils/node/shell.cjs'
+import shell from '../../../utils/node/shell.js'
 import getAppConfig from '../../../../app.config.js'
 
 export default async function startDevServer() {

@@ -2,7 +2,7 @@ import path from 'path'
 
 import esbuild from 'esbuild'
 
-import removeFolder from '../../../../utils/node/removeFolder.cjs'
+import removeFolder from '../../../../utils/node/removeFolder.js'
 import createFile from '../../../../utils/node/createFile.js'
 
 import getEntryPoints from './handlers/getEntryPoints.js'

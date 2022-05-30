@@ -19,7 +19,7 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
 
   const commands: CommandProps[] = [
     {
-      label: 'Vite',
+      label: 'App',
       command: 'npm run app:dev',
       ports: [appConfig.server.local.port],
       color: '#01BF81',

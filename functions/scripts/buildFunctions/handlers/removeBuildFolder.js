@@ -1,8 +1,8 @@
-const path = require('path')
+import { join } from 'path'
 
-const removeFolder = require('../../../../devtools/utils/node/removeFolder.cjs')
+import removeFolder from '../../../../devtools/utils/node/removeFolder.js'
 
-module.exports = async function removeBuildFolder({ rootPath }) {
-  const buildDir = path.join(rootPath, 'build')
+export default async function removeBuildFolder({ rootPath }) {
+  const buildDir = join(rootPath, 'build')
   await removeFolder(buildDir)
 }

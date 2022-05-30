@@ -1,7 +1,7 @@
 import path from 'path'
 
 import watchFolder from '../../../../utils/node/watchFolder.js'
-import shell from '../../../../utils/node/shell.cjs'
+import shell from '../../../../utils/node/shell.js'
 import buildPlayWright from '../buildPlayWright/buildPlayWright.js'
 import getCommandLineArgs from '../../../../utils/node/getCommandLineArgs.js'
 

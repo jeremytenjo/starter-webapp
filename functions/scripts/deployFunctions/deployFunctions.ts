@@ -1,14 +1,17 @@
 // https://github.com/enquirer/enquirer
-const { MultiSelect } = require('enquirer')
+import enquirer from 'enquirer'
 
-const shell = require('../../../devtools/utils/node/shell.cjs')
-const buildFunctions = require('../buildFunctions/buildFunctions')
+import shell from '../../../devtools/utils/node/shell.js'
+import buildFunctions from '../buildFunctions/buildFunctions.js'
 
-module.exports = async function deployFunctions() {
+const { MultiSelect } = enquirer as any
+
+export default async function deployFunctions() {
   try {
     await buildFunctions()
+    console.log()
 
-    const funs = require('../../build/index')
+    const funs = await import('../../build/index.js')
     const cloudFunctions = Object.keys(funs) || []
 
     if (!cloudFunctions.length) return console.log('No functions available to deploy')
@@ -27,7 +30,7 @@ module.exports = async function deployFunctions() {
     const command = `firebase deploy --only ${answersString}`
 
     shell(command)
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(error)
   }
 }

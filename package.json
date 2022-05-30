@@ -5,8 +5,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=16.0.0"
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
   },
   "scripts": {
     "dev": "node --experimental-json-modules --loader ts-node/esm ./scripts/dev/run.ts",
@@ -17,9 +17,9 @@
     "storybook:dev": "node --experimental-json-modules --loader ts-node/esm ./scripts/storybook/startStorybook/run.ts",
     "emulators:start": "firebase emulators:start --only auth,firestore,functions",
     "functions:dev": "concurrently 'npm run functions:build-watch' 'npm run emulators:start'",
-    "functions:build": "node ./functions/scripts/buildFunctions/run.js",
-    "functions:build-watch": "node ./functions/scripts/buildFunctions/run.js --watch",
-    "functions:deploy": "node ./functions/scripts/deployFunctions/run.js",
+    "functions:build": "node --experimental-json-modules --loader ts-node/esm ./functions/scripts/buildFunctions/run.ts",
+    "functions:build-watch": "node --experimental-json-modules --loader ts-node/esm ./functions/scripts/buildFunctions/run.ts --watch",
+    "functions:deploy": "node --experimental-json-modules --loader ts-node/esm ./functions/scripts/deployFunctions/run.ts",
     "helpers:generate-logo-assets": "node --experimental-json-modules --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
     "helpers:create-icon": "node --experimental-json-modules --loader ts-node/esm ./devtools/helpers/createIcon/run.ts",
     "helpers:update-useweb-deps": "npm-check-updates -f /@useweb/*/ -u && npm i",

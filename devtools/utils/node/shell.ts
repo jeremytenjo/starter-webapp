@@ -1,4 +1,4 @@
-const concurrently = require('concurrently')
+import concurrently from 'concurrently'
 
 /**
  * @example
@@ -8,7 +8,7 @@ const concurrently = require('concurrently')
 // run concurrently
  * shell(['npm run start:app', 'npm run start:storybook'])
  */
-module.exports = async function shell(commands) {
+export default async function shell(commands) {
   const _commands = !Array.isArray(commands) ? [commands] : commands
 
   const { result } = concurrently(_commands, {
