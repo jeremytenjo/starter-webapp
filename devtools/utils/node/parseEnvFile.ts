@@ -1,9 +1,9 @@
-const dotenv = require('dotenv')
-const dotenvParseVariables = require('dotenv-parse-variables')
+import dotenv from 'dotenv'
+import dotenvParseVariables from 'dotenv-parse-variables'
 
-const doesFolderOrFileExist = require('./doesFolderOrFileExist.cjs')
+import doesFolderOrFileExist from './doesFolderOrFileExist.js'
 
-module.exports = function parseEnvFile({ envFilePath }) {
+export default function parseEnvFile({ envFilePath }) {
   const doesEnvFileExists = doesFolderOrFileExist(envFilePath)
   if (!doesEnvFileExists) return {}
 
