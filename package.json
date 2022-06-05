@@ -33,7 +33,7 @@
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "install-deps": "npm i && cd functions && npm i",
     "postinstall": "cd functions && npm i",
-    "prepare": "npx @arkweid/lefthook install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@mui/material": "^5.2.7",
@@ -60,7 +60,6 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "^0.7.7",
     "@check-light-or-dark/color": "^1.0.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -94,6 +93,7 @@
     "firebase-admin": "^10.2.0",
     "format-duration": "^1.4.0",
     "fs-extra": "^10.0.0",
+    "husky": "^8.0.1",
     "ink": "^3.2.0",
     "internal-ip": "^7.0.0",
     "kill-port-process": "^3.0.1",
