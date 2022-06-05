@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import dotenvParseVariables from 'dotenv-parse-variables'
 
-import doesFolderOrFileExist from './doesFolderOrFileExist.js'
+import doesFolderOrFileExist from '../doesFolderOrFileExist.js'
 
 export default function parseEnvFile({ envFilePath }) {
   const doesEnvFileExists = doesFolderOrFileExist(envFilePath)
