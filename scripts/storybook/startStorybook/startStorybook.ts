@@ -7,7 +7,7 @@ import getAppConfig from '../../../app.config.js'
 // in scripts instad of devtoosl/storyboo/scipts because of the pacakge commonjs
 export default async function startStorybook() {
   const appConfig = await getAppConfig()
-  const storybookPort = appConfig.storybook.port
+  const storybookPort = appConfig.devtools.storybook.port
   const ipAddress = getIpAddress()
   const networkUrl = `http://${ipAddress}:${storybookPort}`
 

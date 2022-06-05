@@ -32,7 +32,7 @@ export default async function dev({ onReady }: Props = { onReady: undefined }) {
     {
       label: `Storybook`,
       command: `npm run storybook:dev`,
-      ports: [appConfig.storybook.port],
+      ports: [appConfig.devtools.storybook.port],
       color: '#FF4785',
       enableQRCode: true,
       waitForPorts: {
