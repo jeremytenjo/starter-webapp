@@ -6,19 +6,19 @@ const files = [
       const propsName = `${namePascalCase}Props`
       return `import React from 'react'       
     import Box from '@mui/material/Box'
-  
+
     export type ${propsName} = { name: string }
   
-    export default function ${namePascalCase}({ name }: ${propsName}) {
+    export default function ${namePascalCase}({ name = 'Hello' }: ${propsName}) {
       return (
         <Wrapper>
-         ${name}
+          {name}
         </Wrapper>
       );
     }
 
     const Wrapper = ({ children }) => {
-      return <Box>{children}</Box>
+      return <Box data-id='${name}' sx={{}}>{children}</Box>
     }
       `
     },

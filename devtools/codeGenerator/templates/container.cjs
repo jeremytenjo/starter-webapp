@@ -9,42 +9,41 @@ const files = [
     import ${name}Ui from './${name}Ui/${name}.ui'
 
     type ${propsName} = { 
-      name: string 
+      title: string 
     }
     
-    export default function ${name}({}: ${propsName}) {
-      const loading = true 
-      const empty = false 
-      const error = false  
+    export default function ${name}() {
+      const title = '${name}'  
 
-      return <${name}Ui loading={loading} empty={empty} error={error} />
+      return <${name}Ui title={title} />
     }`
     },
   },
   {
     path: ({ name }) => `${name}Ui/${name}.ui.tsx`,
     template: ({ name, helpers }) => {
-      const propsName = `${helpers.changeCase.capitalCase(name).split(' ').join('')}Props`
+      const propsName = `${helpers.changeCase
+        .capitalCase(name)
+        .split(' ')
+        .join('')}UiProps`
 
       return `import React from 'react'
     import Box from '@mui/material/Box'
 
-    type ${propsName} = {
-      loading: boolean 
-      empty: boolean
-      error: Error | boolean
+    export type ${propsName} = {
+      title: string
     }
 
-    export default function ${name}Ui({ loading, empty, error }: ${propsName}) {        
+    export default function ${name}Ui({ title }: ${propsName}) {        
       return (
         <Wrapper>
-          ${name}
+         {title}
         </Wrapper>
       )
     }
     
     const Wrapper = ({ children }) => {
-      return <Box>{children}</Box>
+      return <Box data-id='${name}'>{children}</Box>
     }
     `
     },
