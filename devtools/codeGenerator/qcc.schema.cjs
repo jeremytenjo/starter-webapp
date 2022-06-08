@@ -11,24 +11,34 @@ const globalState = require('./templates/globalState.cjs')
 const asyncHook = require('./templates/asyncHook.cjs')
 const cloudFunction = require('./templates/cloudFunction.cjs')
 const muiOverride = require('./templates/muiOverride.cjs')
+const muiOverrideWithStory = require('./templates/muiOverrideWithStory.cjs')
 const playwrightTest = require('./templates/playwrightTest.cjs')
 const data = require('./templates/data.cjs')
 const vitestTest = require('./templates/vitestTest.cjs')
 const script = require('./templates/script.cjs')
 
 module.exports = [
-  component.template,
-  story.template,
-  componentWithStory.template,
-  functions.template,
   container.template,
-  data.template,
-  playwrightTest.template,
-  muiOverride.template,
-  page.template,
-  globalState.template,
-  asyncHook.template,
+
+  component.template,
+  componentWithStory.template,
+
+  story.template,
+
+  functions.template,
   cloudFunction.template,
+
+  data.template,
+  globalState.template,
+
+  playwrightTest.template,
   vitestTest.template,
+
+  page.template,
+
+  muiOverride.template,
+  muiOverrideWithStory.template,
+
+  asyncHook.template,
   script.template,
 ]
