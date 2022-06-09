@@ -22,7 +22,7 @@
     "functions:deploy": "node --experimental-json-modules --loader ts-node/esm ./functions/scripts/deployFunctions/run.ts",
     "helpers:generate-logo-assets": "node --experimental-json-modules --loader ts-node/esm ./devtools/helpers/assets/generateLogoAssets/run.ts",
     "helpers:create-icon": "node --experimental-json-modules --loader ts-node/esm ./devtools/helpers/createIcon/run.ts",
-    "helpers:update-useweb-deps": "npm-check-updates -f /@useweb/*/ -u && npm i",
+    "helpers:update-useweb-deps": "npm-check-updates -f /@useweb/*/ -u && npm i && npm run tests:check-types",
     "tests:e2e:watch": "node --experimental-json-modules --loader ts-node/esm ./devtools/testing/playwright/scripts/runPlayWright/run.ts --watch",
     "tests:e2e:run:all": "node --experimental-json-modules --loader ts-node/esm ./devtools/testing/playwright/scripts/runPlayWright/run.ts",
     "tests:unit": "vitest --config ./devtools/testing/vitest/vitest.config.ts",
