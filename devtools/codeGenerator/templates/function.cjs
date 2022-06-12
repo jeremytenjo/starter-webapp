@@ -1,9 +1,12 @@
-// https://github.com/jeremytenjo/quick-component-creator/tree/master#component-type-properties
+// https://github.com/jeremytenjo/super-code-generator/tree/master#component-type-properties
 const files = [
   {
     path: ({ name }) => `${name}.ts`,
     template: ({ name, helpers }) => {
-      const propsName = `${helpers.changeCase.capitalCase(name).split(' ').join('')}Props`
+      const propsName = `${helpers.changeCase
+        .capitalCase(name)
+        .split(" ")
+        .join("")}Props`;
 
       return `export type ${propsName} = {name: string}
     
@@ -11,17 +14,17 @@ const files = [
       const data = 'hi'
       
       return data
-    }`
+    }`;
     },
   },
-]
+];
 
 const template = {
-  type: 'Function',
+  type: "Function",
   files,
-}
+};
 
 module.exports = {
   files,
   template,
-}
+};

@@ -1,4 +1,4 @@
-// https://github.com/jeremytenjo/quick-component-creator/tree/master#component-type-properties
+// https://github.com/jeremytenjo/super-code-generator/tree/master#component-type-properties
 const files = [
   {
     path: ({ name }) => `${name}.ts`,
@@ -6,7 +6,7 @@ const files = [
       return `    
     export default function ${name}() {
       console.log('hello')
-    }`
+    }`;
     },
   },
   {
@@ -15,17 +15,17 @@ const files = [
       return `import ${name} from './${name}.js'
       console.clear()
       ${name}()
-      `
+      `;
     },
   },
-]
+];
 
 const template = {
-  type: 'Script',
+  type: "Script",
   files,
-}
+};
 
 module.exports = {
   files,
   template,
-}
+};
