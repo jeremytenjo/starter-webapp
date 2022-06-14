@@ -9,7 +9,7 @@ const files = [
   {
     path: () => 'routes.tsx',
     template: ({ name }) => `import React from 'react'
-
+    // https://react-location.tanstack.com/guides/routes#the-rootindex-path-vs-normal-paths
     export default [
       { path: '/', element: () => import('./${name}').then((res) => <res.default />) },
     ]
