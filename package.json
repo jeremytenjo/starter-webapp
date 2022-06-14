@@ -41,7 +41,7 @@
     "@storybook/addon-essentials": "^6.5.9",
     "@useweb/click-to-component": "^2.0.0",
     "@useweb/gtag": "^1.0.0",
-    "@useweb/use-async": "^3.2.0",
+    "@useweb/use-async": "^4.0.0",
     "@useweb/use-data": "^8.5.0",
     "@useweb/use-event-listener": "^1.0.0",
     "@useweb/use-firebase": "^8.1.1",
