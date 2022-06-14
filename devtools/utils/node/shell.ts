@@ -11,7 +11,7 @@ import concurrently from 'concurrently'
 export default async function shell(commands) {
   const _commands = !Array.isArray(commands) ? [commands] : commands
 
-  const { result } = concurrently(_commands, {
+  const { result } = await concurrently(_commands, {
     prefix: 'none',
   })
 
