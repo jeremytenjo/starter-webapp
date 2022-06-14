@@ -2,6 +2,10 @@
 
 A modern, highly scalable, offline-first foundation with the best developer experience.
 
+```sh
+npm run app:dev
+```
+
 ## What's included?
 
 - React
