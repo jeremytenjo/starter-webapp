@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 
-type Props = {
+type LinkProps = {
   href: any
   children: any
   newTab?: boolean
@@ -14,7 +14,7 @@ type Props = {
  * @example
  * <link href='/' />
  */
-export default function Link(props: Props) {
+export default function Link(props: LinkProps) {
   return <LinkContent content={props.children} sx={props.sx} {...props} />
 }
 
