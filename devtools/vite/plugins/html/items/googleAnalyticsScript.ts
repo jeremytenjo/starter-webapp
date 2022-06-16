@@ -5,7 +5,7 @@ export default function googleAnalyticsScript({ appConfig, isDevMode }: PayloadT
   return appConfig?.analytics?.google?.measurementId
     ? `
      <!-- Global site tag (gtag.js) - Google Analytics -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=${
+     <script defer src="https://www.googletagmanager.com/gtag/js?id=${
        appConfig.analytics.google.measurementId
      }"></script>
      <script>
