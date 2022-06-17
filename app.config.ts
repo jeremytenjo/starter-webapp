@@ -96,7 +96,9 @@ export type AppConfigTypes = {
     }
   }
   theme: {
-    tokens: any
+    tokens: {
+      colors: any
+    }
   }
   domain: {
     main: string
