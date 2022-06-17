@@ -1,12 +1,13 @@
 import { createHtmlPlugin } from 'vite-plugin-html'
 
 import { PayloadTypes } from '../../vite'
+import { getinitialLoadedLogoString } from '../../../helpers/assets/generateLogoAssets/helpers/createInitialLoadedLogo/createInitialLoadedLogo'
 
 import googleAnalyticsScript from './items/googleAnalyticsScript'
 import registerServiceWorker from './items/serviceWorker'
 
 // https://github.com/anncwb/vite-plugin-html
-export default function viteHtmlPlugin(payload: PayloadTypes) {
+export default async function viteHtmlPlugin(payload: PayloadTypes) {
   return createHtmlPlugin({
     inject: {
       data: {
@@ -16,6 +17,7 @@ export default function viteHtmlPlugin(payload: PayloadTypes) {
         googleAnalytics: googleAnalyticsScript(payload),
         registerServiceWorker: registerServiceWorker({ isProdMode: payload.isProdMode }),
         themeColor: `<meta name="theme-color" content="${payload.appConfig.manifestJson.theme_color}" />`,
+        initialLoadedLogo: await getinitialLoadedLogoString(),
         customCriticalStyles: `
         <style>
           body {

@@ -4,18 +4,24 @@ import createFolder from '../../../utils/node/createFolder.js'
 import convertImage from '../../../utils/images/convertImage.js'
 import type { Props as ConvertImageProps } from '../../../utils/images/convertImage.js'
 
+import getLogoAssetsRootPath from './utils/getLogoAssetsRootPath.js'
+import createInitialLoadedLogo from './helpers/createInitialLoadedLogo/createInitialLoadedLogo.js'
+
 /**
  * Updates logo assests based on public/images/logo/logo.svg
  */
 export default async function generateLogoAssets() {
-  const rootPath = path.join(process.cwd(), 'public', 'images', 'logo')
+  const { logoAssetsRootPath, rootPath } = getLogoAssetsRootPath()
   const logoPath = path.join(rootPath, 'logo.svg')
-  const outputFolderPath = path.join(rootPath, 'assets')
-  const applePath = path.join(outputFolderPath, 'apple')
-  const sizesPath = path.join(outputFolderPath, 'sizes')
-  const pngLogoPath = path.join(outputFolderPath, 'logo.png')
+  const applePath = path.join(logoAssetsRootPath, 'apple')
+  const sizesPath = path.join(logoAssetsRootPath, 'sizes')
+  const pngLogoPath = path.join(logoAssetsRootPath, 'logo.png')
 
-  await createFolder({ paths: [outputFolderPath, applePath, sizesPath] })
+  await createFolder({ paths: [logoAssetsRootPath, applePath, sizesPath] })
+
+  await createInitialLoadedLogo({
+    logoPath,
+  })
 
   const getSizeIconName = (name: string) => path.join(sizesPath, name)
   const getAppleIconName = (name: string) => path.join(applePath, name)
