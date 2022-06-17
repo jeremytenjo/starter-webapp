@@ -16,6 +16,13 @@ export default function viteHtmlPlugin(payload: PayloadTypes) {
         googleAnalytics: googleAnalyticsScript(payload),
         registerServiceWorker: registerServiceWorker({ isProdMode: payload.isProdMode }),
         themeColor: `<meta name="theme-color" content="${payload.appConfig.manifestJson.theme_color}" />`,
+        customCriticalStyles: `
+        <style>
+          body {
+            background-color: ${payload.appConfig.theme.tokens.colors.backgroundColor};
+          }
+        </style>
+        `,
       },
     },
   })
