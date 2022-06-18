@@ -1,19 +1,26 @@
 import React from 'react'
 import FirebaseFunctionDashboard from '@useweb/firebase-function-tester'
 
+import { HelloWorldProps } from '../helloWorld'
+
+type HelloWorldArgsProps = {
+  functionName: string
+} & HelloWorldProps
+
+const args: HelloWorldArgsProps = {
+  functionName: 'helloWorld',
+  payload: {
+    name: 'Jeremy',
+  },
+}
+
 export default {
   title: 'functions/helloWorld',
-  args: {},
+  args,
 }
 
 export const Default = {
-  render: (args) => {
-    const payload = {
-      name: 'Jeremy',
-    }
-
-    return (
-      <FirebaseFunctionDashboard functionName='helloWorld' payload={payload} {...args} />
-    )
+  render: (args: HelloWorldArgsProps) => {
+    return <FirebaseFunctionDashboard {...args} />
   },
 }

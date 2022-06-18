@@ -5,7 +5,7 @@ export type HelloWorldProps = {
 }
 
 export default async function helloWorld({ payload }: HelloWorldProps) {
-  const result = { name: `hello my name is ${payload.name}` }
+  const result = { name: `hello ${payload.name}!` }
 
   return result
 }
