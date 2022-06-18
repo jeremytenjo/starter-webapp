@@ -1,6 +1,5 @@
 import React from 'react'
-
-import FirebaseFunctionDashboard from '../../../../src/lib/components/firebase/FirebaseFunctionDashboard/FirebaseFunctionDashboard'
+import FirebaseFunctionDashboard from '@useweb/firebase-function-tester'
 
 export default {
   title: 'functions/helloWorld',

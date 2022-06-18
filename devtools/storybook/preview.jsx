@@ -1,8 +1,8 @@
 import React from 'react'
 import { create } from '@storybook/theming'
+import { SnackbarProvider } from '@useweb/ui/Snackbar'
 
-import ClickToComponent from '../../src/lib/components/ClickToComponent/ClickToComponent'
-import { SnackbarProvider } from '../../src/lib/components/Snackbar/Snackbar'
+import ClickToComponent from '../../src/lib/components/useweb/ClickToComponent/ClickToComponentStorybook'
 import Firebase from '../../src/services/firebase/firebase'
 
 import StorybookTheme from './theme/storybookTheme'
