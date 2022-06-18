@@ -30,7 +30,7 @@
     "tests:unit:ci": "vitest --config ./devtools/testing/vitest/vitest.config.ts --run --passWithNoTests",
     "tests:eslint": "eslint ./ --fix",
     "tests:ts-types": "tsc --noemit",
-    "tests:everything": "node --experimental-json-modules --loader ts-node/esm ./scripts/tests/testEverything/run.ts",
+    "tests:all": "node --experimental-json-modules --loader ts-node/esm ./scripts/tests/testEverything/run.ts",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "install-deps": "npm i && cd functions && npm i",
     "postinstall": "cd functions && npm i",
