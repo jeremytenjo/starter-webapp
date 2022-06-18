@@ -20,7 +20,7 @@ const colors: any = {
   },
 }
 
-colors.themeColor = colors.black.main
+colors.themeColor = colors.white.main
 colors.backgroundColor = colors.white.main
 
 export default colors
