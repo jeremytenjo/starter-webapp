@@ -1,7 +1,7 @@
 import React from 'react'
 import IconButton, { type IconButtonProps } from '@useweb/ui/IconButton'
 
-import IconHamburger from '../../../icons/IconChevron'
+import IconHamburger from '../../../icons/IconHamburger'
 
 export default {
   title: 'Lib/components/IconButton',
