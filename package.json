@@ -40,7 +40,6 @@
     "@mui/material": "^5.8.4",
     "@playwright/test": "^1.22.2",
     "@storybook/addon-essentials": "^6.5.9",
-    "@useweb/button": "^2.4.0",
     "@useweb/click-to-component": "^2.2.1",
     "@useweb/firebase-function-tester": "^1.0.3",
     "@useweb/gtag": "^1.2.0",
