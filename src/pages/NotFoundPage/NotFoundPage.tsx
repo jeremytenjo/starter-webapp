@@ -1,7 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-
-import Text from '../../lib/components/Text/Text'
+import Text from '@useweb/ui/Text'
 
 export default function NotFoundPage() {
   return (
