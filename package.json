@@ -42,7 +42,7 @@
     "@storybook/addon-essentials": "^6.5.9",
     "@useweb/click-to-component": "^2.2.1",
     "@useweb/firebase": "^3.0.0",
-    "@useweb/firebase-function-tester": "^3.0.1",
+    "@useweb/firebase-function-tester": "^4.0.0",
     "@useweb/gtag": "^1.2.0",
     "@useweb/ui": "^1.2.0",
     "@useweb/use-async": "^4.2.0",

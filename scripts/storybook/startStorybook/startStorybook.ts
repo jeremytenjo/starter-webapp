@@ -15,5 +15,5 @@ export default async function startStorybook() {
     small: true,
   })
 
-  shell(`start-storybook -p ${storybookPort} -c ./devtools/storybook --no-open`)
+  shell(`start-storybook -p ${storybookPort} -c ./devtools/storybook --no-open --quiet`)
 }
