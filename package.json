@@ -34,7 +34,7 @@
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "install-deps": "npm i && cd functions && npm i",
     "postinstall": "cd functions && npm i",
-    "prepare": "husky install"
+    "prepare": "node --experimental-json-modules --loader ts-node/esm ./scripts/prepare/run.ts"
   },
   "dependencies": {
     "@mui/material": "^5.8.4",
