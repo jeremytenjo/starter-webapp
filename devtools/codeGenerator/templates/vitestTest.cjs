@@ -1,4 +1,6 @@
 // https://github.com/jeremytenjo/super-code-generator/tree/master#component-type-properties
+// https://vitest.dev/api/
+//
 const files = [
   {
     path: ({ name }) => `${name}.test.ts`,
@@ -10,17 +12,17 @@ const files = [
         expect(true).toBe(true)
       })
       
-      `;
+      `
     },
   },
-];
+]
 
 const template = {
-  type: "Vitest unit test",
+  type: 'Vitest unit test',
   files,
-};
+}
 
 module.exports = {
   files,
   template,
-};
+}
