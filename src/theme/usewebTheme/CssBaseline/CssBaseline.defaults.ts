@@ -1,7 +1,7 @@
-import { type ComponentDefaultsProps } from '@useweb/ui/Theme'
+import { type ComponentDefaultsProps } from "@useweb/ui-theme";
 
-import poppins400Font from '../../tokens/typography/fonts/poppins/regular.woff2'
-import colors from '../../tokens/colors'
+import poppins400Font from "../../tokens/typography/fonts/poppins/regular.woff2";
+import colors from "../../tokens/colors";
 
 const defaults: ComponentDefaultsProps = {
   styleOverrides: `
@@ -99,6 +99,6 @@ const defaults: ComponentDefaultsProps = {
   }
 
 `,
-}
+};
 
-export default defaults
+export default defaults;
