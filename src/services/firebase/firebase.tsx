@@ -1,5 +1,5 @@
 import React from 'react'
-import { FirebaseProvider } from '@useweb/firebase'
+import { FirebaseConfigProvider } from '@useweb/firebase-config'
 import { initializeApp } from 'firebase/app'
 import { getFunctions } from 'firebase/functions'
 import { getFirestore } from 'firebase/firestore'
@@ -19,7 +19,7 @@ const envIsDev = process.env.NODE_ENV === 'development'
 
 export default function Firebase({ children }) {
   return (
-    <FirebaseProvider
+    <FirebaseConfigProvider
       firebaseConfig={firebaseConfig}
       firebaseApp={firebaseApp}
       envIsDev={envIsDev}
@@ -34,6 +34,6 @@ export default function Firebase({ children }) {
       }}
     >
       {children}
-    </FirebaseProvider>
+    </FirebaseConfigProvider>
   )
 }
