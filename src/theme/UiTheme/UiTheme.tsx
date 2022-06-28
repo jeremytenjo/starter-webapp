@@ -31,6 +31,6 @@ const themeData: CreateThemeProps = {
 
 export const theme = createTheme(themeData)
 
-export default function UsewebThemeProvider({ children }) {
+export default function UiTheme({ children }) {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
