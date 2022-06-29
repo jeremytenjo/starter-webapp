@@ -19,11 +19,11 @@ export const decorators = [
         <ClickToComponent />
 
         <Firebase>
-          <SnackbarProvider>
-            <StorybookTheme>
+          <StorybookTheme>
+            <SnackbarProvider>
               <Story />
-            </StorybookTheme>
-          </SnackbarProvider>
+            </SnackbarProvider>
+          </StorybookTheme>
         </Firebase>
       </>
     )
