@@ -9,6 +9,7 @@ dist
 .netlify
 # allow 
 !devtools/vite/build
+!functions/build
 
 # Compiled Java class files
 *.class
