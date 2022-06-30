@@ -1,7 +1,7 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 import Form from '@useweb/ui/Form'
-import Button from '@useweb/ui/Button'
+import Button from '@mui/material/Button'
 import Select, { type SelectProps } from '@useweb/ui/Select'
 
 import Docs from './Select.docs.mdx'
@@ -22,7 +22,7 @@ const defaultArgs: SelectProps = {
 }
 
 export default {
-  title: 'Lib/components/forms/Select',
+  title: 'Lib/components/useweb/forms/Select',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -41,9 +41,7 @@ const Template = (args) => {
     <>
       <Form onSubmit={onSubmit} sx={{ display: 'grid', gap: 2 }}>
         <Select {...args} />
-        <Button name='submit' type='submit'>
-          Submit
-        </Button>
+        <Button type='submit'>Submit</Button>
       </Form>
     </>
   )
