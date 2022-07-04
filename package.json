@@ -59,7 +59,7 @@
     "react-hook-form": "7.32.0",
     "react-location": "3.3.4",
     "ts-toolbelt": "9.6.0",
-    "vitest": "0.14.2",
+    "vitest": "0.17.0",
     "zustand": "3.7.2"
   },
   "devDependencies": {
