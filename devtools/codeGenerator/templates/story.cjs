@@ -10,6 +10,7 @@ const getStoryTemplate = ({ name, type = 'component', helpers, folderPath }) => 
   const propsName = `${helpers.changeCase.capitalCase(name).split(' ').join('')}Props`
   let storyPrefix = folderPath.split('src')
   storyPrefix = storyPrefix.pop()
+  storyPrefix = storyPrefix.substring(1)
 
   return `//https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
@@ -34,7 +35,7 @@ export default {
   },
 }
 
-const Template = (args) => {
+const Template = (args: ${propsName}) => {
   ${isFunction ? `const fn = async () => ${name}(args)` : ''}
 
   return (
