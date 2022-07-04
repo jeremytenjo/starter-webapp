@@ -5,6 +5,7 @@ module.exports = {
     '../../functions/src/**/*.stories.@(ts|tsx)',
   ],
   staticDirs: ['../../public'],
+  core: { builder: '@storybook/builder-vite' },
   features: { emotionAlias: false, storyStoreV7: true },
   framework: '@storybook/react',
   addons: [
