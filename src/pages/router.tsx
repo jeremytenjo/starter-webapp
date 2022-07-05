@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactLocation, Router as ReactLocationRouter, Outlet } from 'react-location'
 
-import RootLayout from '../lib/components/layouts/root.layout'
+import RootLayout from '../lib/layouts/root.layout'
 
 import HomeRoutes from './HomePage/routes'
 import NotFoundPageRoutes from './NotFoundPage/routes'
