@@ -18,4 +18,11 @@ module.exports = {
   webpackFinal: async (defaultWebpackConfig) => {
     return webpackFinal({ defaultWebpackConfig })
   },
+  refs: {
+    useweb: {
+      title: 'useweb ui',
+      url: 'https://useweb.dev/',
+      expanded: false,
+    },
+  },
 }
