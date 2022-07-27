@@ -7,6 +7,8 @@ ui-debug.log
 pubsub-debug.log
 dist
 .netlify
+.firebase
+
 # allow 
 !devtools/vite/build
 !functions/build
