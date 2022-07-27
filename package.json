@@ -37,7 +37,7 @@
     "prepare": "node --experimental-json-modules --loader ts-node/esm ./scripts/prepare/run.ts"
   },
   "dependencies": {
-    "@mui/material": "5.8.4",
+    "@mui/material": "5.9.2",
     "@playwright/test": "1.22.2",
     "@storybook/addon-essentials": "6.5.9",
     "@storybook/builder-vite": "0.1.38",
