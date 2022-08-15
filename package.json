@@ -48,7 +48,7 @@
     "@useweb/ui": "4.8.3",
     "@useweb/ui-theme": "1.0.2",
     "@useweb/use-async": "4.4.0",
-    "@useweb/use-data": "10.0.1",
+    "@useweb/use-data": "10.0.2",
     "@useweb/use-event-listener": "1.2.0",
     "@useweb/use-install-prompt": "1.4.1",
     "firebase": "9.8.3",
