@@ -48,6 +48,7 @@ export default async function buildFunctions() {
     })
 
     spinner.succeed(`Functions built successfully: ${chalk.cyan(functionsListString)}`)
+    console.log('')
   } catch (error: any) {
     spinner.stop()
     throw new Error(error)
